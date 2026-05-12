@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CANSLIM Global — 12 May 2026</title>
+<style>
+:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2430;--b:#30363d;--b2:#21262d;--tx:#e6edf3;--t2:#8b949e;--t3:#6e7681;--gr:#3fb950;--gbg:#0d2d1a;--bl:#58a6ff;--bbg:#0b2b4a;--am:#d29922;--abg:#2b1f00;--rd:#f85149;--rbg:#2d0b0b;--cy:#39d0d8;--t1bg:#0b2e1a;--t2bg:#0a2040;--t3bg:#1e1e0a;--fl:#2b1500;--r:8px;--rs:5px;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-size:13px;min-height:100vh}
+.nav{background:var(--bg2);border-bottom:1px solid var(--b);padding:0 20px;display:flex;align-items:center;position:sticky;top:0;z-index:100;flex-wrap:wrap}
+.brand{font-size:14px;font-weight:700;color:var(--cy);padding:12px 16px 12px 0;border-right:1px solid var(--b);margin-right:10px;white-space:nowrap;line-height:1.2}
+.brand small{display:block;font-size:10px;font-weight:400;color:var(--t2)}
+.tab{padding:12px 13px;font-size:12px;font-weight:500;color:var(--t2);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.on{color:var(--tx);border-bottom-color:var(--cy)}
+.tab:hover:not(.on){color:var(--tx);background:var(--bg3)}
+.nr{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:11px;color:var(--t2)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--gr);animation:pu 1.6s infinite;display:inline-block}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
+.pg{display:none}.pg.on{display:block}
+.hero{padding:16px 20px;background:linear-gradient(135deg,var(--bg2),var(--bg));border-bottom:1px solid var(--b)}
+.hero h1{font-size:18px;font-weight:700;margin-bottom:3px}
+.hero p{font-size:11px;color:var(--t2);margin-bottom:12px}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:8px}
+.sc{background:var(--bg3);border:1px solid var(--b);border-radius:var(--r);padding:10px 12px}
+.sc .v{font-size:20px;font-weight:700}.sc .l{font-size:10px;color:var(--t2);margin-top:2px}
+.sc.g{border-color:#1a6640;background:var(--gbg)}.sc.g .v{color:var(--gr)}
+.sc.b{border-color:#1a3a60;background:var(--bbg)}.sc.b .v{color:var(--bl)}
+.sc.a{border-color:#5a3c00;background:var(--abg)}.sc.a .v{color:var(--am)}
+.sc.r{border-color:#5a1a1a;background:var(--rbg)}.sc.r .v{color:var(--rd)}
+.cr{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:10px 20px;background:var(--bg2);border-bottom:1px solid var(--b)}
+.cb{background:var(--bg3);border:1px solid var(--b);border-radius:var(--rs);padding:6px 8px;text-align:center}
+.cl{font-size:15px;font-weight:800;color:var(--cy)}.cd{font-size:9px;color:var(--t2);margin-top:1px}.ct{font-size:9px;color:var(--am);margin-top:2px}
+.el{display:flex;flex-wrap:wrap;gap:5px;padding:8px 20px;border-bottom:1px solid var(--b)}
+.etag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px}
+.ctrl{padding:9px 20px;background:var(--bg2);border-bottom:1px solid var(--b);display:flex;gap:7px;flex-wrap:wrap;align-items:center;position:sticky;top:47px;z-index:40;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.si{background:var(--bg3);border:1px solid var(--b);border-radius:var(--rs);padding:6px 10px;color:var(--tx);font-size:12px;width:195px;outline:none}
+.si:focus{border-color:var(--cy)}
+.fb{padding:5px 10px;font-size:11px;font-weight:600;border:1px solid var(--b);border-radius:var(--rs);background:var(--bg3);color:var(--t2);cursor:pointer}
+.fb.on{background:var(--cy);color:#000;border-color:var(--cy)}
+.sel{background:var(--bg3);border:1px solid var(--b);border-radius:var(--rs);padding:5px 8px;color:var(--tx);font-size:12px;outline:none}
+.lbl{font-size:11px;color:var(--t2);white-space:nowrap}
+.cnt{margin-left:auto;font-size:11px;color:var(--t2)}
+.vb{padding:4px 9px;font-size:11px;border:1px solid var(--b);border-radius:var(--rs);background:var(--bg3);color:var(--t2);cursor:pointer}
+.vb.on{background:var(--cy);color:#000;border-color:var(--cy)}
+.tw{overflow-x:auto;padding:0 0 16px}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:12px}
+thead th{background:#1a2332;color:#c9d1d9;padding:10px 12px;text-align:left;white-space:nowrap;border-bottom:2px solid var(--cy);border-top:1px solid var(--b);font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;position:sticky;top:0;z-index:50;cursor:pointer;user-select:none;box-shadow:0 2px 6px rgba(0,0,0,.6)}
+thead th:first-child{border-left:3px solid var(--cy)}
+thead th:hover{color:#fff;background:#243447}
+thead th.sa::after{content:" ▲";font-size:9px;color:var(--cy)}
+thead th.sd::after{content:" ▼";font-size:9px;color:var(--cy)}
+tbody tr:hover td{background:var(--bg3)!important}
+td{padding:8px 12px;white-space:nowrap;vertical-align:middle;border-bottom:1px solid var(--b2)}
+.r1 td{background:var(--t1bg)}.r2 td{background:var(--t2bg)}.r3 td{background:var(--t3bg)}.rf td{background:var(--fl)}
+.bx{display:inline-block;padding:2px 7px;border-radius:8px;font-size:10px;font-weight:600}
+.bt1{background:var(--t1bg);color:#52d68a;border:1px solid #1a6640}
+.bt2{background:var(--t2bg);color:#5ab0f8;border:1px solid #1a4a80}
+.bt3{background:var(--abg);color:#ffe0a8;border:1px solid #5a3c00}
+.bny{background:#0a1a30;color:#6eb5ff;border:1px solid #1a3a60}
+.bna{background:#0a1535;color:#88aaff;border:1px solid #1a2f60}
+.bsi{background:#200a0a;color:#ff9999;border:1px solid #5c1a1a}
+.beu{background:#0a200a;color:#88dd88;border:1px solid #1a5c1a}
+.db{font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px}
+.d1{background:var(--gbg);color:#3fb950;border:1px solid #1a6640}
+.d2{background:var(--bbg);color:#58a6ff;border:1px solid #1a3a60}
+.df{background:var(--fl);color:#ffb347;border:1px solid #7a3a00}
+.dd{display:inline-flex;gap:2px;vertical-align:middle}
+.f{width:9px;height:9px;border-radius:50%;background:var(--cy);display:inline-block}
+.e{width:9px;height:9px;border-radius:50%;background:var(--b);display:inline-block}
+.pos{color:var(--gr);font-weight:600}.neg{color:var(--rd);font-weight:600}.neu{color:var(--t2)}
+.rh{color:var(--rd)}.ro{color:var(--gr)}.rl{color:var(--am)}
+.as{color:var(--gr);font-weight:600}.ao{color:var(--tx)}.aw{color:var(--am)}
+.vg{color:var(--gr);font-weight:600}.vw{color:var(--am)}.vfl{color:#ffb347;font-weight:600}
+.tk{font-weight:700;font-size:13px}
+.co{max-width:155px;overflow:hidden;text-overflow:ellipsis;color:var(--t2)}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:10px;padding:14px 20px}
+.card{background:var(--bg2);border:1px solid var(--b);border-radius:var(--r);overflow:hidden}
+.card:hover{border-color:var(--cy)}
+.ct1{border-left:4px solid var(--gr)}.ct2{border-left:4px solid var(--bl)}.ct3{border-left:4px solid var(--am)}.cfl{border-left:4px solid #ffb347;opacity:.85}
+.chd{padding:11px 13px;display:flex;justify-content:space-between;align-items:flex-start}
+.ctk{font-size:16px;font-weight:700}.cnm{font-size:11px;color:var(--t2);margin-top:1px}.cex{font-size:10px;color:var(--t3);margin-top:2px}
+.cpr{font-size:15px;font-weight:600;text-align:right}.cmc{font-size:10px;color:var(--t2);text-align:right;margin-top:2px}
+.pp{display:flex;gap:4px;padding:0 13px 9px;flex-wrap:wrap}
+.pi{font-size:10px;padding:2px 6px;border-radius:6px;font-weight:600}
+.pu{background:var(--gbg);color:#52d68a}.pd{background:var(--rbg);color:#f85149}.pa{background:var(--abg);color:#ffe0a8}
+.ms{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b2)}
+.mt{background:var(--bg3);padding:6px 8px;text-align:center}
+.ml{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.03em}.mv{font-size:12px;font-weight:600;margin-top:1px}
+.cf{padding:8px 13px;background:var(--bg3);display:flex;justify-content:space-between;align-items:center;font-size:11px}
+.al{padding:9px 12px;border-radius:6px;font-size:11px;line-height:1.5;margin:10px 20px 0}
+.al strong{font-weight:700}
+.ag{background:var(--gbg);border:1px solid #1a6640;color:#a8ffce}
+.aa{background:var(--abg);border:1px solid #5a3c00;color:#ffe0a8}
+.ab{background:var(--bbg);border:1px solid #1a3a60;color:#a8d8ff}
+.disc{padding:10px 20px;font-size:11px;color:var(--t3);border-top:1px solid var(--b);line-height:1.5}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="brand">CANSLIM<small>Global · Notion Live Data</small></div>
+  <button class="tab on" onclick="show('all',event)">All Markets</button>
+  <button class="tab" onclick="show('us',event)">🇺🇸 NYSE/NASDAQ</button>
+  <button class="tab" onclick="show('ch',event)">🇨🇭 Swiss</button>
+  <button class="tab" onclick="show('eu',event)">🇪🇺 Europe</button>
+  <button class="tab" onclick="show('t1',event)">⭐ Tier 1</button>
+  <button class="tab" onclick="show('d2',event)">📅 Day 2+</button>
+  <button class="tab" onclick="show('dropped',event)">🔴 Dropped</button>
+</nav>
+
+<div id="pg-all" class="pg on">
+  <div class="hero">
+    <h1>CANSLIM Global Screen — 12 May 2026</h1>
+    <p>Sourced from Notion database · 86 active stocks · Generated 12 May 2026 07:36</p>
+    <div class="sg">
+      <div class="sc g"><div class="v">86</div><div class="l">Active stocks</div></div>
+      <div class="sc g"><div class="v">27</div><div class="l">Tier 1 (≥6/7)</div></div>
+      <div class="sc b"><div class="v">66</div><div class="l">Day 2+ confirmed</div></div>
+      <div class="sc a"><div class="v">19</div><div class="l">New today (Day 1)</div></div>
+      <div class="sc r"><div class="v">9</div><div class="l">Dropped today</div></div>
+      <div class="sc"><div class="v">2</div><div class="l">Flagged</div></div>
+    </div>
+  </div>
+  <div class="cr">
+    <div class="cb"><div class="cl">C</div><div class="cd">EPS Growth</div><div class="ct">NYSE≥25% EU≥15%</div></div>
+    <div class="cb"><div class="cl">A</div><div class="cd">Annual ROE</div><div class="ct">ROE≥15% sustained</div></div>
+    <div class="cb"><div class="cl">N</div><div class="cd">Near ATH</div><div class="ct">Within 25% ATH</div></div>
+    <div class="cb"><div class="cl">S</div><div class="cd">Supply/Demand</div><div class="ct">RelVol≥1.0 breakout</div></div>
+    <div class="cb"><div class="cl">L</div><div class="cd">Leader</div><div class="ct">Top 1Y performer</div></div>
+    <div class="cb"><div class="cl">I</div><div class="cd">Institutional</div><div class="ct">≥5 analyst Buys</div></div>
+    <div class="cb"><div class="cl">M</div><div class="cd">Market Dir.</div><div class="ct">SPX/SMI uptrend ✓</div></div>
+  </div>
+  <div class="el" id="exleg"></div>
+  <div class="ctrl" id="ca">
+    <input class="si" id="s-all" placeholder="🔍 Ticker / company / sector..." oninput="ft('all')">
+    <span class="lbl">Exchange:</span>
+    <select class="sel" id="ex-all" onchange="ft('all')"><option value="">All</option>
+      <option>NYSE</option><option>NASDAQ</option><option>SIX</option><option>LSE</option>
+      <option>BME</option><option>EURONEXT</option><option>OSL</option><option>OMXCOP</option>
+      <option>MIL</option><option>NGM</option><option>GPW</option><option>OMXSTO</option></select>
+    <span class="lbl">Tier:</span>
+    <button class="fb on" onclick="st('all','',this)">All</button>
+    <button class="fb" onclick="st('all','Tier 1',this)">Tier 1</button>
+    <button class="fb" onclick="st('all','Tier 2',this)">Tier 2</button>
+    <button class="fb" onclick="st('all','Tier 3',this)">Tier 3</button>
+    <span class="lbl">Days:</span>
+    <button class="fb on" onclick="sd('all',0,this)">All</button>
+    <button class="fb" onclick="sd('all',2,this)">Day 2+</button>
+    <span style="display:flex;gap:3px">
+      <button class="vb on" onclick="sv('all','table',this)">Table</button>
+      <button class="vb" onclick="sv('all','cards',this)">Cards</button>
+    </span>
+    <span class="cnt" id="c-all"></span>
+  </div>
+  <div id="tv-all" class="tw"><table id="t-all"><thead></thead><tbody></tbody></table></div>
+  <div id="cv-all" class="cg" style="display:none"></div>
+  <div class="disc">⚠ Data sourced from Notion database · Generated 12 May 2026 07:36 · Not regulated financial advice · Always apply stop-loss discipline</div>
+</div>
+
+<div id="pg-us" class="pg">
+  <div class="hero"><h1>🇺🇸 NYSE / NASDAQ</h1>
+  <p>US markets · sorted by Days in Filter</p>
+  <div class="sg" id="sg-us"></div></div>
+  <div class="ctrl">
+    <input class="si" id="s-us" placeholder="🔍 Search..." oninput="ft('us')">
+    <span style="display:flex;gap:3px"><button class="vb on" onclick="sv('us','table',this)">Table</button><button class="vb" onclick="sv('us','cards',this)">Cards</button></span>
+    <span class="cnt" id="c-us"></span>
+  </div>
+  <div id="tv-us" class="tw"><table id="t-us"><thead></thead><tbody></tbody></table></div>
+  <div id="cv-us" class="cg" style="display:none"></div>
+</div>
+
+<div id="pg-ch" class="pg">
+  <div class="hero"><h1>🇨🇭 SIX Swiss Exchange</h1>
+  <p>Swiss market screen</p>
+  <div class="sg" id="sg-ch"></div></div>
+  <div class="ctrl">
+    <input class="si" id="s-ch" placeholder="🔍 Search..." oninput="ft('ch')">
+    <span class="cnt" id="c-ch"></span>
+  </div>
+  <div id="tv-ch" class="tw"><table id="t-ch"><thead></thead><tbody></tbody></table></div>
+</div>
+
+<div id="pg-eu" class="pg">
+  <div class="hero"><h1>🇪🇺 Pan-European Screen</h1>
+  <p>14 exchanges · Norway, UK, Spain leading</p>
+  <div class="sg" id="sg-eu"></div></div>
+  <div class="ctrl">
+    <input class="si" id="s-eu" placeholder="🔍 Search..." oninput="ft('eu')">
+    <span class="lbl">Country:</span>
+    <select class="sel" id="ex-eu" onchange="ft('eu')"><option value="">All</option>
+      <option value="UK">UK</option><option value="Spain">Spain</option><option value="Norway">Norway</option>
+      <option value="Denmark">Denmark</option><option value="Italy">Italy</option>
+      <option value="Netherlands">Netherlands</option><option value="Sweden">Sweden</option>
+      <option value="Ireland">Ireland</option><option value="Poland">Poland</option>
+      <option value="France">France</option><option value="Belgium">Belgium</option></select>
+    <span style="display:flex;gap:3px"><button class="vb on" onclick="sv('eu','table',this)">Table</button><button class="vb" onclick="sv('eu','cards',this)">Cards</button></span>
+    <span class="cnt" id="c-eu"></span>
+  </div>
+  <div id="tv-eu" class="tw"><table id="t-eu"><thead></thead><tbody></tbody></table></div>
+  <div id="cv-eu" class="cg" style="display:none"></div>
+</div>
+
+<div id="pg-t1" class="pg">
+  <div class="hero"><h1>⭐ Tier 1 — High Conviction (≥6/7 CANSLIM)</h1>
+  <p>All stocks scoring 6 or 7 of 7 CANSLIM criteria globally</p>
+  <div class="sg" id="sg-t1"></div></div>
+  <div id="cv-t1" class="cg"></div>
+</div>
+
+<div id="pg-d2" class="pg">
+  <div class="hero"><h1>📅 Day 2+ Confirmed — Sustained Momentum</h1>
+  <p>Stocks in filter for 2 or more consecutive days · O'Neill entry window begins Day 3</p>
+  <div class="sg" id="sg-d2"></div></div>
+  <div class="al ag"><strong>O'Neill Entry Rule:</strong> 3–5 consecutive days in filter with rising ADX = highest conviction. Enter on breakout with volume. Stop: 7–8% below entry.</div>
+  <div id="cv-d2" class="cg"></div>
+</div>
+
+<div id="pg-dropped" class="pg">
+  <div class="hero"><h1>🔴 Dropped — Review Required</h1>
+  <p>Stocks that were in filter previously but did not qualify today</p>
+  <div class="sg" id="sg-dropped"></div></div>
+  <div class="al aa"><strong>Position review required</strong> for any dropped stock you hold. A stock exiting the CANSLIM filter is a signal to check your stop-loss level.</div>
+  <div id="cv-dropped" class="cg"></div>
+</div>
+
+<script>
+const S=[
+["LSE","","UU.","United Utilities Group PLC","Utilities","",1400,10.32,4,"Tier 3",121.69,21.96,27.67,22.43,11.64,26.98,16.91,55.49,17.64,0.42,-6.48,2,15.04,null,"Watch","","",null,4,"Day 4"],
+["OMXCOP","","CPHCAP_ST","Copenhagen Capital A/S","Finance","",7.4,0.37,5,"Tier 2",938.76,17.75,16.34,144.22,8.82,35.78,10.45,56.73,12.87,2.16,-26,null,null,null,"Buy","","",null,4,"Day 4"],
+["GPW","","SNT","Synektik SA","Health Technology","",285,2.41,4,"Tier 3",28.4,27.02,56.12,19.13,6.99,40.16,11.68,52.89,25.22,0.75,-8.01,2,332,null,"Watch","","",null,4,"Day 4"],
+["CBOE","","CBOE","Cboe Global Markets, Inc.","Finance","",350.48,36.68,5,"Tier 2",53.54,10.61,25.03,25.66,25.04,52.82,39.66,73.19,25.53,1.53,0,3,329.64,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","CARE","Carter Bankshares, Inc.","Finance","",26.57,0.59,5,"Tier 2",306.2,30.36,23.57,47.89,21.05,67.69,34.87,78.06,43.39,1.37,-2.46,3,26.75,null,"Buy","","",null,4,"Day 4"],
+["LSE","","MSI","MS International PLC","Electronic Technology","",1760,0.29,4,"Tier 3",20.46,10.56,24.78,12.1,31.34,60.73,20.14,67.57,50.77,0.52,-2.22,null,null,null,"Watch","","",null,4,"Day 4"],
+["NYSE","","MLI","Mueller Industries, Inc.","Producer Manufacturing","",140.71,15.56,4,"Tier 3",39.07,11.54,28.22,19.37,21.7,87.86,22.25,68.29,40.84,0.97,-0.57,2,149.5,null,"Watch","","",null,4,"Day 4"],
+["NYSE","","SPNT","SiriusPoint Ltd.","Finance","",23.01,2.7,5,"Tier 2",320.92,22.94,23.12,15.38,16.86,19.53,5.31,51.24,14.74,1.64,-4.12,3,27,null,"Buy","","",null,4,"Day 4"],
+["NYSE","","VIRT","Virtu Financial, Inc.","Finance","",51.54,7.99,4,"Tier 3",74.21,28.84,33.9,14.4,31.08,20.59,53.85,62.31,23.43,0.96,-1.28,3,51.71,null,"Watch","","",null,4,"Day 4"],
+["LSE","","GAW","Games Workshop Group PLC","Consumer Durables","",19410,6.48,5,"Tier 2",17.75,12.57,67.89,31.75,15.19,24.34,2.21,53.78,27.56,2.43,-4.48,1,218.5,null,"Buy","","",null,4,"Day 4"],
+["GPW","","DVL","Develia S.A.","Finance","",10.68,4.88,5,"Tier 2",15.22,15.83,24.36,21.31,7.77,35.19,22.76,73.4,30.96,0.22,-0.19,5,10,null,"Buy","","",null,4,"Day 4"],
+["OSL","","CADLR","Cadeler A/S","Producer Manufacturing","",68.15,26.04,5,"Tier 2",322.23,150.13,20.31,45.14,11.08,33.89,42.04,73.42,24.75,0.59,-12.06,7,64.57,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","CPRX","Catalyst Pharmaceuticals, Inc.","Health Technology","",31.15,3.81,4,"Tier 3",28.7,19.78,25.49,36.39,26.99,35.08,33.46,73.31,48.26,0.91,-4.33,1,32.62,null,"Watch","","",null,4,"Day 4"],
+["BME","","PHM","Pharma Mar SA","Health Technology","",100.3,1.77,5,"Tier 2",307.19,28.27,35.99,35.7,29.92,34.63,33.2,59.24,32.84,0.83,-32.23,7,106.12,null,"Buy","","",null,4,"Day 4"],
+["EURONEXT","","GTT","Gaztransport & Technigaz SA","Producer Manufacturing","",206.4,7.5,5,"Tier 2",18.78,25.2,78.81,51.51,15.05,39.74,32.56,54.84,16.61,0.82,-4,6,214.64,null,"Buy","","",null,4,"Day 4"],
+["NGM","","VPAB.B","VETERANPOOLEN AB CLASS B","Commercial Services","",61.6,1.17,5,"Tier 2",29.28,15.74,83.59,8.86,10.39,52.48,14.07,65.98,18.65,3.06,-0.16,null,null,null,"Buy","","",null,4,"Day 4"],
+["OSL","","NORBT","Norbit ASA","Industrial Services","",225.2,14.64,5,"Tier 2",61.59,42.9,34.14,16.16,13.39,47.38,19.15,53.76,25.14,0.62,-8.01,5,248.8,null,"Buy","","",null,4,"Day 4"],
+["EURONEXT","","JEN","Jensen-Group NV","Producer Manufacturing","",69.4,0.67,4,"Tier 3",44.98,19.33,20.07,10.87,11.58,53.54,18.43,51.48,14.63,0.23,-5.19,0,70,null,"Watch","","",null,4,"Day 4"],
+["LSE","","HLMA","Halma plc","Electronic Technology","",4596,17.18,5,"Tier 2",20.91,11.74,18.61,14.39,27.1,60.36,29.25,65.89,37.92,0.85,-2.42,7,41.93,null,"Buy","","",null,4,"Day 4"],
+["OMXCOP","","ALK_B","ALK-abello A/S Class B","Health Technology","",250.2,56.9,5,"Tier 2",36.57,14.94,20.91,19.51,15.83,55.4,9.45,67.14,39.88,0.97,-4.5,5,293,null,"Buy","","",null,4,"Day 4"],
+["GPW","","GPW","Gielda Papierow Wartosciowych w Warszawie S.A.","Finance","",82.2,3.49,4,"Tier 3",31.14,21.14,17.75,34.38,11.84,64.4,25.88,60.63,23.84,0.99,-3.75,1,68.12,null,"Watch","","",null,4,"Day 4"],
+["NASDAQ","","FCFS","FirstCash Holdings, Inc.","Finance","",233,10.21,6,"Tier 1",27.91,14.39,16.27,9.15,28.18,74.13,46.42,76.4,44.02,1.18,-0.06,5,242,null,"Buy","","",null,4,"Day 4"],
+["OSL","","DOFG","DOF Group ASA","Energy Minerals","",137.6,33.54,5,"Tier 2",105.92,29.88,23.58,24.8,19.03,70.93,43.41,55.85,11.22,0.61,-3.1,5,132.71,null,"Buy","","",null,4,"Day 4"],
+["LSE","","DPLM","Diploma PLC","Distribution Services","",6900,9.31,5,"Tier 2",43.12,11.82,19.69,12.13,26.03,68.46,29.46,57.88,42.23,0.65,-5.41,11,68.15,null,"Buy","","",null,4,"Day 4"],
+["MIL","","TGYM","Technogym S.p.A","Consumer Durables","",21.08,4.32,5,"Tier 2",33.13,13.06,32.32,11.33,15.44,66.38,29.09,64.83,29.27,0.67,-3.04,5,20.15,null,"Buy","","",null,4,"Day 4"],
+["NGM","","PLEJD","PLEJD AB","Technology Services","",1060,11.96,5,"Tier 2",71.54,41.25,31.13,21.44,20.05,83.39,49.09,62.74,36.87,0.71,-2.66,3,1216.67,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","NVDA","NVIDIA Corporation","Electronic Technology","",219.44,5332.39,6,"Tier 1",66.75,65.47,101.49,55.6,14.66,87,15.6,68.46,25.18,1.02,-1.29,57,269.82,null,"Strong Buy","","",null,4,"Day 4"],
+["OSL","","VTURA","Ventura Offshore Holding Ltd.","Industrial Services","",30.6,3.33,5,"Tier 2",45.45,47.99,29.58,25.75,28.03,74.86,61.9,50.72,39.76,0.31,-8.93,7,39.74,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","IBKR","Interactive Brokers Group, Inc.","Finance","",84.91,144.03,5,"Tier 2",28.42,12.92,20.58,9.65,9.03,83.9,29.81,65.97,23.09,0.72,-2.82,8,88.44,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","AUPH","Aurinia Pharmaceuticals Inc","Health Technology","",15.72,2.02,5,"Tier 2",683.38,20.62,64.98,99.97,8.19,93.83,-1.01,51.38,19.71,1.73,-53.73,4,17,null,"Buy","","",null,4,"Day 4"],
+["SIX","","ACLN","Accelleron Industries AG","Producer Manufacturing","",86.4,8.21,5,"Tier 2",28.78,16.39,56.9,18.43,16.84,84.22,39.92,60.33,27.67,0.83,-4.53,2,77.24,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","DAVE","Dave Inc.","Finance","",249.42,3.2,5,"Tier 2",327.93,58.48,111.62,37.22,33.38,63.7,12.38,52.24,24.3,0.94,-49.21,9,339.88,null,"Buy","","",null,4,"Day 4"],
+["NYSE","","CBL","CBL & Associates Properties, Inc.","Finance","",46.42,1.44,4,"Tier 3",155.46,10.29,50.12,29.81,27.28,90.25,25.43,66.81,31.29,0.8,-4.56,1,50,null,"Watch","","",null,4,"Day 4"],
+["LSE","","AAF","Airtel Africa Plc","Communications","",420.2,13.38,7,"Tier 1",197,23.19,23.48,10.58,25.21,169.36,18.1,74.13,13.38,2.12,-3.67,9,3.22,null,"Strong Buy","","",null,4,"Day 4"],
+["NYSE","","KEYS","Keysight Technologies Inc.","Electronic Technology","",366.36,62.83,6,"Tier 1",58.57,13.13,17.22,17.28,55.52,138.25,78.44,69.26,29.29,1.26,-1.03,8,323.08,null,"Strong Buy","","",null,4,"Day 4"],
+["GPW","","ATR","Atrem S.A.","Industrial Services","",63.8,0.6,5,"Tier 2",140.93,66.43,60.46,12.06,9.25,160.41,7.05,58.75,25.11,0.68,-5.9,1,81.2,null,"Buy","","",null,4,"Day 4"],
+["EURONEXT","","CENER","Cenergy Holdings SA","Producer Manufacturing","",26,5.21,5,"Tier 2",27.37,14.71,24.3,9.39,31.05,191.48,71.5,74.65,41.02,0.6,0,2,21.08,null,"Buy","","",null,4,"Day 4"],
+["GPW","","DIG","Digital Network S.A","Consumer Services","",199.9,0.83,5,"Tier 2",48.69,51.23,48.95,33.31,25.72,194.84,20.42,57.26,25.66,0.56,-7.02,1,184,null,"Buy","","",null,4,"Day 4"],
+["AMEX","","IDR","Idaho Strategic Resources, Inc.","Non-Energy Minerals","",50.75,0.8,6,"Tier 1",65.34,64.59,22.92,39.42,28.16,246.65,23.9,69.02,28.62,1.25,-7.22,1,45,null,"Strong Buy","","",null,4,"Day 4"],
+["GPW","","WAS","WASKO S.A.","Commercial Services","",8.46,0.77,5,"Tier 2",639.55,14.01,18.69,8.56,103.86,368.7,297.18,56.17,37.42,0.79,-10,null,null,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","VICR","Vicor Corporation","Electronic Technology","",312.96,14.27,6,"Tier 1",484.21,15.59,20.49,32.03,96.83,661.65,180.78,70.09,26.35,2.37,-0.18,4,282.5,null,"Strong Buy","","",null,4,"Day 4"],
+["NASDAQ","","TGTX","TG Therapeutics, Inc.","Health Technology","",43.14,6.6,6,"Tier 1",1076.02,81.26,112.6,65.95,44.86,27.63,45.94,75.6,45.82,1.01,-99.97,6,48.14,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","MNST","Monster Beverage Corporation","Consumer Non-Durables","",86.41,84.5,6,"Tier 1",36.04,18.06,26.65,23.11,7.54,46.93,12.7,73.23,21.31,1.42,-2.66,15,91.42,null,"Strong Buy","","",null,4,"Day 4"],
+["MIL","","PHN","PharmaNutra S.p.A.","Health Technology","",77.4,0.75,5,"Tier 2",20.67,14.02,29.96,15.19,21.32,44.67,42.54,48.35,32.68,0.8,-7.08,3,83.33,null,"Flagged","","",null,4,"Flagged"],
+["NASDAQ","","AAPL","Apple Inc.","Electronic Technology","",292.68,4298.7,5,"Tier 2",29,12.76,141.47,27.15,6.47,47.08,7.5,71.96,22.25,0.79,-0.71,25,309.75,null,"Buy","","",null,4,"Day 4"],
+["NYSE","","AROC","Archrock, Inc.","Industrial Services","",36.71,6.43,6,"Tier 1",55.94,22.66,22.42,21.2,13.51,49.96,41.19,47.33,18.66,1.38,-57.9,8,41.2,null,"Flagged","","",null,4,"Flagged"],
+["NYSE","","MS","Morgan Stanley","Finance","",191.1,301.42,6,"Tier 1",29.55,16.32,16.38,24.64,5.05,56.01,7.05,59.58,31.69,1.05,-1.91,11,206.5,null,"Strong Buy","","",null,4,"Day 4"],
+["NYSE","","HWM","Howmet Aerospace Inc.","Electronic Technology","",273.58,109.46,6,"Tier 1",40.55,14.24,33.82,20.22,21.21,73.26,33.14,67.89,22.51,1.04,-2.55,18,302.93,null,"Strong Buy","","",null,4,"Day 4"],
+["EURONEXT","","SBMO","SBM Offshore NV","Industrial Services","",35.9,5.91,6,"Tier 1",501.06,18.18,22.34,15.48,21.69,88.95,45.82,53.6,16.52,1.07,-3.96,4,41.89,null,"Strong Buy","","",null,4,"Day 4"],
+["NASDAQ","","BLBD","Blue Bird Corporation","Consumer Durables","",70.36,2.23,6,"Tier 1",25.92,10.09,54.48,8.91,22.32,90.42,47.47,68.31,23.66,1.23,-13.68,5,81.71,null,"Strong Buy","","",null,4,"Day 4"],
+["NASDAQ","","AVGO","Broadcom Inc.","Electronic Technology","",428.43,2028.47,5,"Tier 2",147.26,25.22,33.37,36.57,23.3,104.67,21.45,64.95,30.83,0.86,-2.11,42,473.25,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","KRYS","Krystal Biotech, Inc.","Health Technology","",312.88,9.22,6,"Tier 1",80.17,25.15,19.9,53.92,14.45,124.03,27.37,74.19,22.56,1.11,-0.73,11,326,null,"Strong Buy","","",null,4,"Day 4"],
+["LSE","","SRB","Serabi Gold PLC","Non-Energy Minerals","",355,0.26,4,"Tier 3",87.48,59.41,38.89,34.55,14.89,136.19,13.42,61.41,18.03,0.86,-96.89,2,4.76,null,"Watch","","",null,4,"Day 4"],
+["BME","","GRE","Grenergy Renovables S.A","Industrial Services","",124.2,3.3,6,"Tier 1",47.62,21.8,19.59,12.39,27.38,142.11,45.77,58.51,15.69,0.66,-2.36,9,112.81,null,"Strong Buy","","",null,4,"Day 4"],
+["NYSE","","INSW","International Seaways, Inc.","Transportation","",89.71,4.44,5,"Tier 2",69.8,14.5,26.87,55.39,48.28,144.11,86.12,68.89,34.63,0.85,-3.18,9,92.22,null,"Buy","","",null,4,"Day 4"],
+["LSE","","AEP","AEP Plantations Plc","Process Industries","",1998,0.76,5,"Tier 2",32.15,21.29,15.84,19.56,33.65,160.16,45.31,65.67,21.54,1,-2.29,1,22.49,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","KLAC","KLA Corporation","Electronic Technology","",1845.19,241.03,6,"Tier 1",28.56,13.43,94.98,35.68,29.57,161.31,46.48,58.92,14.93,1,-4.86,16,1872.36,null,"Strong Buy","","",null,4,"Day 4"],
+["NYSE","","FN","Fabrinet","Electronic Technology","",649.53,23.27,7,"Tier 1",29.63,29.79,19.99,9.94,30.47,210.78,39.76,50.44,16.27,1.04,-11.6,6,749.11,null,"Strong Buy","","",null,4,"Day 4"],
+["NASDAQ","","SSRM","SSR Mining Inc.","Non-Energy Minerals","",34.74,7.21,7,"Tier 1",169.21,79.39,17.34,31.11,35.07,221.37,54.81,64.84,18.76,1.21,-27.87,9,43.94,null,"Strong Buy","","",null,4,"Day 4"],
+["NYSE","","VRT","Vertiv Holdings, LLC","Electronic Technology","",367.92,141.32,7,"Tier 1",130.95,28.95,45.1,14.37,81.24,283.01,117.11,70.31,23.32,1.34,-1.1,21,348.82,null,"Strong Buy","","",null,4,"Day 4"],
+["BME","","SLR","Solaria Energia y Medio Ambiente, S.A.","Utilities","",24.53,3.2,6,"Tier 1",57.02,60.51,20.85,48.38,35.38,289.98,35.08,55.98,21.66,0.76,-21.02,5,22.3,null,"Strong Buy","","",null,4,"Day 4"],
+["NASDAQ","","LRCX","Lam Research Corporation","Producer Manufacturing","",296.05,370.23,6,"Tier 1",47.6,26.53,66.76,30.94,29.12,291.13,66.46,66.51,20.58,0.92,-1.32,25,314.31,null,"Strong Buy","","",null,4,"Day 4"],
+["NASDAQ","","STRL","Sterling Infrastructure, Inc.","Industrial Services","",868.18,26.64,6,"Tier 1",30.74,36.96,34.75,12.02,107.37,379.6,180.57,78.78,35.08,0.72,-2.34,8,846.67,null,"Buy","","",null,4,"Day 4"],
+["NASDAQ","","NVMI","Nova Ltd.","Electronic Technology","",526.01,16.72,7,"Tier 1",39.79,30.96,23.08,29.44,12.49,176.27,56.55,57.39,12.77,1.15,-4.36,6,497.25,null,"Strong Buy","","",null,4,"Day 4"],
+["LSE","","PAF","Pan African Resources PLC","Non-Energy Minerals","",155.6,3.06,7,"Tier 1",172.75,119.53,43.48,29.12,12.1,217.55,26.5,55.81,16.41,1.04,-18.28,5,1.78,null,"Strong Buy","","",null,4,"Day 4"],
+["NYSE","","GLW","Corning Incorporated","Electronic Technology","",207.39,178.49,7,"Tier 1",298.68,20.05,16.07,11.09,60.75,356.71,133.26,74.13,26.34,1.39,-0.73,10,204.62,null,"Strong Buy","","",null,4,"Day 4"],
+["NYSE","","USAC","USA Compression Partners, LP","Industrial Services","",28.14,4.08,5,"Tier 2",46.37,12.18,84.75,11.91,7.08,20.51,22.56,58.27,12.39,3.07,-6.51,1,29.29,null,"Dropped","","",null,3,"Dropped"],
+["SIX","","TEMN","Temenos AG","Technology Services","",74.2,5,5,"Tier 2",112.71,34.09,50.48,26.53,12.85,21.64,-6.96,50.16,16.85,0.53,-59.79,6,81.84,null,"Dropped","","",null,3,"Dropped"],
+["LSE","","CRN","Cairn Homes PLC","Consumer Durables","",200,1.26,5,"Tier 2",26.65,15.74,16.64,14.05,6.04,21.8,10.13,56.89,18.91,0.34,-5.21,4,2.47,null,"Dropped","","",null,3,"Dropped"],
+["NASDAQ","","COCO","The Vita Coco Company, Inc.","Consumer Non-Durables","",71.6,4.09,5,"Tier 2",35.6,23.05,26.32,12.59,25.11,100.67,35.12,79.5,36.66,0.83,-1.89,8,72.56,null,"Dropped","","",null,3,"Dropped"],
+["NYSE","","NEM","Newmont Corporation","Non-Energy Minerals","",116.51,124.38,5,"Tier 2",73.04,25.14,25.56,34.64,5.58,116.6,15.37,54.89,12.43,0.7,-13.62,18,147.78,null,"Dropped","","",null,3,"Dropped"],
+["GPW","","BFT","Benefit Systems S.A.","Consumer Services","",4000,13.2,6,"Tier 1",15.91,33.13,32.49,12.62,5.68,20.48,12.04,56.43,29.29,1.92,-3.38,7,4675,null,"Dropped","","",null,3,"Dropped"],
+["NYSE","","VIK","Viking Holdings Ltd","Consumer Services","",82.67,36.85,6,"Tier 1",691.68,21.89,263.49,17.65,13.26,89.44,15.61,55.05,11.67,1.07,-4.98,14,86.33,null,"Dropped","","",null,3,"Dropped"],
+["MIL","","GF","Generalfinance S.p.A.","Finance","",28.8,0.36,6,"Tier 1",36.29,23.64,32.23,28.22,18.52,92,36.49,48.44,30.68,2.96,-9.43,3,26.73,null,"Dropped","","",null,3,"Dropped"],
+["NYSE","","DOCN","DigitalOcean Holdings, Inc.","Technology Services","",163.95,17.11,6,"Tier 1",109.5,17.61,70,24.97,175.13,469.27,237.07,79.43,38.26,0.84,-0.5,10,169.15,null,"Dropped","","",null,3,"Dropped"],
+["LSE","","SVT","Severn Trent Plc","Utilities","",3152,9.43,4,"Tier 3",35.09,10.68,17.41,11.92,6.59,18.32,12.81,50.55,12.53,0.63,-5.49,1,32.65,null,"Watch","","",null,1,"Day 1"],
+["NYSE","","JHG","Janus Henderson Group plc","Finance","",51.67,7.96,4,"Tier 3",101.77,27.93,15.57,23.18,7.29,41.25,8.57,58.34,26.92,0.9,-3.89,1,52.25,null,"Watch","","",null,1,"Day 1"],
+["EURONEXT","","MOUR","Moury Construct SA","Industrial Services","",768,0.31,4,"Tier 3",41.44,33.92,24.94,13.81,18.89,48.26,32.87,58.2,18.74,0.94,-2.78,null,null,null,"Watch","","",null,1,"Day 1"],
+["NYSE","","HG","Hamilton Insurance Group, Ltd.","Finance","",30.9,3.07,4,"Tier 3",98.92,20.32,24.57,22,5.21,51.32,11.11,48.2,19.7,0.72,-8.35,3,33.86,null,"Watch","","",null,1,"Day 1"],
+["NYSE","","CF","CF Industries Holdings, Inc.","Process Industries","",124.48,19.12,4,"Tier 3",46.73,20.85,34.74,23.73,30.59,51.97,60.66,52.4,12.68,0.88,-12.31,2,122.39,null,"Watch","","",null,1,"Day 1"],
+["NASDAQ","","IESC","IES Holdings, Inc.","Industrial Services","",685.11,13.65,4,"Tier 3",62.69,16.16,42.5,10.4,38.29,173.39,72.33,69.24,32.27,0.75,-2.16,0,700,null,"Watch","","",null,1,"Day 1"],
+["NYSE","","NEE","NextEra Energy, Inc.","Utilities","",94.84,197.77,5,"Tier 2",47.3,11.51,15.58,29.69,5.69,38.09,17.89,52.68,15.69,0.83,-3.96,15,99.29,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","AMZN","Amazon.com, Inc.","Retail Trade","",268.99,2893.55,5,"Tier 2",36.48,14.22,24.28,12.22,28.83,39.1,16.27,68.8,42.94,0.74,-3.44,59,313.55,null,"Buy","","",null,1,"Day 1"],
+["OTC","","MUEL","Mueller (PAUL) Co.","Producer Manufacturing","",454,0.59,5,"Tier 2",25.35,14.55,34.62,10.88,7.04,59.3,13.5,50.06,24.77,3.56,-21.04,null,null,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","UAN","CVR Partners, LP","Process Industries","",132.19,1.4,5,"Tier 2",61.11,19,39.61,18.89,21.26,59.5,29.9,54.35,12.43,1.1,-57.36,null,null,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","ENVA","Enova International, Inc.","Finance","",168.9,4.2,5,"Tier 2",45.42,17.46,25.13,9.95,6.84,76.62,6.9,58.11,40.18,0.79,-4.4,7,202,null,"Buy","","",null,1,"Day 1"],
+["OMXHEX","","PAMPALO","Endomines Finland Oyj","Non-Energy Minerals","",10.52,0.36,5,"Tier 2",1951.55,58.54,15.12,16.26,10.35,102.57,12.51,62.38,23.65,1.5,-17.81,1,11,null,"Buy","","",null,1,"Day 1"],
+["EURONEXT","","ALSTW","StreamWIDE","Communications","",81,0.22,5,"Tier 2",34.26,25.18,22.04,23.81,9.76,133.43,11.57,59.59,35.72,1.22,-4.26,1,73.15,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","ADEA","Adeia Inc.","Technology Services","",31.84,3.51,5,"Tier 2",61.84,21.09,28.51,26.5,65.23,134.81,83.73,60.09,36.05,2.57,-7.28,3,37,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","GOOG","Alphabet Inc.","Technology Services","",386.77,4710.48,5,"Tier 2",46.19,17.77,38.88,37.86,20.52,148.65,21.78,72.54,49,0.75,-2.91,57,426.32,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","GEV","GE Vernova Inc.","Producer Manufacturing","",1073.08,288.36,5,"Tier 2",389.83,10.15,83.23,23.83,33.49,170.81,62.3,56.79,22.67,0.9,-9.21,26,1234.65,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","MGRT","Mega Fortune Company Limited","Technology Services","",138.68,1.91,5,"Tier 2",351.35,234.08,21.09,16.13,2668.06,3375.69,1804.95,80.22,70.31,0.76,-18.42,null,null,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","FIX","Comfort Systems USA, Inc.","Industrial Services","",2032.98,71.57,6,"Tier 1",107.81,38.43,53.29,12.07,58.81,360.26,116.64,72.89,36.57,0.91,-0.59,8,2079,null,"Strong Buy","","",null,1,"Day 1"],
+["NASDAQ","","TER","Teradyne, Inc.","Electronic Technology","",366.64,57.39,6,"Tier 1",52.93,30.33,28.75,22.56,18.27,374.55,83.97,52.96,17.17,0.86,-13.14,11,380.47,null,"Strong Buy","","",null,1,"Day 1"],
+["","","","","","",null,null,null,"",null,null,null,null,null,null,null,null,null,null,null,null,null,null,"","","",null,1,"Day 1"]
+];
+const FL={NYSE:"🇺🇸",NASDAQ:"🇺🇸",CBOE:"🇺🇸",SIX:"🇨🇭",EURONEXT:"🇪🇺",LSE:"🇬🇧",BME:"🇪🇸",MIL:"🇮🇹",OSL:"🇳🇴",OMXCOP:"🇩🇰",NGM:"🇸🇪",OMXSTO:"🇸🇪",GPW:"🇵🇱",VIE:"🇦🇹"};
+const EN={NYSE:"NYSE",NASDAQ:"NASDAQ",CBOE:"CBOE",SIX:"SIX Swiss",EURONEXT:"Euronext",LSE:"LSE/FTSE",BME:"BME/IBEX",MIL:"Milan",OSL:"Oslo Bors",OMXCOP:"Copenhagen",NGM:"Stockholm NGM",OMXSTO:"Stockholm",GPW:"Warsaw",VIE:"Vienna"};
+const EB={NYSE:"#0a1a30",NASDAQ:"#0a1535",SIX:"#200a0a",EURONEXT:"#0a200a",LSE:"#12082a",BME:"#2a0f00",MIL:"#1a0e00",OSL:"#001a12",OMXCOP:"#130020",NGM:"#0d1600",OMXSTO:"#0d1600",GPW:"#1a1a00",VIE:"#1a0a0a"};
+const EF={NYSE:"#6eb5ff",NASDAQ:"#88aaff",SIX:"#ff8888",EURONEXT:"#88dd88",LSE:"#cc88ff",BME:"#ffaa55",MIL:"#ffcc55",OSL:"#55ffcc",OMXCOP:"#cc55ff",NGM:"#aaff55",OMXSTO:"#aaff55",GPW:"#ffff55",VIE:"#ff9988"};
+const COLS=["Exch","Country","Ticker","Company","Sector","CCY","Price","MCap B","Score","Tier","EPS%","Rev%","ROE%","Margin%","3M%","1Y%","YTD%","RSI","ADX","RelVol","%ATH","Buys","Target","Upside%","Verdict","Entry","Stop","Tgt Px","Days","Status"];
+const SRT={c:null,a:true};
+const F={all:{tier:'',days:0},us:{},ch:{},eu:{days:0}};
+const V={all:'table',us:'table',ch:'table',eu:'table'};
+
+function p(v,d=1){if(v==null)return'<span class="neu">—</span>';let c=v>0?'pos':v<0?'neg':'neu';return`<span class="${c}">${v>0?'+':''}${(+v).toFixed(d)}%</span>`}
+function rc(v){return v>75?'rh':v>50?'ro':'rl'}
+function ac(v){return v>35?'as':v>20?'ao':'aw'}
+function dots(n){let h='<span class="dd">';for(let i=1;i<=7;i++)h+=`<span class="${i<=n?'f':'e'}"></span>`;return h+'</span>'}
+function tbdg(t){let m={'Tier 1':'bt1','Tier 2':'bt2','Tier 3':'bt3'};return`<span class="bx ${m[t]||'bt3'}">${t}</span>`}
+function ebdg(e){let us=['NYSE','NASDAQ','CBOE'],sw=['SIX'],c=us.includes(e)?'bny':sw.includes(e)?'bsi':'beu';return`<span class="bx ${c}">${FL[e]||''} ${EN[e]||e}</span>`}
+function dbdg(d,st){
+  if(st==='Flagged')return'<span class="db df">⚠ Flagged</span>';
+  if(st==='Dropped')return'<span class="db" style="background:var(--rbg);color:var(--rd);border:1px solid #5a1a1a">Dropped</span>';
+  if(d>=5)return`<span class="db d2" style="background:#050a20;color:#a0c8ff;border-color:#0a1a40">Day ${d} 🔥</span>`;
+  if(d>=3)return`<span class="db d2" style="background:#061830;color:#7ec8e3;border-color:#0a2848">Day ${d}</span>`;
+  if(d===2)return'<span class="db d2">Day 2</span>';
+  return'<span class="db d1">Day 1</span>';
+}
+function vc(v){return v&&(v.startsWith('Strong')||v==='Buy'||v.startsWith('Buy'))?'vg':v&&(v.startsWith('FLAG')||v==='Dropped')?'vfl':'vw'}
+function rcls(t,s){if(s==='Dropped'||s==='Flagged')return'rf';if(t==='Tier 1')return'r1';if(t==='Tier 2')return'r2';return'r3'}
+
+function mkrow(s){
+  let pa=s[20],ath=pa>=0?`<span class="pos">+${pa.toFixed(1)}% ATH</span>`:pa>-20?`<span class="pos">${pa.toFixed(1)}%</span>`:`<span class="neu">${pa.toFixed(1)}%</span>`;
+  if(pa==null)ath='<span class="neu">—</span>';
+  let rv=s[19];
+  return[ebdg(s[0]),`<span style="color:var(--t3);font-size:11px">${s[1]||''}</span>`,
+    `<span class="tk">${s[2]||''}</span>`,`<span class="co" title="${s[3]||''}">${s[3]||''}</span>`,
+    `<span style="color:var(--t3);font-size:11px">${s[4]||''}</span>`,`<span style="color:var(--t3);font-size:10px">${s[5]||''}</span>`,
+    `<strong>${s[6]!=null?(+s[6]).toLocaleString():'—'}</strong>`,`${s[7]!=null?(+s[7]).toFixed(1)+'B':'—'}`,
+    `<span style="display:flex;align-items:center;gap:4px">${dots(s[8]||0)}<strong style="color:var(--cy)">${s[8]||'—'}</strong></span>`,
+    tbdg(s[9]),p(s[10],0),p(s[11],1),
+    `${s[12]!=null?(+s[12]).toFixed(0)+'%':'—'}`,`${s[13]!=null?(+s[13]).toFixed(1)+'%':'—'}`,
+    p(s[14]),p(s[15]),p(s[16]),
+    `<span class="${rc(s[17]||50)}">${s[17]!=null?(+s[17]).toFixed(1):'—'}</span>`,
+    `<span class="${ac(s[18]||0)}">${s[18]!=null?(+s[18]).toFixed(1):'—'}</span>`,
+    `<span class="${(rv||0)>1.5?'pos':(rv||0)>0.7?'':'neg'}">${rv!=null?(+rv).toFixed(2)+'×':'—'}</span>`,
+    ath,s[21]!=null&&s[21]>0?`<span class="pos">${s[21]}</span>`:'<span class="neu">—</span>',
+    s[22]!=null?`${(+s[22]).toLocaleString()}`:'<span class="neu">—</span>',
+    s[23]!=null?p(s[23]):'<span class="neu">—</span>',
+    `<span class="${vc(s[24])}">${s[24]||'—'}</span>`,
+    `<span style="color:var(--cy);font-size:11px">${s[25]||'—'}</span>`,
+    `<span style="color:var(--rd);font-size:11px">${s[26]||'—'}</span>`,
+    `<span style="color:var(--gr);font-size:11px">${s[27]||'—'}</span>`,
+    dbdg(s[28]||1,s[29]),`<span style="font-size:10px;color:var(--t2)">${s[29]||'—'}</span>`
+  ]
+}
+
+function mkhdrs(tid){
+  let t=document.getElementById(tid);if(!t)return;
+  let tr=document.createElement('tr');
+  COLS.forEach((h,i)=>{let th=document.createElement('th');th.textContent=h;th.onclick=()=>srt(tid,i);tr.appendChild(th)});
+  t.querySelector('thead').appendChild(tr);
+}
+
+function renderT(tid,data){
+  let t=document.getElementById(tid);if(!t)return;
+  let tb=t.querySelector('tbody');tb.innerHTML='';
+  data.forEach(s=>{
+    let tr=document.createElement('tr');tr.className=rcls(s[9],s[29]);
+    mkrow(s).forEach(h=>{let td=document.createElement('td');td.innerHTML=h;tr.appendChild(td)});
+    tb.appendChild(tr);
+  });
+}
+
+function getData(pg){
+  let srch=(document.getElementById('s-'+pg)?.value||'').toLowerCase();
+  let exf=document.getElementById('ex-'+pg)?.value||'';
+  let f=F[pg]||{};
+  let src=S;
+  if(pg==='us') src=S.filter(s=>['NYSE','NASDAQ','CBOE'].includes(s[0]));
+  else if(pg==='ch') src=S.filter(s=>s[0]==='SIX');
+  else if(pg==='eu') src=S.filter(s=>!['NYSE','NASDAQ','CBOE','SIX'].includes(s[0])&&s[29]!=='Dropped');
+  else if(pg==='t1') src=S.filter(s=>(s[8]||0)>=6&&s[29]!=='Dropped'&&s[29]!=='Flagged');
+  else if(pg==='d2') src=S.filter(s=>(s[28]||0)>=2&&s[29]!=='Dropped'&&s[29]!=='Flagged');
+  else if(pg==='dropped') src=S.filter(s=>s[29]==='Dropped');
+  else src=S.filter(s=>s[29]!=='Dropped');
+  return src.filter(s=>{
+    let ms=!srch||[s[2],s[3],s[4],s[1],s[0]].some(v=>v&&v.toString().toLowerCase().includes(srch));
+    let me=!exf||(pg==='eu'?s[1]===exf:s[0]===exf);
+    let mt=!f.tier||s[9]===f.tier;
+    let md=!f.days||(s[28]||0)>=f.days;
+    return ms&&me&&mt&&md;
+  });
+}
+
+function ft(pg){
+  let data=getData(pg);
+  let cnt=document.getElementById('c-'+pg);
+  if(cnt) cnt.textContent=data.length+' stocks';
+  if(V[pg]==='cards'||!document.getElementById('t-'+pg)){renderC('cv-'+pg,data)}
+  else{renderT('t-'+pg,data)}
+}
+
+function st(pg,tier,btn){F[pg]=F[pg]||{};F[pg].tier=tier;btn?.closest('.ctrl')?.querySelectorAll('.fb').forEach(b=>{if(['All','Tier 1','Tier 2','Tier 3'].includes(b.textContent))b.classList.remove('on')});btn?.classList.add('on');ft(pg)}
+function sd(pg,days,btn){F[pg]=F[pg]||{};F[pg].days=days;btn?.parentElement?.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));btn?.classList.add('on');ft(pg)}
+function sv(pg,v,btn){V[pg]=v;let tw=document.getElementById('tv-'+pg),cw=document.getElementById('cv-'+pg);if(tw)tw.style.display=v==='table'?'':'none';if(cw)cw.style.display=v==='cards'?'grid':'none';btn?.parentElement?.querySelectorAll('.vb').forEach(b=>b.classList.remove('on'));btn?.classList.add('on');ft(pg)}
+function srt(tid,col){
+  let pg=tid.replace('t-',''),data=getData(pg);
+  if(SRT.c===col){SRT.a=!SRT.a}else{SRT.c=col;SRT.a=true}
+  let km=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29];
+  data.sort((a,b)=>{let av=a[km[col]],bv=b[km[col]];if(av==null)return 1;if(bv==null)return-1;return SRT.a?(av>bv?1:av<bv?-1:0):(av<bv?1:av>bv?-1:0)});
+  renderT(tid,data);
+  document.querySelectorAll('#'+tid+' thead th').forEach((th,i)=>{th.classList.remove('sa','sd');if(i===col)th.classList.add(SRT.a?'sa':'sd')});
+}
+
+function renderC(cid,data){
+  let el=document.getElementById(cid);if(!el)return;el.innerHTML='';
+  data.forEach(s=>{
+    let d=document.createElement('div');
+    let sc=s[9]==='Tier 1'?'ct1':s[9]==='Tier 2'?'ct2':s[29]==='Flagged'||s[29]==='Dropped'?'cfl':'ct3';
+    d.className='card '+sc;
+    let pa=s[20],pas=pa!=null?(pa>=0?`<span class="pos">+${pa.toFixed(1)}% ATH</span>`:pa>-20?`<span class="pos">${pa.toFixed(1)}%</span>`:`<span class="neu">${pa.toFixed(1)}%</span>`):'<span class="neu">—</span>';
+    let rv=s[19]||0,rvc=rv>1.5?'pos':rv>0.7?'':'neg';
+    d.innerHTML=`<div class="chd">
+      <div><div class="ctk">${FL[s[0]]||''} ${s[2]||''} ${dots(s[8]||0)} <span style="color:var(--cy);font-weight:700;font-size:12px">${s[8]||0}/7</span></div>
+      <div class="cnm">${s[3]||''}</div><div class="cex">${EN[s[0]]||s[0]} · ${s[4]||''} · ${s[5]||''}</div></div>
+      <div><div class="cpr">${s[6]!=null?(+s[6]).toLocaleString():'—'}</div><div class="cmc">${s[7]!=null?(+s[7]).toFixed(1)+'B':'—'} · ${tbdg(s[9])}</div></div></div>
+    <div class="pp">
+      <span class="pi ${(s[14]||0)>0?'pu':'pd'}">${(s[14]||0)>0?'+':''}${(+(s[14]||0)).toFixed(1)}% 3M</span>
+      <span class="pi ${(s[15]||0)>0?'pu':'pd'}">${(s[15]||0)>0?'+':''}${(+(s[15]||0)).toFixed(1)}% 1Y</span>
+      <span class="pi ${(s[16]||0)>0?'pu':'pd'}">${(s[16]||0)>0?'+':''}${(+(s[16]||0)).toFixed(1)}% YTD</span>
+      ${dbdg(s[28]||1,s[29])}${s[29]==='Flagged'?'<span class="pi pa">⚠ Review</span>':''}
+    </div>
+    <div class="ms">
+      <div class="mt"><div class="ml">EPS Gr.</div><div class="mv ${(s[10]||0)>0?'pos':'neg'}">${s[10]!=null?(+s[10]).toFixed(0)+'%':'—'}</div></div>
+      <div class="mt"><div class="ml">Rev Gr.</div><div class="mv ${(s[11]||0)>0?'pos':'neg'}">${s[11]!=null?(+s[11]).toFixed(0)+'%':'—'}</div></div>
+      <div class="mt"><div class="ml">ROE</div><div class="mv ${(s[12]||0)>20?'pos':(s[12]||0)>12?'':'neg'}">${s[12]!=null?(+s[12]).toFixed(0)+'%':'—'}</div></div>
+      <div class="mt"><div class="ml">Margin</div><div class="mv ${(s[13]||0)>15?'pos':(s[13]||0)>8?'':'neg'}">${s[13]!=null?(+s[13]).toFixed(1)+'%':'—'}</div></div>
+      <div class="mt"><div class="ml">RSI</div><div class="mv ${rc(s[17]||50)}">${s[17]!=null?(+s[17]).toFixed(0):'—'}</div></div>
+      <div class="mt"><div class="ml">ADX</div><div class="mv ${ac(s[18]||0)}">${s[18]!=null?(+s[18]).toFixed(0):'—'}</div></div>
+      <div class="mt"><div class="ml">RelVol</div><div class="mv ${rvc}">${rv?(+rv).toFixed(2)+'×':'—'}</div></div>
+      <div class="mt"><div class="ml">ATH Gap</div><div class="mv">${pas}</div></div>
+    </div>
+    <div class="cf">
+      <div><span class="${vc(s[24])}">${s[24]||'—'}</span> · <span style="color:var(--cy);font-size:11px">${s[25]||'—'}</span></div>
+      <span style="color:var(--rd);font-size:11px">Stop: ${s[26]||'—'}</span>
+    </div>`;
+    el.appendChild(d);
+  });
+}
+
+function mkstats(cid,data){
+  let el=document.getElementById(cid);if(!el)return;
+  let t1=data.filter(s=>(s[8]||0)>=6).length;
+  let d2=data.filter(s=>(s[28]||0)>=2).length;
+  let avg=(data.reduce((a,s)=>a+(+(s[15]||0)),0)/Math.max(data.length,1)).toFixed(0);
+  let nw=data.filter(s=>(s[28]||0)===1).length;
+  el.innerHTML=`<div class="sc g"><div class="v">${data.length}</div><div class="l">Stocks</div></div><div class="sc g"><div class="v">${t1}</div><div class="l">Tier 1</div></div><div class="sc b"><div class="v">${d2}</div><div class="l">Day 2+</div></div><div class="sc a"><div class="v">${nw}</div><div class="l">New today</div></div><div class="sc"><div class="v">+${avg}%</div><div class="l">Avg 1Y perf.</div></div>`;
+}
+
+function mkleg(){
+  let el=document.getElementById('exleg');if(!el)return;
+  let active=S.filter(s=>s[29]!=='Dropped');
+  let ex=[...new Set(active.map(s=>s[0]))];
+  ex.forEach(e=>{let cnt=active.filter(s=>s[0]===e).length;let d=document.createElement('div');d.className='etag';d.style.cssText=`background:${EB[e]||'#1a1a2e'};color:${EF[e]||'#aaa'}`;d.textContent=`${FL[e]||''} ${EN[e]||e} (${cnt})`;el.appendChild(d)});
+}
+
+function show(n,e){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pg-'+n).classList.add('on');
+  e?.target?.classList.add('on');
+}
+
+['all','us','ch','eu'].forEach(p=>{let t=document.getElementById('t-'+p);if(t)mkhdrs('t-'+p)});
+let active=S.filter(s=>s[29]!=='Dropped');
+mkstats('sg-all',active);
+mkstats('sg-us',active.filter(s=>['NYSE','NASDAQ','CBOE'].includes(s[0])));
+mkstats('sg-ch',active.filter(s=>s[0]==='SIX'));
+mkstats('sg-eu',active.filter(s=>!['NYSE','NASDAQ','CBOE','SIX'].includes(s[0])));
+mkstats('sg-t1',active.filter(s=>(s[8]||0)>=6));
+mkstats('sg-d2',active.filter(s=>(s[28]||0)>=2));
+mkstats('sg-dropped',S.filter(s=>s[29]==='Dropped'));
+mkleg();
+renderC('cv-t1',active.filter(s=>(s[8]||0)>=6&&s[29]!=='Flagged'));
+renderC('cv-d2',active.filter(s=>(s[28]||0)>=2&&s[29]!=='Flagged'));
+renderC('cv-dropped',S.filter(s=>s[29]==='Dropped'));
+ft('all');ft('us');ft('ch');ft('eu');
+</script>
+</body>
+</html>
