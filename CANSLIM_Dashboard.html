@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CANSLIM Global — 29 May 2026</title>
+<title>CANSLIM Global — 01 Jun 2026</title>
 <style>
 :root{
   --bg:#0d1117;--bg2:#161b22;--bg3:#1c2430;--b:#30363d;--b2:#21262d;
@@ -118,20 +118,20 @@ td{padding:8px 12px;white-space:nowrap;vertical-align:middle;border-bottom:1px s
   <button class="tab" onclick="show('t1',event)">⭐ Tier 1</button>
   <button class="tab" onclick="show('d2',event)">📅 Day 2+</button>
   <button class="tab" onclick="show('dropped',event)">🔴 Dropped</button>
-  <div class="nr"><span class="dot"></span>Notion · <strong>29 May 2026</strong></div>
+  <div class="nr"><span class="dot"></span>Notion · <strong>01 Jun 2026</strong></div>
 </nav>
 
 <div id="pg-all" class="pg on">
   <div class="hero">
-    <h1>CANSLIM Global — 29 May 2026</h1>
-    <p>Notion database · 76 active stocks · generated 29 May 2026 16:08 · max streak: Day 18</p>
+    <h1>CANSLIM Global — 01 Jun 2026</h1>
+    <p>Notion database · 169 active stocks · generated 01 Jun 2026 16:12 · max streak: Day 18</p>
     <div class="sg">
-      <div class="sc g"><div class="v">76</div><div class="l">Active stocks</div></div>
-      <div class="sc g"><div class="v">14</div><div class="l">Tier 1 (≥6/7)</div></div>
+      <div class="sc g"><div class="v">169</div><div class="l">Active stocks</div></div>
+      <div class="sc g"><div class="v">33</div><div class="l">Tier 1 (≥6/7)</div></div>
       <div class="sc b"><div class="v">75</div><div class="l">Day 2+ confirmed</div></div>
       <div class="sc cy"><div class="v">73</div><div class="l">Day 3+ (O'Neill zone)</div></div>
-      <div class="sc a"><div class="v">1</div><div class="l">New today (Day 1)</div></div>
-      <div class="sc r"><div class="v">129</div><div class="l">Dropped</div></div>
+      <div class="sc a"><div class="v">94</div><div class="l">New today (Day 1)</div></div>
+      <div class="sc r"><div class="v">113</div><div class="l">Dropped</div></div>
     </div>
   </div>
   <div class="cr">
@@ -176,9 +176,19 @@ td{padding:8px 12px;white-space:nowrap;vertical-align:middle;border-bottom:1px s
     </span>
     <span class="cnt" id="c-all"></span>
   </div>
+  <div style="padding:6px 20px;background:var(--bg2);border-bottom:1px solid var(--b);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+    <span class="lbl">Verdict:</span>
+    <div id="vg-all" style="display:flex;gap:4px;flex-wrap:wrap">
+      <button class="fb fv on" onclick="setVerdict('all','',this)">All</button>
+      <button class="fb fv" onclick="setVerdict('all','Strong Buy',this)" style="color:var(--gr)">Strong Buy</button>
+      <button class="fb fv" onclick="setVerdict('all','Buy',this)" style="color:var(--bl)">Buy</button>
+      <button class="fb fv" onclick="setVerdict('all','Watch',this)" style="color:var(--am)">Watch</button>
+      <button class="fb fv" onclick="setVerdict('all','Flagged',this)" style="color:#ffb347">⚠ Flagged</button>
+    </div>
+  </div>
   <div id="tv-all" class="tw"><table id="t-all"><thead></thead><tbody></tbody></table></div>
   <div id="cv-all" class="cg" style="display:none"></div>
-  <div class="disc">⚠ Data from Notion database · Generated 29 May 2026 16:08 · Not regulated financial advice · Always apply stop-loss discipline</div>
+  <div class="disc">⚠ Data from Notion database · Generated 01 Jun 2026 16:12 · Not regulated financial advice · Always apply stop-loss discipline</div>
 </div>
 
 <div id="pg-us" class="pg">
@@ -203,6 +213,16 @@ td{padding:8px 12px;white-space:nowrap;vertical-align:middle;border-bottom:1px s
     <span style="display:flex;gap:3px"><button class="vb on" onclick="setView('us','table',this)">Table</button><button class="vb" onclick="setView('us','cards',this)">Cards</button></span>
     <span class="cnt" id="c-us"></span>
   </div>
+  <div style="padding:6px 20px;background:var(--bg2);border-bottom:1px solid var(--b);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+    <span class="lbl">Verdict:</span>
+    <div id="vg-us" style="display:flex;gap:4px;flex-wrap:wrap">
+      <button class="fb fv on" onclick="setVerdict('us','',this)">All</button>
+      <button class="fb fv" onclick="setVerdict('us','Strong Buy',this)" style="color:var(--gr)">Strong Buy</button>
+      <button class="fb fv" onclick="setVerdict('us','Buy',this)" style="color:var(--bl)">Buy</button>
+      <button class="fb fv" onclick="setVerdict('us','Watch',this)" style="color:var(--am)">Watch</button>
+      <button class="fb fv" onclick="setVerdict('us','Flagged',this)" style="color:#ffb347">⚠ Flagged</button>
+    </div>
+  </div>
   <div id="tv-us" class="tw"><table id="t-us"><thead></thead><tbody></tbody></table></div>
   <div id="cv-us" class="cg" style="display:none"></div>
 </div>
@@ -213,6 +233,13 @@ td{padding:8px 12px;white-space:nowrap;vertical-align:middle;border-bottom:1px s
   <div class="sg" id="sg-ch"></div></div>
   <div class="ctrl">
     <input class="si" id="s-ch" placeholder="🔍 Search..." oninput="ft('ch')">
+    <span class="lbl">Verdict:</span>
+    <div id="vg-ch" style="display:flex;gap:4px;flex-wrap:wrap">
+      <button class="fb fv on" onclick="setVerdict('ch','',this)">All</button>
+      <button class="fb fv" onclick="setVerdict('ch','Strong Buy',this)" style="color:var(--gr)">Strong Buy</button>
+      <button class="fb fv" onclick="setVerdict('ch','Buy',this)" style="color:var(--bl)">Buy</button>
+      <button class="fb fv" onclick="setVerdict('ch','Watch',this)" style="color:var(--am)">Watch</button>
+    </div>
     <span class="cnt" id="c-ch"></span>
   </div>
   <div id="tv-ch" class="tw"><table id="t-ch"><thead></thead><tbody></tbody></table></div>
@@ -246,6 +273,16 @@ td{padding:8px 12px;white-space:nowrap;vertical-align:middle;border-bottom:1px s
     <span style="display:flex;gap:3px"><button class="vb on" onclick="setView('eu','table',this)">Table</button><button class="vb" onclick="setView('eu','cards',this)">Cards</button></span>
     <span class="cnt" id="c-eu"></span>
   </div>
+  <div style="padding:6px 20px;background:var(--bg2);border-bottom:1px solid var(--b);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+    <span class="lbl">Verdict:</span>
+    <div id="vg-eu" style="display:flex;gap:4px;flex-wrap:wrap">
+      <button class="fb fv on" onclick="setVerdict('eu','',this)">All</button>
+      <button class="fb fv" onclick="setVerdict('eu','Strong Buy',this)" style="color:var(--gr)">Strong Buy</button>
+      <button class="fb fv" onclick="setVerdict('eu','Buy',this)" style="color:var(--bl)">Buy</button>
+      <button class="fb fv" onclick="setVerdict('eu','Watch',this)" style="color:var(--am)">Watch</button>
+      <button class="fb fv" onclick="setVerdict('eu','Flagged',this)" style="color:#ffb347">⚠ Flagged</button>
+    </div>
+  </div>
   <div id="tv-eu" class="tw"><table id="t-eu"><thead></thead><tbody></tbody></table></div>
   <div id="cv-eu" class="cg" style="display:none"></div>
 </div>
@@ -273,91 +310,83 @@ td{padding:8px 12px;white-space:nowrap;vertical-align:middle;border-bottom:1px s
 
 <script>
 const S = [
-["GPW","","GPW:DVL","Develia S.A.","Finance","",10.86,4.97,5,"Tier 2",52,65.2,28.49,20.42,17.79,41.96,24.83,61.07,26.14,0.27,-2.9,5,10.23,null,"Buy","","",null,18,"Day 5+"],
-["LSE","","LSE:GAW","Games Workshop Group PLC","Consumer Durables","",19965,6.53,5,"Tier 3",17.75,12.57,67.89,31.75,10.49,29.81,5.13,55.9,18.05,2.25,-4.5,2,219.25,null,"Watch","","",null,16,"Day 5+"],
-["NASDAQ","","NASDAQ:IBKR","Interactive Brokers Group, Inc.","Finance","",85.43,144.91,5,"Tier 2",28.42,12.92,20.58,9.65,17.58,59.86,30.61,58.54,19.81,0.08,-3.4,8,88.78,null,"Flagged","","",null,16,"Flagged"],
-["BME","","BME:PHM","Pharma Mar SA","Health Technology","",100.5,1.79,4,"Tier 2",307.19,28.27,35.99,35.7,25.31,16.86,33.47,57.12,18.39,0.39,-32.1,7,106.12,null,"Buy","","",null,15,"Day 5+"],
-["NASDAQ","","NASDAQ:NVDA","NVIDIA Corporation","Electronic Technology","",215.5,5215.1,5,"Tier 2",110.33,70.68,114.29,62.97,18.9,51.5,13.52,53.79,22.37,0.1,-8.9,59,306.8,null,"Buy","","",null,15,"Day 5+"],
-["NYSE","","NYSE:KEYS","Keysight Technologies Inc.","Electronic Technology","",340.05,58.32,5,"Tier 2",42.61,19.19,17.78,17.25,11.76,112.55,65.63,48.18,17.33,0.03,-8.1,8,394.17,null,"Flagged","","",null,15,"Flagged"],
-["NASDAQ","","NASDAQ:VICR","Vicor Corporation","Electronic Technology","",334.72,15.26,5,"Tier 2",484.21,15.59,20.49,32.03,65.17,678.42,200.31,64.55,23.95,0.04,-7.5,4,323.75,null,"Buy","","",null,15,"Day 5+"],
-["NYSE","","NYSE:FN","Fabrinet","Electronic Technology","",650.06,23.29,6,"Tier 2",29.63,29.79,19.99,9.94,18.26,176.3,39.88,46.66,12.81,0.05,-13.2,6,749.11,null,"Flagged","","",null,15,"Flagged"],
+["GPW","","GPW:DVL","Develia S.A.","Finance","",10.86,4.97,5,"Tier 2",52,65.2,28.49,20.42,17.79,41.96,24.83,61.07,26.14,0.27,-2.9,5,10.23,null,"Buy","","",null,18,"Paused"],
+["LSE","","LSE:GAW","Games Workshop Group PLC","Consumer Durables","",19965,6.53,5,"Tier 3",17.75,12.57,67.89,31.75,10.49,29.81,5.13,55.9,18.05,2.25,-4.5,2,219.25,null,"Watch","","",null,16,"Paused"],
+["NASDAQ","","NASDAQ:IBKR","Interactive Brokers Group, Inc.","Finance","",85.43,144.91,5,"Tier 2",28.42,12.92,20.58,9.65,17.58,59.86,30.61,58.54,19.81,0.08,-3.4,8,88.78,null,"Flagged","","",null,16,"Paused"],
+["BME","","BME:PHM","Pharma Mar SA","Health Technology","",100.5,1.79,4,"Tier 2",307.19,28.27,35.99,35.7,25.31,16.86,33.47,57.12,18.39,0.39,-32.1,7,106.12,null,"Buy","","",null,15,"Paused"],
+["NASDAQ","","NASDAQ:NVDA","NVIDIA Corporation","Electronic Technology","",215.5,5215.1,5,"Tier 2",110.33,70.68,114.29,62.97,18.9,51.5,13.52,53.79,22.37,0.1,-8.9,59,306.8,null,"Buy","","",null,15,"Paused"],
+["NYSE","","NYSE:KEYS","Keysight Technologies Inc.","Electronic Technology","",340.05,58.32,5,"Tier 2",42.61,19.19,17.78,17.25,11.76,112.55,65.63,48.18,17.33,0.03,-8.1,8,394.17,null,"Flagged","","",null,15,"Paused"],
+["NASDAQ","","NASDAQ:VICR","Vicor Corporation","Electronic Technology","",334.72,15.26,5,"Tier 2",484.21,15.59,20.49,32.03,65.17,678.42,200.31,64.55,23.95,0.04,-7.5,4,323.75,null,"Buy","","",null,15,"Paused"],
+["NYSE","","NYSE:FN","Fabrinet","Electronic Technology","",650.06,23.29,6,"Tier 2",29.63,29.79,19.99,9.94,18.26,176.3,39.88,46.66,12.81,0.05,-13.2,6,749.11,null,"Flagged","","",null,15,"Paused"],
 ["BME","","SLR","Solaria Energia y Medio Ambiente, S.A.","Utilities","",24.16,3.23,6,"Tier 1",57.02,60.51,20.85,48.38,26.36,266.06,33.04,51.92,14.46,0.57,-23.05,6,23.46,null,"Dropped","","",null,15,"Dropped"],
-["NASDAQ","","NASDAQ:CARE","Carter Bankshares, Inc.","Finance","",27.02,0.6,4,"Tier 3",306.2,30.36,23.57,47.89,27.19,65.63,37.13,63.4,40.76,0.03,-3,2,27.25,null,"Watch","","",null,14,"Day 5+"],
-["NYSE","","NYSE:MS","Morgan Stanley","Finance","",206.32,325.43,5,"Tier 2",29.55,16.32,16.38,24.64,18.58,61.07,15.58,72.77,27.21,0.09,-0.1,11,206.82,null,"Buy","","",null,14,"Day 5+"],
-["NASDAQ","","NASDAQ:BLBD","Blue Bird Corporation","Consumer Durables","",69.92,2.21,5,"Tier 2",25.92,10.09,54.48,8.91,19.72,77.72,46.54,57.45,24.81,0.01,-14.2,5,81.71,null,"Buy","","",null,14,"Day 5+"],
-["NASDAQ","","NASDAQ:AVGO","Broadcom Inc.","Electronic Technology","",445.56,2109.58,5,"Tier 2",147.26,25.22,33.37,36.57,43.41,81.19,26.3,65.55,23.12,0.17,-0.3,42,479.91,null,"Flagged","","",null,14,"Flagged"],
+["NASDAQ","","NASDAQ:CARE","Carter Bankshares, Inc.","Finance","",27.02,0.6,4,"Tier 3",306.2,30.36,23.57,47.89,27.19,65.63,37.13,63.4,40.76,0.03,-3,2,27.25,null,"Watch","","",null,14,"Paused"],
+["NYSE","","NYSE:MS","Morgan Stanley","Finance","",206.32,325.43,5,"Tier 2",29.55,16.32,16.38,24.64,18.58,61.07,15.58,72.77,27.21,0.09,-0.1,11,206.82,null,"Buy","","",null,14,"Paused"],
+["NASDAQ","","NASDAQ:BLBD","Blue Bird Corporation","Consumer Durables","",69.92,2.21,5,"Tier 2",25.92,10.09,54.48,8.91,19.72,77.72,46.54,57.45,24.81,0.01,-14.2,5,81.71,null,"Buy","","",null,14,"Paused"],
+["NASDAQ","","NASDAQ:AVGO","Broadcom Inc.","Electronic Technology","",445.56,2109.58,5,"Tier 2",147.26,25.22,33.37,36.57,43.41,81.19,26.3,65.55,23.12,0.17,-0.3,42,479.91,null,"Flagged","","",null,14,"Paused"],
 ["NASDAQ","","KRYS","Krystal Biotech, Inc.","Health Technology","",299.33,8.82,5,"Tier 2",80.17,25.15,19.9,53.92,9.69,136.29,21.86,54.91,22.23,0.03,-4.13,11,330.56,null,"Dropped","","",null,14,"Dropped"],
-["NASDAQ","","NASDAQ:KLAC","KLA Corporation","Electronic Technology","",1957.25,255.67,6,"Tier 2",28.56,13.43,94.98,35.68,30.74,146.82,55.37,60.31,14.06,0.11,-5,15,1894.96,null,"Buy","","",null,14,"Day 5+"],
-["NASDAQ","","NASDAQ:LRCX","Lam Research Corporation","Producer Manufacturing","",321.7,402.31,6,"Tier 1",47.6,26.53,66.76,30.94,37.8,274.72,80.88,67.2,21.91,0.07,-3.5,26,319.07,null,"Strong Buy","","",null,14,"Day 5+"],
-["NYSE","","NYSE:GLW","Corning Incorporated","Electronic Technology","",179.23,154.25,6,"Tier 1",298.68,20.05,16.07,11.09,20.3,257.82,101.59,49.32,23.65,0.11,-15.4,10,204.62,null,"Strong Buy","","",null,14,"Day 5+"],
-["CBOE","","CBOE:CBOE","Cboe Global Markets, Inc.","Finance","",345.13,36.12,4,"Tier 3",53.54,10.61,25.03,25.66,18.36,52.89,37.53,53.95,32.87,0.09,-7,3,329.5,null,"Watch","","",null,13,"Day 5+"],
-["NASDAQ","","NASDAQ:FCFS","FirstCash Holdings, Inc.","Finance","",220.95,9.69,5,"Tier 2",27.91,14.39,16.27,9.15,17.2,74.4,38.85,49.22,35.07,0.04,-6.4,5,242,null,"Buy","","",null,13,"Day 5+"],
-["NYSE","","NYSE:CBL","CBL & Associates Properties, Inc.","Finance","",48.33,1.5,4,"Tier 3",155.46,10.29,50.12,29.81,27.51,94.08,30.57,68.04,29.03,0.01,-1.7,2,56,null,"Watch","","",null,13,"Day 5+"],
-["NASDAQ","","NASDAQ:AAPL","Apple Inc.","Electronic Technology","",314.15,4614.03,5,"Tier 2",29,12.76,141.47,27.15,15.15,54.32,15.39,80.71,43.81,0.1,-0.3,24,316.07,null,"Buy","","",null,13,"Day 5+"],
-["NYSE","","NYSE:VIK","Viking Holdings Ltd","Consumer Services","",92.84,41.39,5,"Tier 2",117.99,20.78,299.93,18,19.69,108.4,29.83,66.42,17.37,0.02,-0.9,15,98.11,null,"Buy","","",null,13,"Day 5+"],
-["NASDAQ","","NASDAQ:STRL","Sterling Infrastructure, Inc.","Industrial Services","",856.43,26.28,6,"Tier 1",30.74,36.96,34.75,12.02,101.74,349.83,176.78,66.4,33.1,0.14,-4.1,9,929.14,null,"Strong Buy","","",null,13,"Day 5+"],
-["NASDAQ","","NASDAQ:MU","Micron Technology, Inc.","Electronic Technology","",958.21,1080.61,6,"Tier 1",409.12,85.55,39.82,41.49,138.47,871.91,224.68,77.43,37.82,0.15,-1,37,717.24,null,"Strong Buy","","",null,12,"Day 5+"],
+["NASDAQ","","NASDAQ:KLAC","KLA Corporation","Electronic Technology","",1957.25,255.67,6,"Tier 2",28.56,13.43,94.98,35.68,30.74,146.82,55.37,60.31,14.06,0.11,-5,15,1894.96,null,"Buy","","",null,14,"Paused"],
+["NASDAQ","","NASDAQ:LRCX","Lam Research Corporation","Producer Manufacturing","",321.7,402.31,6,"Tier 1",47.6,26.53,66.76,30.94,37.8,274.72,80.88,67.2,21.91,0.07,-3.5,26,319.07,null,"Strong Buy","","",null,14,"Paused"],
+["NYSE","","NYSE:GLW","Corning Incorporated","Electronic Technology","",179.23,154.25,6,"Tier 1",298.68,20.05,16.07,11.09,20.3,257.82,101.59,49.32,23.65,0.11,-15.4,10,204.62,null,"Strong Buy","","",null,14,"Paused"],
+["CBOE","","CBOE:CBOE","Cboe Global Markets, Inc.","Finance","",345.13,36.12,4,"Tier 3",53.54,10.61,25.03,25.66,18.36,52.89,37.53,53.95,32.87,0.09,-7,3,329.5,null,"Watch","","",null,13,"Paused"],
+["NASDAQ","","NASDAQ:FCFS","FirstCash Holdings, Inc.","Finance","",220.95,9.69,5,"Tier 2",27.91,14.39,16.27,9.15,17.2,74.4,38.85,49.22,35.07,0.04,-6.4,5,242,null,"Buy","","",null,13,"Paused"],
+["NYSE","","NYSE:CBL","CBL & Associates Properties, Inc.","Finance","",48.33,1.5,4,"Tier 3",155.46,10.29,50.12,29.81,27.51,94.08,30.57,68.04,29.03,0.01,-1.7,2,56,null,"Watch","","",null,13,"Paused"],
+["NASDAQ","","NASDAQ:AAPL","Apple Inc.","Electronic Technology","",314.15,4614.03,5,"Tier 2",29,12.76,141.47,27.15,15.15,54.32,15.39,80.71,43.81,0.1,-0.3,24,316.07,null,"Buy","","",null,13,"Paused"],
+["NYSE","","NYSE:VIK","Viking Holdings Ltd","Consumer Services","",92.84,41.39,5,"Tier 2",117.99,20.78,299.93,18,19.69,108.4,29.83,66.42,17.37,0.02,-0.9,15,98.11,null,"Buy","","",null,13,"Paused"],
+["NASDAQ","","NASDAQ:STRL","Sterling Infrastructure, Inc.","Industrial Services","",856.43,26.28,6,"Tier 1",30.74,36.96,34.75,12.02,101.74,349.83,176.78,66.4,33.1,0.14,-4.1,9,929.14,null,"Strong Buy","","",null,13,"Paused"],
+["NASDAQ","","NASDAQ:MU","Micron Technology, Inc.","Electronic Technology","",958.21,1080.61,6,"Tier 1",409.12,85.55,39.82,41.49,138.47,871.91,224.68,77.43,37.82,0.15,-1,37,717.24,null,"Strong Buy","","",null,12,"Paused"],
 ["NYSE","","MLI","Mueller Industries, Inc.","Producer Manufacturing","",137.16,15.17,4,"Tier 3",39.07,11.54,28.22,19.37,13.83,78.5,19.17,57.08,25.9,0.04,-3.58,2,149.5,null,"Dropped","","",null,12,"Dropped"],
 ["NYSE","","SPNT","SiriusPoint Ltd.","Finance","",23.34,2.74,4,"Tier 3",320.92,22.94,23.12,15.38,10.15,20.56,6.82,53.3,11.28,0.02,-4.33,3,27,null,"Dropped","","",null,12,"Dropped"],
 ["NYSE","","NYSE:VIRT","Virtu Financial, Inc.","Finance","",50.13,7.77,4,"Tier 3",74.21,28.84,33.9,14.4,20.19,21.7,49.64,47.22,23.71,0.06,-11.2,3,51.71,null,"Dropped","","",null,12,"Dropped"],
 ["NYSE","","INSW","International Seaways, Inc.","Transportation","",81.2,4.02,5,"Tier 2",69.8,14.5,26.87,55.39,16,114.14,68.47,46.16,22.45,0.11,-8.72,8,97,null,"Dropped","","",null,12,"Dropped"],
 ["NYSE","","NYSE:VRT","Vertiv Holdings, LLC","Electronic Technology","",315.64,121.24,6,"Tier 1",130.95,28.95,45.1,14.37,25.5,177.34,86.26,45.35,17.31,0.11,-16.9,22,379.16,null,"Dropped","","",null,12,"Dropped"],
-["NYSE","","NYSE:DOCN","DigitalOcean Holdings, Inc.","Technology Services","",155.58,16.24,6,"Tier 1",109.5,17.61,70,24.97,195.95,437.41,219.86,62.61,38.12,0.04,-6.3,9,170.31,null,"Strong Buy","","",null,12,"Day 5+"],
-["NYSE","","NYSE:FIX","Comfort Systems USA, Inc.","Industrial Services","",1851.77,65.19,6,"Tier 1",107.81,38.43,53.29,12.07,30.52,283.75,97.33,51.86,23.83,0.11,-10.7,9,2096.29,null,"Flagged","","",null,11,"Flagged"],
-["NASDAQ","","NASDAQ:TER","Teradyne, Inc.","Electronic Technology","",380.86,59.62,6,"Tier 1",52.93,30.33,28.75,22.56,17.55,364.41,91.11,56.71,16.66,0.1,-9.8,11,380.47,null,"Strong Buy","","",null,11,"Day 5+"],
+["NYSE","","NYSE:DOCN","DigitalOcean Holdings, Inc.","Technology Services","",155.58,16.24,6,"Tier 1",109.5,17.61,70,24.97,195.95,437.41,219.86,62.61,38.12,0.04,-6.3,9,170.31,null,"Strong Buy","","",null,12,"Paused"],
+["NYSE","","NYSE:FIX","Comfort Systems USA, Inc.","Industrial Services","",1851.77,65.19,6,"Tier 1",107.81,38.43,53.29,12.07,30.52,283.75,97.33,51.86,23.83,0.11,-10.7,9,2096.29,null,"Flagged","","",null,11,"Paused"],
+["NASDAQ","","NASDAQ:TER","Teradyne, Inc.","Electronic Technology","",380.86,59.62,6,"Tier 1",52.93,30.33,28.75,22.56,17.55,364.41,91.11,56.71,16.66,0.1,-9.8,11,380.47,null,"Strong Buy","","",null,11,"Paused"],
 ["NGM","","NGM:VPAB.B","VETERANPOOLEN AB CLASS B","Commercial Services","",67.9,1.32,4,"Tier 2",29.42,16.24,80.2,8.99,15.87,59.76,25.74,71.38,21.65,0.53,-0.3,0,null,null,"Dropped","","",null,11,"Dropped"],
 ["OMXCOP","","OMXCOP:ALK_B","ALK-abello A/S Class B","Health Technology","",265,59.04,5,"Tier 2",36.57,14.94,20.91,19.51,25.83,50.31,15.92,73.3,40.9,0.12,-2.2,6,293,null,"Dropped","","",null,11,"Dropped"],
 ["NGM","","NGM:PLEJD","PLEJD AB","Technology Services","",1034,11.54,5,"Tier 2",71.54,41.25,31.13,21.44,30.39,69.51,45.43,51.35,25.19,0.93,-5.1,3,1216.67,null,"Dropped","","",null,11,"Dropped"],
 ["OSL","","OSL:VTURA","Ventura Offshore Holding Ltd.","Industrial Services","",31.9,3.45,5,"Tier 2",45.45,47.99,29.58,25.75,23.17,77.22,68.78,52.29,41.88,0.53,-8.6,7,39.26,null,"Dropped","","",null,11,"Dropped"],
 ["NYSE","","AROC","Archrock, Inc.","Industrial Services","",37.69,6.6,5,"Tier 2",55.94,22.66,22.42,21.2,14.54,57.02,44.94,52.96,13.92,0.03,-57.08,8,41.5,null,"Dropped","","",null,11,"Dropped"],
-["NASDAQ","","NASDAQ:CRDO","Credo Technology Group Holding Ltd","Technology Services","",233.49,43.07,6,"Tier 2",13061.31,226.12,27.54,31.81,110.24,254.31,57.34,68.48,31.92,0.12,-0.2,18,215.86,null,"Buy","","",null,10,"Day 5+"],
-["NYSE","","NYSE:FTK","Flotek Industries, Inc.","Industrial Services","",20.41,0.74,4,"Tier 2",71.53,24.72,25.06,11.83,32.45,37.26,16.9,63.53,34.15,0.01,-93.8,6,21.93,null,"Buy","","",null,10,"Day 5+"],
-["NASDAQ","","NASDAQ:AMZN","Amazon.com, Inc.","Retail Trade","",273.48,2941.8,5,"Tier 2",36.48,14.22,24.28,12.22,32.22,31.46,18.21,63.62,26.97,0.13,-1.8,57,317.5,null,"Buy","","",null,10,"Day 5+"],
-["NASDAQ","","NASDAQ:GOOG","Alphabet Inc.","Technology Services","",379.15,4620.05,5,"Tier 2",46.19,17.77,38.88,37.86,24.75,116.66,19.38,54.73,39.39,0.18,-6.3,54,433.6,null,"Buy","","",null,10,"Day 5+"],
+["NASDAQ","","NASDAQ:CRDO","Credo Technology Group Holding Ltd","Technology Services","",233.49,43.07,6,"Tier 2",13061.31,226.12,27.54,31.81,110.24,254.31,57.34,68.48,31.92,0.12,-0.2,18,215.86,null,"Buy","","",null,10,"Paused"],
+["NYSE","","NYSE:FTK","Flotek Industries, Inc.","Industrial Services","",20.41,0.74,4,"Tier 2",71.53,24.72,25.06,11.83,32.45,37.26,16.9,63.53,34.15,0.01,-93.8,6,21.93,null,"Buy","","",null,10,"Paused"],
+["NASDAQ","","NASDAQ:AMZN","Amazon.com, Inc.","Retail Trade","",273.48,2941.8,5,"Tier 2",36.48,14.22,24.28,12.22,32.22,31.46,18.21,63.62,26.97,0.13,-1.8,57,317.5,null,"Buy","","",null,10,"Paused"],
+["NASDAQ","","NASDAQ:GOOG","Alphabet Inc.","Technology Services","",379.15,4620.05,5,"Tier 2",46.19,17.77,38.88,37.86,24.75,116.66,19.38,54.73,39.39,0.18,-6.3,54,433.6,null,"Buy","","",null,10,"Paused"],
 ["OMXCOP","","OMXCOP:CPHCAP_ST","Copenhagen Capital A/S","Finance","",7.35,0.37,4,"Tier 3",938.76,17.75,16.34,144.22,9.7,31.25,9.7,52.23,10.81,0.21,10,0,null,null,"Dropped","","",null,10,"Dropped"],
 ["OSL","","CADLR","Cadeler A/S","Producer Manufacturing","",67.7,26.25,6,"Tier 1",322.23,150.13,20.31,45.14,7.89,35,41.1,65.47,27.05,1.85,-12.26,7,66.4,null,"Dropped","","",null,10,"Dropped"],
 ["LSE","","LSE:HLMA","Halma plc","Electronic Technology","",4734,17.55,5,"Tier 2",20.91,11.74,18.61,14.39,14.29,61.46,33.13,65.06,30.53,0.55,-0.1,7,41.93,null,"Dropped","","",null,10,"Dropped"],
 ["OSL","","OSL:DOFG","DOF Group ASA","Energy Minerals","",138.9,35.32,6,"Tier 1",105.92,29.88,23.58,24.8,17.71,50.49,44.76,54.32,14.01,1.01,143.7,4,134.13,null,"Dropped","","",null,10,"Dropped"],
 ["SIX","","SIX:ACLN","Accelleron Industries AG","Producer Manufacturing","",81.8,7.89,4,"Tier 3",28.78,16.39,56.9,18.43,11.29,65.86,32.47,46.32,21.44,0.53,90.5,2,77.24,null,"Dropped","","",null,10,"Dropped"],
-["NASDAQ","","NASDAQ:COCO","The Vita Coco Company, Inc.","Consumer Non-Durables","",77.26,4.41,5,"Tier 2",35.6,23.05,26.32,12.59,34.58,115.12,45.8,67.67,50.25,0.01,-3.1,8,75.11,null,"Buy","","",null,10,"Day 5+"],
+["NASDAQ","","NASDAQ:COCO","The Vita Coco Company, Inc.","Consumer Non-Durables","",77.26,4.41,5,"Tier 2",35.6,23.05,26.32,12.59,34.58,115.12,45.8,67.67,50.25,0.01,-3.1,8,75.11,null,"Buy","","",null,10,"Paused"],
 ["EURONEXT","","EURONEXT:CENER","Cenergy Holdings SA","Producer Manufacturing","",25.92,5.46,6,"Tier 1",27.37,14.71,24.3,9.39,21.98,165.3,70.98,61.29,31.11,1.4,-3.1,2,21.08,null,"Dropped","","",null,10,"Dropped"],
 ["GPW","","GPW:WAS","WASKO S.A.","Commercial Services","",8.04,0.76,5,"Tier 1",697.05,11.02,20.53,9.43,101,344.2,277.46,48.24,26.15,0.52,9.4,0,null,null,"Dropped","","",null,10,"Dropped"],
-["NASDAQ","","MNST","Monster Beverage Corporation","Consumer Non-Durables","",89.61,87.64,5,"Tier 2",36.04,18.06,26.65,23.11,5.51,40.98,16.88,71.71,39.47,0.12,-1.89,15,92.32,null,"Dropped","","",null,10,"Dropped"],
 ["BME","","BME:GRE","Grenergy Renovables S.A","Industrial Services","",123.6,3.48,5,"Tier 2",47.62,21.8,19.59,12.39,10.55,113.47,45.07,50.56,14.75,0.43,-9.5,8,116.3,null,"Dropped","","",null,10,"Dropped"],
-["BME","","ART","Arteche Lantegi Elkartea SA","Distribution Services","",41.5,2.34,5,"Tier 2",139.4,13.64,49.46,9.03,60.85,319.19,86.94,63,49.6,0.68,null,2,29.17,null,"Dropped","","",null,9,"Dropped"],
 ["OMXHEX","","BITTI","Bittium Corporation","Technology Services","",42.05,1.44,7,"Tier 1",139.98,35.16,15.6,19.77,58.38,516.57,40.4,68.83,22.35,1.02,null,3,35,null,"Dropped","","",null,9,"Dropped"],
-["NYSE","","NYSE:SGHC","Super Group (SGHC) Limited","Consumer Services","",12.62,6.41,5,"Tier 2",79.51,19.93,35.81,10.58,16.85,43.57,4.21,46.72,46.29,0.05,-12.2,8,18.12,null,"Flagged","","",null,9,"Flagged"],
+["NYSE","","NYSE:SGHC","Super Group (SGHC) Limited","Consumer Services","",12.62,6.41,5,"Tier 2",79.51,19.93,35.81,10.58,16.85,43.57,4.21,46.72,46.29,0.05,-12.2,8,18.12,null,"Flagged","","",null,9,"Paused"],
 ["NYSE","","GEV","GE Vernova Inc.","Producer Manufacturing","",1021.5,274.5,5,"Tier 2",389.83,10.15,83.23,23.83,15.04,116.58,54.49,47.59,15.52,0.21,-11.23,26,1245.55,null,"Dropped","","",null,9,"Dropped"],
 ["GPW","","GPW:SNT","Synektik SA","Health Technology","",277.6,2.42,4,"Tier 2",28.4,27.02,56.12,19.13,5.69,38.95,8.78,45.19,18.56,0.92,309.8,2,332,null,"Dropped","","",null,9,"Dropped"],
 ["EURONEXT","","EURONEXT:GTT","Gaztransport & Technigaz SA","Producer Manufacturing","",204.8,7.48,5,"Tier 2",18.78,25.2,78.81,51.51,13.71,31.54,31.54,50.99,13.98,0.43,215,6,214.73,null,"Dropped","","",null,9,"Dropped"],
 ["GPW","","GPW:GPW","Gielda Papierow Wartosciowych w Warszawie S.A.","Finance","",79.45,3.35,5,"Tier 3",31.14,21.14,17.75,34.38,7.36,53.53,21.67,49.31,20.48,1.32,85.4,1,68.12,null,"Dropped","","",null,9,"Dropped"],
 ["LSE","","LSE:DPLM","Diploma PLC","Distribution Services","",6825,8.88,5,"Tier 2",43.12,11.82,19.69,12.13,23.64,63.75,28.05,53.75,31.23,0.77,7295,11,68.15,null,"Dropped","","",null,9,"Dropped"],
 ["MIL","","MIL:TGYM","Technogym S.p.A","Consumer Durables","",20.66,4.13,5,"Tier 2",33.13,13.06,32.32,11.33,13.27,71.17,26.52,54.94,29.32,0.35,21.82,5,20.15,null,"Dropped","","",null,9,"Dropped"],
-["NASDAQ","","NASDAQ:DAVE","Dave Inc.","Finance","",272.23,3.46,4,"Tier 2",327.93,58.48,111.62,37.22,46.44,23.56,22.66,62.76,19,0.11,-44.6,11,325.73,null,"Buy","","",null,9,"Day 5+"],
+["NASDAQ","","NASDAQ:DAVE","Dave Inc.","Finance","",272.23,3.46,4,"Tier 2",327.93,58.48,111.62,37.22,46.44,23.56,22.66,62.76,19,0.11,-44.6,11,325.73,null,"Buy","","",null,9,"Paused"],
 ["GPW","","GPW:ATR","Atrem S.A.","Industrial Services","",59,0.53,4,"Tier 3",108.38,67.14,57.53,11.79,8.46,86.12,-1.01,47.46,15.12,0.22,-13,1,81.2,null,"Dropped","","",null,9,"Dropped"],
 ["GPW","","GPW:DIG","Digital Network S.A","Consumer Services","",194.4,0.83,5,"Tier 2",48.69,51.23,48.95,33.31,25.58,159.55,17.11,49.41,27.72,0.49,215,1,184,null,"Dropped","","",null,9,"Dropped"],
 ["EURONEXT","","EURONEXT:SBMO","SBM Offshore NV","Industrial Services","",35.32,6.01,5,"Tier 2",501.06,18.18,22.34,15.48,15.65,90.1,43.46,48.79,15.08,0.24,37.38,3,42.45,null,"Dropped","","",null,9,"Dropped"],
 ["LSE","","LSE:SRB","Serabi Gold PLC","Non-Energy Minerals","",332.5,0.25,4,"Tier 3",87.48,59.41,38.89,34.55,10.83,138.59,6.23,49.69,16.26,0.74,11400,2,4.77,null,"Dropped","","",null,9,"Dropped"],
 ["LSE","","LSE:AEP","AEP Plantations Plc","Process Industries","",2204.79,0.86,5,"Tier 2",32.15,21.29,15.84,19.56,49.99,187.08,60.35,68.48,34.54,0.41,2290,2,22.56,null,"Dropped","","",null,9,"Dropped"],
-["NASDAQ","","NASDAQ:STX","Seagate Technology Holdings PLC","Electronic Technology","",891.47,199.89,6,"Tier 1",52.23,28.92,1787.97,21.6,122.87,658.31,216.16,75.57,46,0.06,-1.5,17,834.5,null,"Strong Buy","","",null,8,"Day 5+"],
-["NASDAQ","","NASDAQ:ALAB","Astera Labs, Inc.","Electronic Technology","",345.52,59.22,6,"Tier 2",532.4,104.18,21.11,26.72,181.69,245.52,101.25,81.94,55.13,0.07,-2.5,15,246.01,null,"Buy","","",null,8,"Day 5+"],
-["OSL","","VTURA","Ventura Offshore Holding Ltd.","Industrial Services","",32.8,3.41,5,"Tier 2",45.45,47.99,29.58,25.75,26.64,82.22,73.54,58.16,42.98,0.31,null,7,39.34,null,"Dropped","","",null,8,"Dropped"],
+["NASDAQ","","NASDAQ:STX","Seagate Technology Holdings PLC","Electronic Technology","",891.47,199.89,6,"Tier 1",52.23,28.92,1787.97,21.6,122.87,658.31,216.16,75.57,46,0.06,-1.5,17,834.5,null,"Strong Buy","","",null,8,"Paused"],
+["NASDAQ","","NASDAQ:ALAB","Astera Labs, Inc.","Electronic Technology","",345.52,59.22,6,"Tier 2",532.4,104.18,21.11,26.72,181.69,245.52,101.25,81.94,55.13,0.07,-2.5,15,246.01,null,"Buy","","",null,8,"Paused"],
 ["BME","","GRE","Grenergy Renovables S.A","Industrial Services","",128.6,3.29,7,"Tier 1",47.62,21.8,19.59,12.39,15.03,126.01,50.94,55.56,15.09,1,null,9,123.41,null,"Dropped","","",null,8,"Dropped"],
-["NGM","","PLEJD","PLEJD AB","Technology Services","",1032,11.92,6,"Tier 1",71.54,41.25,31.13,21.44,30.14,69.18,45.15,50.94,27.1,1.16,null,3,1216.67,null,"Dropped","","",null,8,"Dropped"],
-["EURONEXT","","CENER","Cenergy Holdings SA","Producer Manufacturing","",25.82,5.31,6,"Tier 1",27.37,14.71,24.3,9.39,21.51,158.2,70.32,61.94,29.85,1.1,null,2,22.95,null,"Dropped","","",null,8,"Dropped"],
-["NASDAQ","","NASDAQ:TIGO","Millicom International Cellular S.A.","Communications","",85.63,14.35,4,"Tier 3",256.55,12.97,37.77,19.16,22.07,134.99,52.91,57.83,26.32,0.04,-32.8,3,81.77,null,"Watch","","",null,8,"Day 5+"],
+["NASDAQ","","NASDAQ:TIGO","Millicom International Cellular S.A.","Communications","",85.63,14.35,4,"Tier 3",256.55,12.97,37.77,19.16,22.07,134.99,52.91,57.83,26.32,0.04,-32.8,3,81.77,null,"Watch","","",null,8,"Paused"],
 ["LSE","","LSE:MSI","MS International PLC","Electronic Technology","",1632,0.27,5,"Tier 3",20.46,10.56,24.78,12.1,33.22,46.37,11.4,51.01,30.6,1.25,-9.3,0,null,null,"Dropped","","",null,8,"Dropped"],
 ["BME","","IDR","Indra Sistemas, S.A. Class A","Technology Services","",54.46,9.54,5,"Tier 2",64.92,15.07,28.46,8.05,6.58,55.6,11.83,59.65,12.18,0.52,-5.85,9,66.52,null,"Dropped","","",null,8,"Dropped"],
 ["MIL","","MIL:PHN","PharmaNutra S.p.A.","Health Technology","",87.5,0.87,5,"Tier 2",28.37,16.81,30.23,15.23,35.03,74.65,61.14,65.75,37.23,0.79,91.2,3,94.33,null,"Dropped","","",null,8,"Dropped"],
-["NYSE","","NYSE:LPG","Dorian LPG Ltd.","Transportation","",40.73,1.74,5,"Tier 2",110.12,36.27,17.73,40.22,11.12,88.98,65.55,49.23,30.11,0.05,-21.2,5,48.25,null,"Buy","","",null,7,"Day 5+"],
-["OMXSTO","","OMXSTO:LAGR_B","Lagercrantz Group AB Class B","Electronic Technology","",252.8,51.38,5,"Tier 2",17.61,12.98,29.03,11.32,15.54,15.96,18.57,56.62,40.11,0.21,-5.2,5,277.22,null,"Buy","","",null,7,"Day 5+"],
-["NGM","","VPAB.B","VETERANPOOLEN AB CLASS B","Commercial Services","",67.8,1.33,4,"Tier 3",29.42,16.24,80.2,8.99,15.7,59.53,25.56,72.4,23.06,0.78,null,0,null,null,"Dropped","","",null,7,"Dropped"],
-["OMXCOP","","ALK_B","ALK-abello A/S Class B","Health Technology","",265.2,59.21,5,"Tier 2",36.57,14.94,20.91,19.51,25.93,50.43,16.01,73.68,40.82,0.25,null,6,295,null,"Dropped","","",null,7,"Dropped"],
-["LSE","","LSE:AJB","AJ Bell Plc","Finance","",602,2.36,5,"Tier 2",40.48,19.27,59.94,35.42,40.13,19.92,31.21,65.35,35.71,0.1,-7.6,5,5.97,null,"Buy","","",null,7,"Day 5+"],
-["EURONEXT","","EURONEXT:EXENS","Exosens","Electronic Technology","",68.95,3.52,5,"Tier 2",157.23,18.81,16.36,14.99,10.5,60.35,41.87,65.09,19.44,0.33,-6.8,6,66.75,null,"Buy","","",null,7,"Day 5+"],
+["NYSE","","NYSE:LPG","Dorian LPG Ltd.","Transportation","",40.73,1.74,5,"Tier 2",110.12,36.27,17.73,40.22,11.12,88.98,65.55,49.23,30.11,0.05,-21.2,5,48.25,null,"Buy","","",null,7,"Paused"],
+["OMXSTO","","OMXSTO:LAGR_B","Lagercrantz Group AB Class B","Electronic Technology","",252.8,51.38,5,"Tier 2",17.61,12.98,29.03,11.32,15.54,15.96,18.57,56.62,40.11,0.21,-5.2,5,277.22,null,"Buy","","",null,7,"Paused"],
+["LSE","","LSE:AJB","AJ Bell Plc","Finance","",602,2.36,5,"Tier 2",40.48,19.27,59.94,35.42,40.13,19.92,31.21,65.35,35.71,0.1,-7.6,5,5.97,null,"Buy","","",null,7,"Paused"],
+["EURONEXT","","EURONEXT:EXENS","Exosens","Electronic Technology","",68.95,3.52,5,"Tier 2",157.23,18.81,16.36,14.99,10.5,60.35,41.87,65.09,19.44,0.33,-6.8,6,66.75,null,"Buy","","",null,7,"Paused"],
 ["NASDAQ","","AUPH","Aurinia Pharmaceuticals Inc","Health Technology","",15.45,1.99,4,"Tier 3",683.38,20.62,64.98,99.97,5.46,89.8,-2.71,48.36,14.75,0.25,-52.93,4,17,null,"Dropped","","",null,7,"Dropped"],
-["NASDAQ","","NASDAQ:AMSC","American Superconductor Corporation","Producer Manufacturing","",50.16,2.39,3,"Tier 3",1833.51,34.26,35.56,44.73,51.3,75.92,68.59,50.9,30.45,0.15,-93.3,3,60,null,"Flagged","","",null,6,"Flagged"],
-["LSE","","MSI","MS International PLC","Electronic Technology","",1639,0.27,5,"Tier 2",20.46,10.56,24.78,12.1,33.8,42.52,11.88,51.9,33.06,1.49,null,0,null,null,"Dropped","","",null,6,"Dropped"],
+["NASDAQ","","NASDAQ:AMSC","American Superconductor Corporation","Producer Manufacturing","",50.16,2.39,3,"Tier 3",1833.51,34.26,35.56,44.73,51.3,75.92,68.59,50.9,30.45,0.15,-93.3,3,60,null,"Flagged","","",null,6,"Paused"],
 ["MIL","","TGYM","Technogym S.p.A","Consumer Durables","",19.8,4.07,5,"Tier 2",33.13,13.06,32.32,11.33,7.67,65.69,21.25,45.42,22.18,0.26,null,5,20.15,null,"Dropped","","",null,6,"Dropped"],
 ["OSL","","PHO","Photocure ASA","Health Technology","",66.3,1.76,5,"Tier 2",13133.19,26.13,16.06,12.55,13.92,30.26,-7.14,51.94,11.64,0.49,null,4,82.5,null,"Dropped","","",null,6,"Dropped"],
 ["NYSE","","JHG","Janus Henderson Group plc","Finance","",51.81,7.98,4,"Tier 3",101.77,27.93,15.57,23.18,5.54,42.18,8.87,61.77,28.97,0.98,-3.83,1,52.25,null,"Dropped","","",null,6,"Dropped"],
@@ -368,42 +397,39 @@ const S = [
 ["NASDAQ","","TGTX","TG Therapeutics, Inc.","Health Technology","",38.97,5.97,5,"Tier 2",1076.02,81.26,112.6,65.95,27.52,15.47,31.83,53.72,34.07,0.04,-99.97,6,48,null,"Dropped","","",null,6,"Dropped"],
 ["NYSE","","HWM","Howmet Aerospace Inc.","Electronic Technology","",273.1,109.27,5,"Tier 2",40.55,14.24,33.82,20.22,15.81,74.37,32.9,65.94,24.37,0.83,-3.91,18,302.93,null,"Dropped","","",null,6,"Dropped"],
 ["NASDAQ","","SSRM","SSR Mining Inc.","Non-Energy Minerals","",31.39,6.51,5,"Tier 1",160.19,75.12,17.34,31.11,19.49,199.81,39.88,49.48,19.52,1.26,-34.82,9,43.94,null,"Dropped","","",null,6,"Dropped"],
-["OMXSTO","","OMXSTO:KARNEL_B","Karnell Group AB Class B","Producer Manufacturing","",78,4.16,3,"Tier 3",55.12,20.97,12.28,8.3,30.87,36.84,7.59,58.95,29.37,0.58,-9.2,1,89,null,"Watch","","",null,5,"Day 4"],
-["NGM","","NGM:ANGL","ANGLER GAMING PLC","Consumer Services","",4.52,0.34,3,"Tier 3",87.49,-21.58,44.26,18.47,48.2,19.26,54.27,79,43.2,0.13,-88.3,1,6.3,null,"Watch","","",null,5,"Day 4"],
-["EURONEXT","","EURONEXT:AGS","ageas SA/NV","Finance","",66.75,14.01,3,"Tier 3",49.2,0.61,19.92,13.73,5.04,16.39,11.25,46.73,15.82,0.37,-81.2,1,66.53,null,"Flagged","","",null,5,"Flagged"],
-["LSE","","LSE:SAG","Science Group Plc","Commercial Services","",580.5,0.24,4,"Tier 3",183.32,0.9,35.52,29.8,8,25.89,6.03,51.14,40.3,0.15,-5.1,2,7.78,null,"Watch","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:RAIL","Railcare Group AB","Producer Manufacturing","",35,0.83,4,"Tier 2",54.29,10.77,15.01,6.61,21.11,37.8,21.53,68.56,41.02,0.76,-2.8,0,null,null,"Buy","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:ORES","Investment AB Oresund","Finance","",155.8,7.04,4,"Tier 3",256.86,2.88,22.68,737.33,11.29,34.31,31.59,65.24,21.5,0.37,-14.3,0,null,null,"Watch","","",null,5,"Day 4"],
-["GPW","","GPW:MIL","Bank Millennium SA","Finance","",20.1,24.07,3,"Tier 3",71.83,5.56,14.14,17.53,14.2,29.68,20.72,68.81,30.35,0.55,-0.8,1,16.87,null,"Watch","","",null,5,"Day 4"],
-["OSL","","OSL:PEXIP","Pexip Holding ASA","Technology Services","",77.3,7.88,3,"Tier 3",73.62,9.81,13.32,16.92,26.72,30.57,1.05,56.96,32.07,0.23,-34.7,4,92.69,null,"Watch","","",null,5,"Day 4"],
-["XETR","","XETR:DMP","Dermapharm Holding SE","Health Technology","",48.75,2.43,3,"Tier 3",39.24,-1.36,20.94,12.34,24.05,39.29,23.73,56.18,33.38,0.42,-47,2,50.38,null,"Watch","","",null,5,"Day 4"],
-["GPW","","GPW:MBK","mBank SA","Finance","",1261.5,52.94,4,"Tier 3",40.98,0.51,18.55,27.25,19.97,47.23,17.62,61.36,18.85,0.82,-2.1,0,1123.67,null,"Watch","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:CLAS_B","Clas Ohlson AB Class B","Retail Trade","",422.6,26.25,4,"Tier 2",31.17,6.95,41.33,9.06,12.33,59.47,39.29,53.28,36.91,0.55,-6.6,1,405,null,"Flagged","","",null,5,"Flagged"],
-["BME","","BME:COXG","COX ABG Group SA","Utilities","",13.4,1.14,4,"Tier 3",54.21,62.23,24.53,5.98,39,52.62,42.55,58.98,43.08,0.19,-8.8,1,15.17,null,"Watch","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:CHEF","Cheffelo AB","Retail Trade","",120.2,1.56,3,"Tier 3",58.99,10.9,14.22,5.45,21.41,125.09,50.06,60.36,29.44,0.18,-3.7,2,130.33,null,"Watch","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:HMS","HMS Networks AB","Technology Services","",531,26.61,4,"Tier 3",51.13,9.75,13.57,13.17,30.4,21.84,27.4,46.47,39.15,0.38,-10.5,4,584.14,null,"Flagged","","",null,5,"Flagged"],
-["MIL","","MIL:PST","Poste Italiane SpA","Transportation","",25.34,32.55,5,"Tier 2",16.48,4.18,20.33,11.56,9.46,32.6,18.36,71.79,42.54,0.5,-0.9,7,24.17,null,"Buy","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:ATIC","Actic Group AB","Consumer Services","",34.3,0.75,4,"Tier 3",1421.87,-3.76,38.9,11.94,10.29,61.03,-4.19,56.11,15.27,1.95,-31,0,null,null,"Watch","","",null,5,"Day 4"],
-["BME","","BME:MEL","Melia Hotels International, S.A.","Consumer Services","",11.18,2.5,5,"Tier 2",20.93,3.22,21.23,8.19,32.62,63.21,39.92,48.3,24.77,0.53,-20.1,5,11.51,null,"Buy","","",null,5,"Day 4"],
-["SIX","","SIX:ASCN","Ascom Holding AG","Electronic Technology","",6.1,0.22,3,"Tier 2",313.46,1.88,19.57,5.17,20.08,66.67,59.69,66.97,20.03,0.33,-94.2,0,5.6,null,"Buy","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:HOFI","Hoist Finance AB","Commercial Services","",174.3,14.93,5,"Tier 2",23.11,6.42,18.48,18.8,20.46,85.13,54.38,66.71,25.23,0.52,-0.4,4,190,null,"Buy","","",null,5,"Day 4"],
-["MIL","","MIL:LUVE","LU-VE S.p.A.","Producer Manufacturing","",67.3,1.47,5,"Tier 1",33.25,7.15,15.2,6.7,67.41,119.22,69.1,71.29,67.44,0.45,-3.4,5,70.4,null,"Strong Buy","","",null,5,"Day 4"],
-["OMXCOP","","OMXCOP:NKT","NKT A/S","Producer Manufacturing","",1022,56.78,3,"Tier 3",16.38,6.2,13.85,7.46,26.02,81.05,27.99,54.25,43.54,0.4,-10,2,946.27,null,"Watch","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:TAGM_B","TagMaster AB Class B","Electronic Technology","",41.6,0.6,3,"Tier 2",17455.22,17.19,13.06,6.98,60,230.16,131.11,83.65,44.61,0.88,-50.4,0,null,null,"Buy","","",null,5,"Day 4"],
-["OMXSTO","","OMXSTO:ERIC_A","Telefonaktiebolaget LM Ericsson Class A","Electronic Technology","",118.8,396.82,4,"Tier 2",1485.93,-7.45,26.71,10.9,16.47,41.09,31.13,55.36,28.47,0.62,-88.8,4,100.5,null,"Buy","","",null,5,"Day 4"],
-["LSE","","LSE:LUCE","Luceco PLC","Electronic Technology","",269,0.42,4,"Tier 2",41.61,11.92,20.33,7.48,51.12,84.25,99.26,71.39,52.05,0.17,-47.6,3,2.7,null,"Buy","","",null,5,"Day 4"],
-["EURONEXT","","EURONEXT:ASM","ASM International N.V.","Producer Manufacturing","",913.2,43.5,5,"Tier 2",105.89,2.03,24.94,31.01,28.26,83.96,73.48,63.31,20.11,0.34,-0.7,14,918.68,null,"Buy","","",null,5,"Day 4"],
-["MIL","","MIL:PRY","Prysmian S.p.A.","Producer Manufacturing","",148.2,43.92,6,"Tier 1",95.76,10.97,23.04,6.81,45.37,150.42,71.13,57.58,25.72,0.31,-5.8,10,138.05,null,"Strong Buy","","",null,5,"Day 4"],
-["OSL","","OSL:SMOP","Smartoptics Group ASA","Electronic Technology","",63.2,5.94,6,"Tier 1",49.69,35.18,15.53,5.82,60.41,268.51,113.51,66.06,32.38,0.7,-1.2,3,62.01,null,"Strong Buy","","",null,5,"Day 4"],
-["EURONEXT","","EURONEXT:ASML","ASML Holding NV","Electronic Technology","",1415,531.34,5,"Tier 1",16.87,9.7,52.24,29.71,14.59,109.51,53.9,61.7,20.17,0.32,-1.5,30,1492.52,null,"Strong Buy","","",null,5,"Day 4"],
-["LSE","","HLMA","Halma plc","Electronic Technology","",4574,17.51,5,"Tier 2",20.91,11.74,18.61,14.39,10.43,56.97,28.63,56.66,30.31,0.15,null,7,42.33,null,"Dropped","","",null,5,"Dropped"],
+["OMXSTO","","OMXSTO:KARNEL_B","Karnell Group AB Class B","Producer Manufacturing","",78,4.16,3,"Tier 3",55.12,20.97,12.28,8.3,30.87,36.84,7.59,58.95,29.37,0.58,-9.2,1,89,null,"Watch","","",null,5,"Paused"],
+["NGM","","NGM:ANGL","ANGLER GAMING PLC","Consumer Services","",4.52,0.34,3,"Tier 3",87.49,-21.58,44.26,18.47,48.2,19.26,54.27,79,43.2,0.13,-88.3,1,6.3,null,"Watch","","",null,5,"Paused"],
+["EURONEXT","","EURONEXT:AGS","ageas SA/NV","Finance","",66.75,14.01,3,"Tier 3",49.2,0.61,19.92,13.73,5.04,16.39,11.25,46.73,15.82,0.37,-81.2,1,66.53,null,"Flagged","","",null,5,"Paused"],
+["LSE","","LSE:SAG","Science Group Plc","Commercial Services","",580.5,0.24,4,"Tier 3",183.32,0.9,35.52,29.8,8,25.89,6.03,51.14,40.3,0.15,-5.1,2,7.78,null,"Watch","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:RAIL","Railcare Group AB","Producer Manufacturing","",35,0.83,4,"Tier 2",54.29,10.77,15.01,6.61,21.11,37.8,21.53,68.56,41.02,0.76,-2.8,0,null,null,"Buy","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:ORES","Investment AB Oresund","Finance","",155.8,7.04,4,"Tier 3",256.86,2.88,22.68,737.33,11.29,34.31,31.59,65.24,21.5,0.37,-14.3,0,null,null,"Watch","","",null,5,"Paused"],
+["GPW","","GPW:MIL","Bank Millennium SA","Finance","",20.1,24.07,3,"Tier 3",71.83,5.56,14.14,17.53,14.2,29.68,20.72,68.81,30.35,0.55,-0.8,1,16.87,null,"Watch","","",null,5,"Paused"],
+["OSL","","OSL:PEXIP","Pexip Holding ASA","Technology Services","",77.3,7.88,3,"Tier 3",73.62,9.81,13.32,16.92,26.72,30.57,1.05,56.96,32.07,0.23,-34.7,4,92.69,null,"Watch","","",null,5,"Paused"],
+["XETR","","XETR:DMP","Dermapharm Holding SE","Health Technology","",48.75,2.43,3,"Tier 3",39.24,-1.36,20.94,12.34,24.05,39.29,23.73,56.18,33.38,0.42,-47,2,50.38,null,"Watch","","",null,5,"Paused"],
+["GPW","","GPW:MBK","mBank SA","Finance","",1261.5,52.94,4,"Tier 3",40.98,0.51,18.55,27.25,19.97,47.23,17.62,61.36,18.85,0.82,-2.1,0,1123.67,null,"Watch","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:CLAS_B","Clas Ohlson AB Class B","Retail Trade","",422.6,26.25,4,"Tier 2",31.17,6.95,41.33,9.06,12.33,59.47,39.29,53.28,36.91,0.55,-6.6,1,405,null,"Flagged","","",null,5,"Paused"],
+["BME","","BME:COXG","COX ABG Group SA","Utilities","",13.4,1.14,4,"Tier 3",54.21,62.23,24.53,5.98,39,52.62,42.55,58.98,43.08,0.19,-8.8,1,15.17,null,"Watch","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:CHEF","Cheffelo AB","Retail Trade","",120.2,1.56,3,"Tier 3",58.99,10.9,14.22,5.45,21.41,125.09,50.06,60.36,29.44,0.18,-3.7,2,130.33,null,"Watch","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:HMS","HMS Networks AB","Technology Services","",531,26.61,4,"Tier 3",51.13,9.75,13.57,13.17,30.4,21.84,27.4,46.47,39.15,0.38,-10.5,4,584.14,null,"Flagged","","",null,5,"Paused"],
+["MIL","","MIL:PST","Poste Italiane SpA","Transportation","",25.34,32.55,5,"Tier 2",16.48,4.18,20.33,11.56,9.46,32.6,18.36,71.79,42.54,0.5,-0.9,7,24.17,null,"Buy","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:ATIC","Actic Group AB","Consumer Services","",34.3,0.75,4,"Tier 3",1421.87,-3.76,38.9,11.94,10.29,61.03,-4.19,56.11,15.27,1.95,-31,0,null,null,"Watch","","",null,5,"Paused"],
+["BME","","BME:MEL","Melia Hotels International, S.A.","Consumer Services","",11.18,2.5,5,"Tier 2",20.93,3.22,21.23,8.19,32.62,63.21,39.92,48.3,24.77,0.53,-20.1,5,11.51,null,"Buy","","",null,5,"Paused"],
+["SIX","","SIX:ASCN","Ascom Holding AG","Electronic Technology","",6.1,0.22,3,"Tier 2",313.46,1.88,19.57,5.17,20.08,66.67,59.69,66.97,20.03,0.33,-94.2,0,5.6,null,"Buy","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:HOFI","Hoist Finance AB","Commercial Services","",174.3,14.93,5,"Tier 2",23.11,6.42,18.48,18.8,20.46,85.13,54.38,66.71,25.23,0.52,-0.4,4,190,null,"Buy","","",null,5,"Paused"],
+["MIL","","MIL:LUVE","LU-VE S.p.A.","Producer Manufacturing","",67.3,1.47,5,"Tier 1",33.25,7.15,15.2,6.7,67.41,119.22,69.1,71.29,67.44,0.45,-3.4,5,70.4,null,"Strong Buy","","",null,5,"Paused"],
+["OMXCOP","","OMXCOP:NKT","NKT A/S","Producer Manufacturing","",1022,56.78,3,"Tier 3",16.38,6.2,13.85,7.46,26.02,81.05,27.99,54.25,43.54,0.4,-10,2,946.27,null,"Watch","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:TAGM_B","TagMaster AB Class B","Electronic Technology","",41.6,0.6,3,"Tier 2",17455.22,17.19,13.06,6.98,60,230.16,131.11,83.65,44.61,0.88,-50.4,0,null,null,"Buy","","",null,5,"Paused"],
+["OMXSTO","","OMXSTO:ERIC_A","Telefonaktiebolaget LM Ericsson Class A","Electronic Technology","",118.8,396.82,4,"Tier 2",1485.93,-7.45,26.71,10.9,16.47,41.09,31.13,55.36,28.47,0.62,-88.8,4,100.5,null,"Buy","","",null,5,"Paused"],
+["LSE","","LSE:LUCE","Luceco PLC","Electronic Technology","",269,0.42,4,"Tier 2",41.61,11.92,20.33,7.48,51.12,84.25,99.26,71.39,52.05,0.17,-47.6,3,2.7,null,"Buy","","",null,5,"Paused"],
+["EURONEXT","","EURONEXT:ASM","ASM International N.V.","Producer Manufacturing","",913.2,43.5,5,"Tier 2",105.89,2.03,24.94,31.01,28.26,83.96,73.48,63.31,20.11,0.34,-0.7,14,918.68,null,"Buy","","",null,5,"Paused"],
+["MIL","","MIL:PRY","Prysmian S.p.A.","Producer Manufacturing","",148.2,43.92,6,"Tier 1",95.76,10.97,23.04,6.81,45.37,150.42,71.13,57.58,25.72,0.31,-5.8,10,138.05,null,"Strong Buy","","",null,5,"Paused"],
+["OSL","","OSL:SMOP","Smartoptics Group ASA","Electronic Technology","",63.2,5.94,6,"Tier 1",49.69,35.18,15.53,5.82,60.41,268.51,113.51,66.06,32.38,0.7,-1.2,3,62.01,null,"Strong Buy","","",null,5,"Paused"],
+["EURONEXT","","EURONEXT:ASML","ASML Holding NV","Electronic Technology","",1415,531.34,5,"Tier 1",16.87,9.7,52.24,29.71,14.59,109.51,53.9,61.7,20.17,0.32,-1.5,30,1492.52,null,"Strong Buy","","",null,5,"Paused"],
 ["LSE","","SRB","Serabi Gold PLC","Non-Energy Minerals","",350,0.25,5,"Tier 2",87.48,59.41,38.89,34.55,3.7,136.49,11.82,57.28,15.35,0.68,null,2,4.77,null,"Dropped","","",null,5,"Dropped"],
 ["OMXCOP","","CPHCAP_ST","Copenhagen Capital A/S","Finance","",7.5,0.37,4,"Tier 3",938.76,17.75,16.34,144.22,9.49,35.14,11.94,57.72,14.25,0.45,null,0,null,null,"Dropped","","",null,5,"Dropped"],
 ["MIL","","FM","Fiera Milano SpA","Commercial Services","",8.91,0.62,4,"Tier 3",161.95,39.08,29.77,13.24,5.57,56.04,12.78,66.22,23.83,0.68,null,2,9.1,null,"Dropped","","",null,5,"Dropped"],
-["GPW","","ATR","Atrem S.A.","Industrial Services","",57.7,0.53,4,"Tier 3",108.38,67.14,57.53,11.79,6.07,81.45,-3.19,44.01,15.72,0.18,null,1,81.2,null,"Dropped","","",null,5,"Dropped"],
 ["GPW","","IPE","IPOPEMA Securities S.A.","Finance","",7.36,0.22,5,"Tier 2",301.14,22.46,22.61,9.46,63.92,140.52,84,74.26,32.52,0.65,null,0,null,null,"Dropped","","",null,5,"Dropped"],
 ["GPW","","SNT","Synektik SA","Health Technology","",280.6,2.44,4,"Tier 3",28.4,27.02,56.12,19.13,5.48,42.35,9.96,48.24,17.4,0.81,null,2,332,null,"Dropped","","",null,5,"Dropped"],
-["GPW","","KGH","KGHM Polska Miedz S.A.","Non-Energy Minerals","",330.5,66.1,6,"Tier 1",148.23,11.88,20.17,17.35,11.28,170.13,17.37,51.62,21.29,0.91,null,4,333.29,null,"Dropped","","",null,5,"Dropped"],
 ["BME","","BME:ART","Arteche Lantegi Elkartea SA","Distribution Services","",41.4,2.35,5,"Tier 2",139.4,13.64,49.46,9.03,60.47,309.9,86.49,62.77,48.24,0.52,-10,2,29.17,null,"Dropped","","",null,5,"Dropped"],
 ["GPW","","GPW:KGH","KGHM Polska Miedz S.A.","Non-Energy Minerals","",347.2,68.96,6,"Tier 1",148.23,11.88,20.17,17.35,3.43,176.65,23.3,56.96,19.56,0.33,-12.4,4,323.75,null,"Dropped","","",null,5,"Dropped"],
 ["MIL","","MIL:FM","Fiera Milano SpA","Commercial Services","",8.21,0.61,5,"Tier 3",161.95,39.08,29.77,13.24,15.47,44.8,3.92,56.6,24.61,1.21,9.63,2,9.1,null,"Dropped","","",null,5,"Dropped"],
@@ -412,8 +438,8 @@ const S = [
 ["GPW","","GPW:BFT","Benefit Systems S.A.","Consumer Services","",4426,14.52,5,"Tier 1",62.38,39.64,38,15.01,12.05,30.95,23.98,72.05,29.05,0.76,4490,7,4791.67,null,"Dropped","","",null,5,"Dropped"],
 ["NASDAQ","","NVMI","Nova Ltd.","Electronic Technology","",503.65,16.01,7,"Tier 1",39.79,30.96,23.08,29.44,6.49,158.83,49.9,50.42,12.72,1.36,-4.36,6,497.25,null,"Dropped","","",null,5,"Dropped"],
 ["LSE","","PAF","Pan African Resources PLC","Non-Energy Minerals","",153.5,3.15,7,"Tier 1",172.75,119.53,43.48,29.12,7.79,208.23,24.8,53.94,16.08,1.25,-19.38,5,1.78,null,"Dropped","","",null,5,"Dropped"],
-["EURONEXT","","EURONEXT:AMUN","Amundi SA","Finance","",83.95,17.3,4,"Tier 3",21.79,9.6,12.91,22.6,3.2,14.84,18.74,53.68,27.55,0.29,-4,8,84.58,null,"Watch","","",null,4,"Day 3"],
-["EURONEXT","","EURONEXT:ALRIB","Riber SA","Electronic Technology","",15.86,0.33,4,"Tier 1",26.96,-2.06,20.83,13,158.31,483.09,353.14,64.98,47.8,0.42,-57.5,0,6,null,"Strong Buy","","",null,4,"Day 3"],
+["EURONEXT","","EURONEXT:AMUN","Amundi SA","Finance","",83.95,17.3,4,"Tier 3",21.79,9.6,12.91,22.6,3.2,14.84,18.74,53.68,27.55,0.29,-4,8,84.58,null,"Watch","","",null,4,"Paused"],
+["EURONEXT","","EURONEXT:ALRIB","Riber SA","Electronic Technology","",15.86,0.33,4,"Tier 1",26.96,-2.06,20.83,13,158.31,483.09,353.14,64.98,47.8,0.42,-57.5,0,6,null,"Strong Buy","","",null,4,"Paused"],
 ["OSL","","NORAM","NorAm Drilling AS","Industrial Services","",49.3,2.19,6,"Tier 1",99.5,-9.78,21.51,12.08,29.74,117.66,48.94,49.66,15.64,1.41,null,2,54.54,null,"Dropped","","",null,4,"Dropped"],
 ["XETR","","EKT","EnergieKontor AG","Utilities","",48.55,0.66,6,"Tier 1",81.49,32.8,19.9,24.39,26.1,10.84,33.56,65.77,49.1,1.2,null,4,67.25,null,"Dropped","","",null,4,"Dropped"],
 ["MIL","","PHN","PharmaNutra S.p.A.","Health Technology","",84.7,0.82,5,"Tier 2",28.37,16.81,30.23,15.23,27.95,70.59,55.99,55.22,32.93,0.22,null,3,94.33,null,"Dropped","","",null,4,"Dropped"],
@@ -424,10 +450,10 @@ const S = [
 ["EURONEXT","","EURONEXT:ALSTW","StreamWIDE","Communications","",82,0.22,4,"Tier 3",34.26,25.18,22.04,23.81,26.15,140.47,12.95,62.32,39.1,0.67,84.6,1,73.15,null,"Dropped","","",null,4,"Dropped"],
 ["NASDAQ","","ADEA","Adeia Inc.","Technology Services","",28.19,3.11,4,"Tier 3",61.84,21.09,28.51,26.5,42.52,120.92,62.67,48.91,23.05,0.07,-9.2,3,37,null,"Dropped","","",null,4,"Dropped"],
 ["NASDAQ","","CPRX","Catalyst Pharmaceuticals, Inc.","Health Technology","",31.15,3.81,4,"Tier 3",28.7,19.78,25.49,36.39,26.99,35.08,33.46,73.31,48.26,0.91,-4.33,1,32.62,null,"Dropped","","",null,4,"Dropped"],
-["OSL","","OSL:STECH","SoilTech AS","Industrial Services","",88.2,0.77,4,"Tier 3",258.9,36.88,14.31,8.29,6.27,81.48,16.05,63.46,26.17,0.06,-5.2,3,95.67,null,"Watch","","",null,3,"Day 2"],
-["XETR","","XETR:ACT","Alzchem Group AG","Process Industries","",185.5,1.92,5,"Tier 2",94.17,4.71,26.79,11.8,19.99,47.22,19.83,66.59,15.89,0.43,-3,6,192.07,null,"Buy","","",null,3,"Day 2"],
+["OSL","","OSL:STECH","SoilTech AS","Industrial Services","",88.2,0.77,4,"Tier 3",258.9,36.88,14.31,8.29,6.27,81.48,16.05,63.46,26.17,0.06,-5.2,3,95.67,null,"Watch","","",null,3,"Paused"],
+["XETR","","XETR:ACT","Alzchem Group AG","Process Industries","",185.5,1.92,5,"Tier 2",94.17,4.71,26.79,11.8,19.99,47.22,19.83,66.59,15.89,0.43,-3,6,192.07,null,"Buy","","",null,3,"Paused"],
 ["GPW","","CMP","Comp S.A.","Technology Services","",68.7,1.19,4,"Tier 3",98.84,-2.92,16.52,8.74,25.82,46.79,17.24,81.95,35.56,0.68,null,1,67,null,"Dropped","","",null,3,"Dropped"],
-["OSL","","OSL:KIT","Kitron ASA","Electronic Technology","",115.1,24.84,5,"Tier 1",82.22,32.01,20.76,6.64,7.67,97.77,57.89,65.49,25.62,0.46,-0.6,3,112.4,null,"Strong Buy","","",null,3,"Day 2"],
+["OSL","","OSL:KIT","Kitron ASA","Electronic Technology","",115.1,24.84,5,"Tier 1",82.22,32.01,20.76,6.64,7.67,97.77,57.89,65.49,25.62,0.46,-0.6,3,112.4,null,"Strong Buy","","",null,3,"Paused"],
 ["GPW","","GPW:XTB","XTB Spolka Akcyjna","Finance","",103.48,11.99,5,"Tier 2",31.69,40.8,41.61,35.55,16.87,24.61,43.52,48.16,14.57,0.46,-9.2,3,100.07,null,"Dropped","","",null,3,"Dropped"],
 ["LSE","","BATS","British American Tobacco p.l.c.","Consumer Non-Durables","",4776,104.21,5,"Tier 2",159.16,-0.99,15.74,29.98,3.26,42.57,14.56,59.98,45.08,0.73,null,7,50.77,null,"Dropped","","",null,3,"Dropped"],
 ["NYSE","","ECO","Okeanis Eco Tankers Corp.","Transportation","",54.07,2.07,5,"Tier 2",128.18,32.94,34.95,41.26,12.11,133.16,64.6,49.69,18.9,0.83,null,5,62.14,null,"Dropped","","",null,3,"Dropped"],
@@ -445,31 +471,118 @@ const S = [
 ["LSE","","CRN","Cairn Homes PLC","Consumer Durables","",200,1.26,5,"Tier 2",26.65,15.74,16.64,14.05,6.04,21.8,10.13,56.89,18.91,0.34,-5.21,4,2.47,null,"Dropped","","",null,3,"Dropped"],
 ["NYSE","","NEM","Newmont Corporation","Non-Energy Minerals","",116.51,124.38,5,"Tier 2",73.04,25.14,25.56,34.64,5.58,116.6,15.37,54.89,12.43,0.7,-13.62,18,147.78,null,"Dropped","","",null,3,"Dropped"],
 ["MIL","","GF","Generalfinance S.p.A.","Finance","",28.8,0.36,6,"Tier 1",36.29,23.64,32.23,28.22,18.52,92,36.49,48.44,30.68,2.96,-9.43,3,26.73,null,"Dropped","","",null,3,"Dropped"],
-["GPW","","GPW:APT","Apator S.A.","Electronic Technology","",26.1,0.76,2,"Tier 3",21.75,2.97,13.68,6.96,3.16,34.95,11.06,62.79,22.07,0.39,-43.7,1,28.02,null,"Watch","","",null,2,"Day 1"],
-["NYSE","","NYSE:LLY","Eli Lilly and Company","Health Technology","",1114.58,1049.65,5,"Tier 2",130.14,47.44,107.64,34.98,9.32,54.9,3.5,71.83,27.66,0.08,-3,24,1254.96,null,"Buy","","",null,2,"Day 1"],
-["XETR","","DWS","DWS Group GmbH & Co. KGaA","Finance","",62.45,12.52,4,"Tier 3",42.84,21.42,12.42,21.37,4.34,26.31,10.34,63.58,20.04,0.5,null,4,62.81,null,"Dropped","","",null,2,"Dropped"],
-["OMXSTO","","INVE_A","Investor AB Class A","Finance","",380.7,1179.43,5,"Tier 2",340.75,162.91,21.23,96.34,3.65,34,15.71,64.4,15.22,0.63,null,3,396.6,null,"Dropped","","",null,2,"Dropped"],
-["OMXSTO","","INDU_A","Industrivarden AB Class A","Finance","",513,220.38,4,"Tier 3",930.08,87.35,21.64,387.6,3.14,46.57,23.32,64.74,14.71,0.34,null,1,501.17,null,"Dropped","","",null,2,"Dropped"],
+["GPW","","GPW:APT","Apator S.A.","Electronic Technology","",26.1,0.76,2,"Tier 3",21.75,2.97,13.68,6.96,3.16,34.95,11.06,62.79,22.07,0.39,-43.7,1,28.02,null,"Watch","","",null,2,"Paused"],
+["NYSE","","NYSE:LLY","Eli Lilly and Company","Health Technology","",1114.58,1049.65,5,"Tier 2",130.14,47.44,107.64,34.98,9.32,54.9,3.5,71.83,27.66,0.08,-3,24,1254.96,null,"Buy","","",null,2,"Paused"],
 ["XETR","","ENR","Siemens Energy AG","Producer Manufacturing","",179.74,154.44,6,"Tier 1",1076.39,7.21,21.33,5.54,6.42,114.64,47.93,56.08,12.41,0.29,null,17,194.33,null,"Dropped","","",null,2,"Dropped"],
 ["NYSE","","VG","Venture Global, Inc.","Industrial Services","",13.83,34.36,5,"Tier 2",89.63,139.83,36.49,18.05,39.7,34.01,101.6,54.18,19.03,0.48,null,9,15.53,null,"Dropped","","",null,2,"Dropped"],
 ["LSE","","PRU","Prudential plc","Finance","",1143.42,28.46,4,"Tier 3",77.76,61.45,20.76,14.27,5.38,30.35,-0.96,53.79,9.57,0.22,null,15,14.15,null,"Dropped","","",null,2,"Dropped"],
 ["NYSE","","ENVA","Enova International, Inc.","Finance","",163.24,4.06,5,"Tier 2",45.42,17.46,25.13,9.95,6.38,65.47,3.32,50.69,36.11,0.72,-4.4,7,202,null,"Dropped","","",null,2,"Dropped"],
 ["OMXHEX","","PAMPALO","Endomines Finland Oyj","Non-Energy Minerals","",10.86,0.38,5,"Tier 2",1951.55,58.54,15.12,16.26,14.72,103.63,16.15,65.72,25.67,2.42,-15.16,1,11,null,"Dropped","","",null,2,"Dropped"],
 ["NASDAQ","","MGRT","Mega Fortune Company Limited","Technology Services","",130,1.79,6,"Tier 1",351.35,234.08,21.09,16.13,2602.7,3158.15,1685.71,68.64,68.01,1.92,-23.53,null,null,null,"Dropped","","",null,2,"Dropped"],
+["GPW","","MIL","Bank Millennium SA","Finance","",19.33,24.09,3,"Tier 3",71.83,5.56,14.14,17.53,16.38,29.3,16.1,57.86,29.79,0.88,null,0,17.04,null,"Watch","","",null,1,"Day 1"],
+["GPW","","APT","Apator S.A.","Electronic Technology","",25.65,0.75,3,"Tier 3",21.75,2.97,13.68,6.96,3.01,35.14,9.15,56.82,21.97,0.5,null,1,28.02,null,"Watch","","",null,1,"Day 1"],
+["OSL","","STECH","SoilTech AS","Industrial Services","",86.8,0.77,3,"Tier 3",258.9,36.88,14.31,8.29,7.16,71.54,14.21,57.61,26.16,0.31,null,2,93.5,null,"Watch","","",null,1,"Day 1"],
+["OMXCOP","","NKT","NKT A/S","Producer Manufacturing","",1007,55.06,3,"Tier 3",16.38,6.2,13.85,7.46,26.27,78.39,26.11,51.08,41.13,0.4,null,2,984.15,null,"Flagged","","",null,1,"Flagged"],
+["EURONEXT","","AMUN","Amundi SA","Finance","",84.15,17.27,4,"Tier 3",21.79,9.6,12.91,22.6,6.59,15.91,19.02,54.55,25.88,0.26,null,8,84.58,null,"Watch","","",null,1,"Day 1"],
+["NGM","","ANGL","ANGLER GAMING PLC","Consumer Services","",4.5,0.34,4,"Tier 3",87.49,-21.58,44.26,18.47,49.5,21.95,53.58,75.34,45.34,0.32,null,1,6.3,null,"Watch","","",null,1,"Day 1"],
+["OMXSTO","","HMS","HMS Networks AB","Technology Services","",541.5,26.99,4,"Tier 3",51.13,9.75,13.57,13.17,33.77,23.57,29.92,50.22,36.56,0.15,null,4,584.14,null,"Watch","","",null,1,"Day 1"],
+["NYSE","","VIRT","Virtu Financial, Inc.","Finance","",50.34,4.38,4,"Tier 3",74.21,28.84,33.9,14.4,21.77,25.22,50.27,48.1,22.05,0.04,null,3,51.71,null,"Watch","","",null,1,"Day 1"],
+["LSE","","SAG","Science Group Plc","Commercial Services","",580,0.24,4,"Tier 3",183.32,0.9,35.52,29.8,7.91,25.68,5.94,50.11,38.66,0.63,null,2,7.78,null,"Flagged","","",null,1,"Flagged"],
+["LSE","","GAW","Games Workshop Group PLC","Consumer Durables","",19390,6.56,4,"Tier 3",17.75,12.57,67.89,31.75,9.73,26.15,2.11,48.43,17.43,0.14,null,2,219.25,null,"Flagged","","",null,1,"Flagged"],
+["XETR","","DMP","Dermapharm Holding SE","Health Technology","",48.2,2.42,4,"Tier 3",39.24,-1.36,20.94,12.34,25.03,36.54,22.34,53.06,32.64,0.32,null,2,50.38,null,"Watch","","",null,1,"Day 1"],
+["OMXSTO","","KARNEL_B","Karnell Group AB Class B","Producer Manufacturing","",78.1,4.27,4,"Tier 3",55.12,20.97,12.28,8.3,28.67,44.1,7.72,56.98,29.81,5.34,null,1,89,null,"Watch","","",null,1,"Day 1"],
+["BME","","COXG","COX ABG Group SA","Utilities","",13.5,1.14,4,"Tier 3",54.21,62.23,24.53,5.98,39.18,45.47,43.62,59.9,41.85,0.22,null,1,15.17,null,"Watch","","",null,1,"Day 1"],
+["GPW","","MBK","mBank SA","Finance","",1267.5,54.43,4,"Tier 3",40.98,0.51,18.55,27.25,26.75,49.54,18.18,61,19.88,0.25,null,0,1153.5,null,"Watch","","",null,1,"Day 1"],
+["BME","","SAN","Banco Santander, S.A.","Finance","",10.57,157.42,4,"Tier 3",33.19,-21.02,12.63,22.19,5.68,50.33,5.15,52.43,14.96,0.42,null,18,12.36,null,"Watch","","",null,1,"Day 1"],
+["OMXSTO","","CLAS_B","Clas Ohlson AB Class B","Retail Trade","",431,26.68,4,"Tier 3",31.17,6.95,41.33,9.06,19.06,64.38,42.06,57.13,35.42,0.49,null,1,417.5,null,"Watch","","",null,1,"Day 1"],
+["NASDAQ","","CARE","Carter Bankshares, Inc.","Finance","",27.12,0.6,4,"Tier 3",306.2,30.36,23.57,47.89,32.48,65.76,37.99,63.99,41.44,0.02,null,2,27.25,null,"Watch","","",null,1,"Day 1"],
+["EURONEXT","","UCB","UCB S.A.","Health Technology","",254.2,47.82,4,"Tier 3",46.56,25.83,14.91,20.13,3.33,66.04,7.67,62.73,17.1,0.19,null,15,297.33,null,"Watch","","",null,1,"Day 1"],
+["NASDAQ","","AMSC","American Superconductor Corporation","Producer Manufacturing","",50.71,2.42,4,"Tier 3",1833.51,34.26,35.56,44.73,67.91,83.73,70.45,51.94,28.66,0.09,null,4,64,null,"Watch","","",null,1,"Day 1"],
+["NYSE","","CBL","CBL & Associates Properties, Inc.","Finance","",47.94,1.48,4,"Tier 3",155.46,10.29,50.12,29.81,28.77,91.22,29.53,64.73,29.46,0.02,null,2,56,null,"Watch","","",null,1,"Day 1"],
+["NASDAQ","","TIGO","Millicom International Cellular S.A.","Communications","",87.6,14.68,4,"Tier 3",256.55,12.97,37.77,19.16,20.76,136.76,56.43,61.6,26,0.09,null,3,81.77,null,"Watch","","",null,1,"Day 1"],
+["OMXSTO","","LAGR_B","Lagercrantz Group AB Class B","Electronic Technology","",250.6,52.15,5,"Tier 2",17.61,12.98,29.03,11.32,18.66,14.43,17.54,53.93,38.2,0.32,null,5,277.22,null,"Buy","","",null,1,"Day 1"],
+["GPW","","XTB","XTB Spolka Akcyjna","Finance","",103.18,12.18,5,"Tier 2",31.69,40.8,41.61,35.55,13.99,24.61,43.11,47.69,14.91,0.58,null,3,100.07,null,"Buy","","",null,1,"Day 1"],
+["LSE","","AJB","AJ Bell Plc","Finance","",612,2.4,5,"Tier 2",40.48,19.27,59.94,35.42,38.71,26.29,33.39,67.27,36.2,0.12,null,6,6.1,null,"Buy","","",null,1,"Day 1"],
+["GPW","","SKH","Skarbiec Holding S.A.","Finance","",35.3,0.23,5,"Tier 2",1131.71,79.53,27.2,48.85,8.62,28.36,3.82,54.67,17.61,1.28,null,0,null,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","AMZN","Amazon.com, Inc.","Retail Trade","",264.8,2848.48,5,"Tier 2",36.48,14.22,24.28,12.22,29.45,29.27,14.46,52.52,25.05,0.18,null,57,317.42,null,"Flagged","","",null,1,"Flagged"],
+["MIL","","PST","Poste Italiane SpA","Transportation","",25.43,32.99,5,"Tier 2",16.48,4.18,20.33,11.56,13.43,33.53,18.78,72.58,43.08,0.59,null,7,24.27,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","DAVE","Dave Inc.","Finance","",275.86,3.14,5,"Tier 2",327.93,58.48,111.62,37.22,49.11,33.7,24.29,62.21,19.8,0.17,null,11,325.73,null,"Buy","","",null,1,"Day 1"],
+["OSL","","PEXIP","Pexip Holding ASA","Technology Services","",79.4,7.84,5,"Tier 2",73.62,9.81,13.32,16.92,29.69,33.84,3.92,62.05,31.88,1.41,null,4,92.69,null,"Buy","","",null,1,"Day 1"],
+["OMXSTO","","ORES","Investment AB Oresund","Finance","",157,7.07,5,"Tier 2",256.86,2.88,22.68,737.33,13.77,36.05,32.6,67.08,22.45,1.04,null,0,null,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","FTK","Flotek Industries, Inc.","Industrial Services","",20.16,0.73,5,"Tier 2",71.53,24.72,25.06,11.83,32.49,36.34,15.49,60.78,34.24,0.1,null,6,21.93,null,"Buy","","",null,1,"Day 1"],
+["OMXSTO","","RAIL","Railcare Group AB","Producer Manufacturing","",36.1,0.85,5,"Tier 2",54.29,10.77,15.01,6.61,28.7,42.41,25.35,73.41,41.56,2.84,null,0,null,null,"Buy","","",null,1,"Day 1"],
+["VIE","","EBS","Erste Group Bank AG","Finance","",101.7,41.2,5,"Tier 2",19.92,-1.85,15.7,25.68,5.06,43.64,-1.17,55.67,15.04,0.34,null,11,112.72,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","EVR","Evercore Inc.","Finance","",340.95,13.19,5,"Tier 2",69.77,47.3,45.43,16.3,13.8,46.94,-0.02,53.22,10.3,0.11,null,7,380.11,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","SGHC","Super Group (SGHC) Limited","Consumer Services","",13.06,6.64,5,"Tier 2",79.51,19.93,35.81,10.58,26.98,49.09,7.84,54.05,43.67,0.05,null,8,18.12,null,"Buy","","",null,1,"Day 1"],
+["XETR","","ACT","Alzchem Group AG","Process Industries","",185.1,1.92,5,"Tier 2",94.17,4.71,26.79,11.8,19.11,49.76,19.57,65.69,17.64,0.76,null,6,192.07,null,"Buy","","",null,1,"Day 1"],
+["OMXSTO","","ATIC","Actic Group AB","Consumer Services","",33,0.8,5,"Tier 2",1421.87,-3.76,38.9,11.94,17.86,50.68,-7.82,50.06,16.93,1.33,null,0,null,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","AAPL","Apple Inc.","Electronic Technology","",310.14,4555.22,5,"Tier 2",29,12.76,141.47,27.15,18.19,55.56,13.92,74.43,45,0.12,null,24,316.07,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","NVDA","NVIDIA Corporation","Electronic Technology","",219.89,5321.34,5,"Tier 2",110.33,70.68,114.29,62.97,25.64,58.52,15.83,57.25,22,0.22,null,59,308.51,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","MS","Morgan Stanley","Finance","",207.84,327.82,5,"Tier 2",29.55,16.32,16.38,24.64,27.77,62.85,16.41,73.73,28.19,0.09,null,11,206.82,null,"Buy","","",null,1,"Day 1"],
+["SIX","","ASCN","Ascom Holding AG","Electronic Technology","",6.15,0.22,5,"Tier 2",313.46,1.88,19.57,5.17,25.64,62.91,60.99,68.2,20.99,0.51,null,1,7.9,null,"Buy","","",null,1,"Day 1"],
+["BME","","MEL","Melia Hotels International, S.A.","Consumer Services","",11.1,2.47,5,"Tier 2",20.93,3.22,21.23,8.19,40.42,63.24,38.92,46.15,25.05,0.4,null,5,11.51,null,"Flagged","","",null,1,"Flagged"],
+["NASDAQ","","IBKR","Interactive Brokers Group, Inc.","Finance","",85.89,147.52,5,"Tier 2",28.42,12.92,20.58,9.65,24.08,65.29,31.31,58.37,19.99,0.04,null,8,88.78,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","FCFS","FirstCash Holdings, Inc.","Finance","",218.96,9.6,5,"Tier 2",27.91,14.39,16.27,9.15,14.95,72.44,37.6,46.7,33.02,0.03,null,5,242,null,"Flagged","","",null,1,"Flagged"],
+["NASDAQ","","BLBD","Blue Bird Corporation","Consumer Durables","",69.06,2.19,5,"Tier 2",25.92,10.09,54.48,8.91,19.99,77.36,44.76,54.91,23.51,0.04,null,5,81.71,null,"Buy","","",null,1,"Day 1"],
+["EURONEXT","","ASM","ASM International N.V.","Producer Manufacturing","",878.6,43.72,5,"Tier 2",105.89,2.03,24.94,31.01,27.81,80.52,66.91,55.6,19.18,0.33,null,14,926.58,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","AVGO","Broadcom Inc.","Electronic Technology","",450.42,2132.59,5,"Tier 2",147.26,25.22,33.37,36.57,45.6,86.73,27.68,67.07,24.39,0.24,null,42,480.76,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","LPG","Dorian LPG Ltd.","Transportation","",41.05,1.76,5,"Tier 2",110.12,36.27,17.73,40.22,8.03,87.87,66.87,50.5,27.77,0.04,null,5,48.25,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","VIK","Viking Holdings Ltd","Consumer Services","",90.3,28.72,5,"Tier 2",117.99,20.78,299.93,18,27.35,101.8,26.91,61.98,18.23,0.06,null,16,98.63,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","COCO","The Vita Coco Company, Inc.","Consumer Non-Durables","",75.58,4.32,5,"Tier 2",35.6,23.05,26.32,12.59,32.61,111.75,42.62,62.21,47.73,0.05,null,8,75.11,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","GOOG","Alphabet Inc.","Technology Services","",371.51,4586.91,5,"Tier 2",46.19,17.77,38.88,37.86,22.62,115.48,16.98,48.53,36.74,0.12,null,54,434.47,null,"Flagged","","",null,1,"Flagged"],
+["OMXSTO","","CHEF","Cheffelo AB","Retail Trade","",115.2,1.57,5,"Tier 2",58.99,10.9,14.22,5.45,19.01,116.14,43.82,51.4,27.8,1.38,null,2,130.33,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","KLAC","KLA Corporation","Electronic Technology","",1924.36,251.38,5,"Tier 2",28.56,13.43,94.98,35.68,30.47,149.02,52.76,58.13,14.29,0.08,null,15,1894.96,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","VRT","Vertiv Holdings, LLC","Electronic Technology","",324.5,124.64,5,"Tier 2",130.95,28.95,45.1,14.37,30.09,202.41,91.48,49.55,16.15,0.17,null,22,379.16,null,"Buy","","",null,1,"Day 1"],
+["OMXSTO","","TAGM_B","TagMaster AB Class B","Electronic Technology","",40.6,0.6,5,"Tier 2",17455.22,17.19,13.06,6.98,56.76,222.22,125.56,78.54,45.22,1.49,null,0,null,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","ALAB","Astera Labs, Inc.","Electronic Technology","",327.88,56.2,5,"Tier 2",532.4,104.18,21.11,26.72,190.24,246.6,90.98,73.55,55.89,0.12,null,15,246.01,null,"Buy","","",null,1,"Day 1"],
+["NYSE","","GLW","Corning Incorporated","Electronic Technology","",175.71,151.22,5,"Tier 2",298.68,20.05,16.07,11.09,14.51,256.05,97.63,47.26,21.72,0.13,null,10,204.62,null,"Flagged","","",null,1,"Flagged"],
+["NASDAQ","","CRDO","Credo Technology Group Holding Ltd","Technology Services","",229.4,42.31,5,"Tier 2",13061.31,226.12,27.54,31.81,112.31,265.8,54.58,65.55,33.25,0.22,null,18,218.21,null,"Buy","","",null,1,"Day 1"],
+["EURONEXT","","ALRIB","Riber SA","Electronic Technology","",15.72,0.33,5,"Tier 2",26.96,-2.06,20.83,13,150.32,469.57,349.14,63.91,48.18,0.82,null,0,6,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","VICR","Vicor Corporation","Electronic Technology","",324.5,10.99,5,"Tier 2",484.21,15.59,20.49,32.03,66.18,662.44,191.13,61.4,23.92,0.06,null,4,323.75,null,"Buy","","",null,1,"Day 1"],
+["BME","","PHM","Pharma Mar SA","Health Technology","",98.75,1.78,6,"Tier 1",307.19,28.27,35.99,35.7,18.26,16.86,31.14,51.94,17.58,1.16,null,7,106.12,null,"Flagged","","",null,1,"Flagged"],
+["GPW","","DVL","Develia S.A.","Finance","",10.94,5.04,6,"Tier 1",52,65.2,28.49,20.42,15.77,43.76,25.75,62.62,25.48,1.48,null,5,10.23,null,"Strong Buy","","",null,1,"Day 1"],
+["OMXSTO","","ERIC_A","Telefonaktiebolaget LM Ericsson Class A","Electronic Technology","",122.4,400.25,6,"Tier 1",1485.93,-7.45,26.71,10.9,17.47,47.29,35.1,62.33,27.88,1.15,null,4,100.5,null,"Strong Buy","","",null,1,"Day 1"],
+["OMXSTO","","HOFI","Hoist Finance AB","Commercial Services","",167.9,15.19,6,"Tier 1",23.11,6.42,18.48,18.8,17.82,82.5,48.72,56.92,24.88,0.66,null,4,190,null,"Strong Buy","","",null,1,"Day 1"],
+["LSE","","LUCE","Luceco PLC","Electronic Technology","",266,0.41,6,"Tier 1",41.61,11.92,20.33,7.48,57.21,84.72,97.04,68.45,51.62,0.09,null,3,2.7,null,"Strong Buy","","",null,1,"Day 1"],
+["OSL","","KIT","Kitron ASA","Electronic Technology","",112.7,25,6,"Tier 1",82.22,32.01,20.76,6.64,5.13,92.98,54.6,60.96,26.37,0.39,null,3,112.4,null,"Strong Buy","","",null,1,"Day 1"],
+["EURONEXT","","ASML","ASML Holding NV","Electronic Technology","",1387.6,528.97,6,"Tier 1",16.87,9.7,52.24,29.71,16.94,111.2,50.92,59.01,20.24,0.35,null,30,1499.41,null,"Strong Buy","","",null,1,"Day 1"],
+["MIL","","LUVE","LU-VE S.p.A.","Producer Manufacturing","",68.2,1.5,6,"Tier 1",33.25,7.15,15.2,6.7,71.14,118.59,71.36,72.74,67.88,0.95,null,5,70.4,null,"Strong Buy","","",null,1,"Day 1"],
+["MIL","","PRY","Prysmian S.p.A.","Producer Manufacturing","",148.65,43.25,6,"Tier 1",95.76,10.97,23.04,6.81,48.65,160.33,71.65,57.94,24.56,0.29,null,10,139.4,null,"Strong Buy","","",null,1,"Day 1"],
+["OSL","","SMOP","Smartoptics Group ASA","Electronic Technology","",62.2,6.27,6,"Tier 1",49.69,35.18,15.53,5.82,68.11,255.43,110.14,62.89,33.39,0.27,null,3,62.01,null,"Strong Buy","","",null,1,"Day 1"],
+["NASDAQ","","LRCX","Lam Research Corporation","Producer Manufacturing","",314.85,393.74,6,"Tier 1",47.6,26.53,66.76,30.94,37.32,276.29,77.03,63.82,21.95,0.12,null,26,320.62,null,"Strong Buy","","",null,1,"Day 1"],
+["NYSE","","FIX","Comfort Systems USA, Inc.","Industrial Services","",1820.04,64.07,6,"Tier 1",107.81,38.43,53.29,12.07,29.49,280.76,93.95,48.54,23.74,0.11,null,9,2096.29,null,"Flagged","","",null,1,"Flagged"],
+["NASDAQ","","STRL","Sterling Infrastructure, Inc.","Industrial Services","",849.88,26.08,6,"Tier 1",30.74,36.96,34.75,12.02,99.21,359.1,174.66,65.05,32.86,0.08,null,9,929.14,null,"Strong Buy","","",null,1,"Day 1"],
+["NASDAQ","","TER","Teradyne, Inc.","Electronic Technology","",373.25,58.43,6,"Tier 1",52.93,30.33,28.75,22.56,20.21,365.51,87.29,54.38,16.74,0.09,null,11,380.47,null,"Strong Buy","","",null,1,"Day 1"],
+["NYSE","","DOCN","DigitalOcean Holdings, Inc.","Technology Services","",161.72,16.88,6,"Tier 1",109.5,17.61,70,24.97,195.27,478.6,232.48,65.7,38.03,0.14,null,9,170.31,null,"Strong Buy","","",null,1,"Day 1"],
+["NASDAQ","","STX","Seagate Technology Holdings PLC","Electronic Technology","",908.65,203.75,6,"Tier 1",52.23,28.92,1787.97,21.6,130.86,675.5,222.25,76.89,46.35,0.14,null,17,843.59,null,"Buy","","",null,1,"Day 1"],
+["NASDAQ","","MU","Micron Technology, Inc.","Electronic Technology","",1035.73,1168.02,6,"Tier 1",409.12,85.55,39.82,41.49,157.98,978.44,250.95,80.73,39.37,0.2,null,37,759.44,null,"Buy","","",null,1,"Day 1"],
 ["","","","","","",35,0.24,4,"",1255.3,88.82,32.66,51.11,4.17,31.09,2.94,53.84,18.55,3.96,-31.1,0,null,null,"","","",null,1,""],
 ["NASDAQ","","CINF","Cincinnati Financial Corporation","Finance","",168.58,26.08,4,"Tier 3",90.78,17.87,18.73,21.33,5.04,16.96,3.22,63.7,14.46,0.01,null,4,181.5,null,"Dropped","","",null,1,"Dropped"],
-["EURONEXT","","GVR","Glenveagh Properties PLC","Consumer Durables","",2.27,1.14,4,"Tier 3",15.92,6.52,13.94,11.62,3.41,29.26,18.24,65.4,27.75,0.66,null,5,2.44,null,"Dropped","","",null,1,"Dropped"],
+["XETR","","DWS","DWS Group GmbH & Co. KGaA","Finance","",61.6,12.39,4,"Tier 3",42.84,21.42,12.42,21.37,5.3,24.85,8.83,57.66,20.33,0.85,null,4,62.81,null,"Watch","","",null,1,"Day 1"],
+["EURONEXT","","GVR","Glenveagh Properties PLC","Consumer Durables","",2.27,1.16,5,"Tier 2",15.92,6.52,13.94,11.62,4.13,24.45,17.98,62.89,26.02,1.38,null,5,2.44,null,"Buy","","",null,1,"Day 1"],
 ["SIX","","ACLN","Accelleron Industries AG","Producer Manufacturing","",81.1,7.44,4,"Tier 3",28.78,16.39,56.9,18.43,10.42,69.59,31.34,46.95,21.48,0.28,null,2,77.1,null,"Dropped","","",null,1,"Dropped"],
 ["NYSE","","RL","Ralph Lauren Corporation","Consumer Non-Durables","",389.2,23.57,5,"Tier 2",30.14,14.63,34.66,11.6,6.35,45.02,9.63,64.48,22.42,0.07,null,14,436.57,null,"Dropped","","",null,1,"Dropped"],
 ["GPW","","GPW","Gielda Papierow Wartosciowych w Warszawie S.A.","Finance","",81.45,3.41,5,"Tier 2",24.43,25.03,18.47,35.49,4.29,60.33,24.73,56.01,16.43,1.49,null,1,68.12,null,"Dropped","","",null,1,"Dropped"],
 ["OMXSTO","","INTEA_B","Intea Fastigheter AB Class B","Finance","",76.4,16.37,4,"Tier 3",95.36,31.41,12.35,87.12,6.33,14.12,12.35,58.19,11.72,0.75,null,6,87.33,null,"Dropped","","",null,1,"Dropped"],
-["VIE","","UQA","UNIQA Insurance Group AG","Finance","",16.84,5.17,4,"Tier 3",22.21,6.44,14.27,5.22,3.95,46.69,9.21,56.53,14.21,1.02,null,2,17.23,null,"Dropped","","",null,1,"Dropped"],
+["VIE","","UQA","UNIQA Insurance Group AG","Finance","",17.24,5.27,4,"Tier 3",22.21,6.44,14.27,5.22,6.42,39.26,11.8,61.22,12.45,1.35,null,2,17.32,null,"Watch","","",null,1,"Day 1"],
 ["EURONEXT","","VPK","Royal Vopak NV","Distribution Services","",46.5,5.09,5,"Tier 2",67.83,-1.27,18.99,46.5,3.33,18.68,22.37,62.97,27.28,0.96,null,3,55.74,null,"Dropped","","",null,1,"Dropped"],
 ["OSL","","SATS","SATS ASA","Consumer Services","",43.8,8.54,5,"Tier 2",44.37,8.34,36.22,8.7,4.16,25.14,8.96,56.49,14.02,0.82,null,5,47.75,null,"Dropped","","",null,1,"Dropped"],
 ["MIL","","UNI","UNIPOL ASSICURAZIONI SPA","Finance","",21.6,15.48,5,"Tier 2",37.82,4.66,15.04,10.21,5.88,27.21,5.01,48.16,17.79,0.63,null,4,23.82,null,"Dropped","","",null,1,"Dropped"],
+["OMXSTO","","INVE_A","Investor AB Class A","Finance","",374.4,1159.51,5,"Tier 2",340.75,162.91,21.23,96.34,4,32.16,13.8,55.57,15.41,0.57,null,3,396.6,null,"Buy","","",null,1,"Day 1"],
+["OMXSTO","","INDU_A","Industrivarden AB Class A","Finance","",513.5,222.59,4,"Tier 3",930.08,87.35,21.64,387.6,3.03,48.41,23.44,58.78,19.05,0.69,null,1,501.17,null,"Watch","","",null,1,"Day 1"],
+["LSE","","HLMA","Halma plc","Electronic Technology","",4714,17.68,5,"Tier 2",20.91,11.74,18.61,14.39,16.17,62.55,32.56,64.36,31.2,0.25,null,7,42.81,null,"Buy","","",null,1,"Day 1"],
+["LSE","","MSI","MS International PLC","Electronic Technology","",1590,0.27,4,"Tier 3",20.46,10.56,24.78,12.1,26.19,38.26,8.53,46.03,28.57,0.7,null,0,null,null,"Flagged","","",null,1,"Flagged"],
+["GPW","","ATR","Atrem S.A.","Industrial Services","",57.8,0.54,5,"Tier 2",108.38,67.14,57.53,11.79,7.04,81.76,-3.02,44.52,14.56,0.58,null,1,81.2,null,"Flagged","","",null,1,"Flagged"],
+["NGM","","VPAB.B","VETERANPOOLEN AB CLASS B","Commercial Services","",68.7,1.36,5,"Tier 2",29.42,16.24,80.2,8.99,17.24,65.54,27.22,73,21.2,1.22,null,0,null,null,"Buy","","",null,1,"Day 1"],
+["OMXCOP","","ALK_B","ALK-abello A/S Class B","Health Technology","",264.4,59.66,5,"Tier 2",36.57,14.94,20.91,19.51,21.17,49.97,15.66,68.94,40.69,0.16,null,6,295,null,"Buy","","",null,1,"Day 1"],
+["OSL","","VTURA","Ventura Offshore Holding Ltd.","Industrial Services","",31.7,3.38,5,"Tier 2",45.45,47.99,29.58,25.75,20.53,76.11,67.72,50.96,39.93,0.64,null,7,40.51,null,"Flagged","","",null,1,"Flagged"],
 ["EURONEXT","","SBMO","SBM Offshore NV","Industrial Services","",35.28,5.86,5,"Tier 2",501.06,18.18,22.34,15.48,14.1,85.68,43.3,48.71,15.37,0.3,null,3,42.45,null,"Dropped","","",null,1,"Dropped"],
+["BME","","ART","Arteche Lantegi Elkartea SA","Distribution Services","",39.7,2.33,5,"Tier 2",139.4,13.64,49.46,9.03,56.3,278.1,78.83,55.16,46.18,0.34,null,2,29.17,null,"Buy","","",null,1,"Day 1"],
 ["NASDAQ","","NBN","Northeast Bank","Finance","",122.52,0.98,6,"Tier 1",29.89,17.95,19,42.05,5.23,44.87,17.56,53.05,18.99,1.41,null,1,136.5,null,"Dropped","","",null,1,"Dropped"],
 ["OSL","","DOFG","DOF Group ASA","Energy Minerals","",135.2,34.48,6,"Tier 1",105.92,29.88,23.58,24.8,9.3,49.06,40.91,46.42,13.38,1.29,null,4,135.76,null,"Dropped","","",null,1,"Dropped"],
+["NGM","","PLEJD","PLEJD AB","Technology Services","",1063,12.07,5,"Tier 2",71.54,41.25,31.13,21.44,30.27,73.41,49.51,55.65,24.81,0.62,null,3,1216.67,null,"Buy","","",null,1,"Day 1"],
+["EURONEXT","","CENER","Cenergy Holdings SA","Producer Manufacturing","",27.7,5.3,6,"Tier 1",27.37,14.71,24.3,9.39,27.06,180.65,82.72,67.25,32.34,1.14,null,2,22.95,null,"Strong Buy","","",null,1,"Day 1"],
+["GPW","","KGH","KGHM Polska Miedz S.A.","Non-Energy Minerals","",352.25,69.91,6,"Tier 1",148.23,11.88,20.17,17.35,10.18,186.38,25.09,58.68,20.1,0.54,null,4,345.72,null,"Strong Buy","","",null,1,"Day 1"],
 ["GPW","","GPW:IPE","IPOPEMA Securities S.A.","Finance","",7.12,0.21,4,"Tier 3",301.14,22.46,22.61,9.46,58.22,129.68,78,73.6,29.52,0.85,18.01,0,null,null,"Dropped","","",null,1,"Dropped"],
 ["BX","","BX:PRO","Procimmo Group SA","Finance","",9.6,0.43,5,"Tier 1",120.01,50.78,51.15,68.57,14.29,92,18.52,64.29,57.85,1.8,9.9,0,null,null,"Dropped","","",null,1,"Dropped"],
 ["NYSE","","EIX","Edison International","Utilities","",71.27,27.42,5,"Tier 2",30.76,13.14,21.8,18.87,8.43,24.79,18.06,56.03,27,0.95,-19.71,5,75.12,null,"Dropped","","",null,1,"Dropped"],
@@ -477,15 +590,16 @@ const S = [
 ["NYSE","","HG","Hamilton Insurance Group, Ltd.","Finance","",30.9,3.07,4,"Tier 3",98.92,20.32,24.57,22,5.21,51.32,11.11,48.2,19.7,0.72,-8.35,3,33.86,null,"Dropped","","",null,1,"Dropped"],
 ["NYSE","","NEE","NextEra Energy, Inc.","Utilities","",94.84,197.77,5,"Tier 2",47.3,11.51,15.58,29.69,5.69,38.09,17.89,52.68,15.69,0.83,-3.96,15,99.29,null,"Dropped","","",null,1,"Dropped"],
 ["OTC","","MUEL","Mueller (PAUL) Co.","Producer Manufacturing","",454,0.59,5,"Tier 2",25.35,14.55,34.62,10.88,7.04,59.3,13.5,50.06,24.77,3.56,-21.04,null,null,null,"Dropped","","",null,1,"Dropped"],
-["NYSE","","UAN","CVR Partners, LP","Process Industries","",132.19,1.4,5,"Tier 2",61.11,19,39.61,18.89,21.26,59.5,29.9,54.35,12.43,1.1,-57.36,null,null,null,"Dropped","","",null,1,"Dropped"]
+["NYSE","","UAN","CVR Partners, LP","Process Industries","",132.19,1.4,5,"Tier 2",61.11,19,39.61,18.89,21.26,59.5,29.9,54.35,12.43,1.1,-57.36,null,null,null,"Dropped","","",null,1,"Dropped"],
+["NASDAQ","","MNST","Monster Beverage Corporation","Consumer Non-Durables","",89.31,87.35,5,"Tier 2",36.04,18.06,26.65,23.11,5.53,40.12,16.49,68.58,42.27,0.08,-1.89,15,92.47,null,"Buy","","",null,1,"Day 1"]
 ];
 
 const FL={NYSE:"🇺🇸",NASDAQ:"🇺🇸",CBOE:"🇺🇸",SIX:"🇨🇭",EURONEXT:"🇪🇺",LSE:"🇬🇧",BME:"🇪🇸",MIL:"🇮🇹",OSL:"🇳🇴",OMXCOP:"🇩🇰",NGM:"🇸🇪",OMXSTO:"🇸🇪",GPW:"🇵🇱",VIE:"🇦🇹"};
 const EN={NYSE:"NYSE",NASDAQ:"NASDAQ",CBOE:"CBOE",SIX:"SIX Swiss",EURONEXT:"Euronext",LSE:"LSE/FTSE",BME:"BME/IBEX",MIL:"Milan",OSL:"Oslo Bors",OMXCOP:"Copenhagen",NGM:"Stockholm NGM",OMXSTO:"Stockholm",GPW:"Warsaw",VIE:"Vienna"};
 const EB={NYSE:"#0a1a30",NASDAQ:"#0a1535",SIX:"#200a0a",EURONEXT:"#0a200a",LSE:"#12082a",BME:"#2a0f00",MIL:"#1a0e00",OSL:"#001a12",OMXCOP:"#130020",NGM:"#0d1600",OMXSTO:"#0d1600",GPW:"#1a1a00",VIE:"#1a0a0a"};
 const EF={NYSE:"#6eb5ff",NASDAQ:"#88aaff",SIX:"#ff8888",EURONEXT:"#88dd88",LSE:"#cc88ff",BME:"#ffaa55",MIL:"#ffcc55",OSL:"#55ffcc",OMXCOP:"#cc55ff",NGM:"#aaff55",OMXSTO:"#aaff55",GPW:"#ffff55",VIE:"#ff9988"};
-const COLS=["Exch","Country","Ticker","Company","Sector","CCY","Price","MCap B","Score","Tier","EPS%","Rev%","ROE%","Margin%","3M%","1Y%","YTD%","RSI","ADX","RelVol","%ATH","Buys","Target","Upside%","Verdict","Entry","Stop","Tgt Px","Days","Status"];
-const F={all:{tier:'',days:0},us:{tier:'',days:0},ch:{},eu:{days:0}};
+const COLS=["Exch","Ticker","Company","Sector","Price","MCap B","Score","Tier","EPS%","Rev%","ROE%","Margin%","3M%","1Y%","YTD%","RSI","ADX","RelVol","%ATH","Buys","Target","Verdict","Days"];
+const F={all:{tier:'',days:0,verdict:''},us:{tier:'',days:0,verdict:''},ch:{verdict:''},eu:{days:0,verdict:''}};
 const V={all:'table',us:'table',ch:'table',eu:'table'};
 const SRT={col:null,asc:true};
 
@@ -515,11 +629,9 @@ function mkRow(s){
   const rv=s[19];
   return[
     exchBadge(s[0]),
-    `<span style="color:var(--t3);font-size:11px">${s[1]||''}</span>`,
     `<span class="tk">${s[2]||''}</span>`,
     `<span class="co" title="${s[3]||''}">${s[3]||''}</span>`,
     `<span style="color:var(--t3);font-size:11px">${s[4]||''}</span>`,
-    `<span style="color:var(--t3);font-size:10px">${s[5]||''}</span>`,
     `<strong>${s[6]!=null?(+s[6]).toLocaleString():'—'}</strong>`,
     s[7]!=null?`${(+s[7]).toFixed(1)}B`:'—',
     `<span style="display:flex;align-items:center;gap:4px">${dots(s[8]||0)}<strong style="color:var(--cy)">${s[8]||'—'}</strong></span>`,
@@ -534,13 +646,8 @@ function mkRow(s){
     ath,
     s[21]!=null&&s[21]>0?`<span class="pos">${s[21]}</span>`:'<span class="neu">—</span>',
     s[22]!=null?`${(+s[22]).toLocaleString()}`:'<span class="neu">—</span>',
-    s[23]!=null?pct(s[23]):'<span class="neu">—</span>',
     `<span class="${verdictCls(s[24])}">${s[24]||'—'}</span>`,
-    `<span style="color:var(--cy);font-size:11px">${s[25]||'—'}</span>`,
-    `<span style="color:var(--rd);font-size:11px">${s[26]||'—'}</span>`,
-    `<span style="color:var(--gr);font-size:11px">${s[27]||'—'}</span>`,
     dayBadge(s[28]||1,s[29]),
-    `<span style="font-size:10px;color:var(--t2)">${s[29]||'—'}</span>`,
   ];
 }
 
@@ -571,8 +678,10 @@ function sortTable(tid,col){
   const pg=tid.replace('t-','');
   const data=getData(pg);
   if(SRT.col===col){SRT.asc=!SRT.asc}else{SRT.col=col;SRT.asc=true}
+  // Map display col index → data array index (after removing 7 columns)
+  const km=[0,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,24,28];
   data.sort((a,b)=>{
-    let av=a[col],bv=b[col];
+    let av=a[km[col]],bv=b[km[col]];
     if(av==null)return 1;if(bv==null)return-1;
     if(typeof av==='string'&&typeof bv==='string')
       return SRT.asc?av.localeCompare(bv):bv.localeCompare(av);
@@ -604,7 +713,8 @@ function getData(pg){
     const me=!exf||(pg==='eu'?s[1]===exf:s[0]===exf);
     const mt=!f.tier||s[9]===f.tier;
     const md=!f.days||(s[28]||0)>=f.days;
-    return ms&&me&&mt&&md;
+    const mv=!f.verdict||(s[24]||'').toLowerCase().includes(f.verdict.toLowerCase());
+    return ms&&me&&mt&&md&&mv;
   });
 }
 
@@ -629,6 +739,12 @@ function setDays(pg,days,btn){
   if(inp)inp.value='';
   if(diw)diw.classList.remove('active');
   document.querySelectorAll(`#dg-${pg} .fb`).forEach(b=>b.classList.remove('on'));
+  btn?.classList.add('on');ft(pg);
+}
+
+function setVerdict(pg,verdict,btn){
+  F[pg]=F[pg]||{};F[pg].verdict=verdict;
+  document.querySelectorAll(`#vg-${pg} .fv`).forEach(b=>b.classList.remove('on'));
   btn?.classList.add('on');ft(pg);
 }
 
