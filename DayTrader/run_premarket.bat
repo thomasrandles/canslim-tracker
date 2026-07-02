@@ -18,5 +18,12 @@ if exist "outputs\premarket_latest.json" (
 
 REM Step 3: Generate dashboard
 "C:\Python314\python.exe" generate_dashboard.py
+echo [%DATE% %TIME%] Dashboard updated >> "%LOG%"
+
+REM Step 4: Publish to GitHub Pages
+"C:\Program Files\Git\cmd\git.exe" -C C:\CANSLIM add DayTrader/DayTrader_Dashboard.html
+"C:\Program Files\Git\cmd\git.exe" -C C:\CANSLIM commit -m "DayTrader pre-market update %DATE% %TIME%"
+"C:\Program Files\Git\cmd\git.exe" -C C:\CANSLIM push
+echo [%DATE% %TIME%] GitHub push exit: %ERRORLEVEL% >> "%LOG%"
 echo [%DATE% %TIME%] === PRE-MARKET SCAN COMPLETE === >> "%LOG%"
 endlocal
