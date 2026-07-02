@@ -1,0 +1,5 @@
+outputs/
+logs/
+__pycache__/
+*.pyc
+tv_premarket_output.txt

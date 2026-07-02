@@ -1,0 +1,31 @@
+You are a day-trading assistant. Use the TradingView MCP to validate the top pre-market candidates identified by the Python scanner.
+
+Read the file C:\CANSLIM\DayTrader\outputs\premarket_latest.json to get the list of candidates. Take the top 8 stocks (highest score).
+
+For each of the top 8 candidates:
+1. Use the TradingView MCP (quote_get or chart_set_symbol + data_get_study_values) to get:
+   - Current real-time price
+   - Day change %
+   - Pre-market change % if available
+   - Volume vs average
+
+2. Note if the pre-market move is confirmed or has reversed
+
+3. Add a "tv_confirmed" boolean and "tv_note" string to each result
+
+After checking all 8, write an enriched JSON file to C:\CANSLIM\DayTrader\outputs\tv_premarket_enriched.json with the structure:
+{
+  "timestamp": "...",
+  "enriched_results": [
+    {
+      "ticker": "...",
+      "grade": "...",           (from original scan)
+      "tv_confirmed": true/false,
+      "tv_note": "Price confirmed / reversed / gap fading",
+      "tv_price": ...,
+      "tv_change_pct": ...
+    }
+  ]
+}
+
+Focus on finding the 2-3 BEST setups that are both Python-scored AND TradingView-confirmed. These are the true A+ day trades. Be concise and data-focused.
