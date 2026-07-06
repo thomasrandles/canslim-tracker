@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="120">
-<title>DayTrader Scanner — 2026-07-06 15:00</title>
+<title>DayTrader Scanner — 2026-07-06 15:35</title>
 <style>
   :root {
     --bg: #0d1117; --card: #161b22; --border: #30363d;
@@ -87,7 +87,7 @@
 
 <header>
   <h1>📈 <span>DayTrader</span> Scanner</h1>
-  <div class="time-badge">2026-07-06 15:00 local &bull; 09:00 ET</div>
+  <div class="time-badge">2026-07-06 15:35 local &bull; 09:35 ET</div>
 </header>
 
 <div class="legend">
@@ -102,7 +102,7 @@
 </div>
 
 <div class="tabs">
-  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell<br><small>9:35 AM ET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze<br><small>1:30 PM ET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum<br><small>3:00 PM ET</small></button>
+  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>10 A+</span><br><small>9:35 AM ET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze<br><small>1:30 PM ET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum<br><small>3:00 PM ET</small></button>
 </div>
 
 <div id='tab-premarket' class='tab-panel active'>
@@ -385,15 +385,275 @@
       <thead>
         <tr>
           <th>Grade</th><th>Ticker</th><th>Price</th>
-          
+          <th>Gap %</th><th>vs VWAP</th><th>RVOL</th><th>RSI</th>
           <th>Signals</th>
         </tr>
       </thead>
-      <tbody><tr><td colspan='10' class='empty'>No results yet — scanner hasn't run.</td></tr></tbody>
+      <tbody>
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SOXL' target='_blank' class='ticker-link'>SOXL</a></td>
+          <td>$200.67</td>
+          
+              <td>+8.7%</td>
+              <td>+2.37%</td>
+              <td>9.3×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+2.37%)</span><span class='tag'>RVOL 9.3x [FIRE]</span><span class='tag'>Gap held (+8.7%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CLSK' target='_blank' class='ticker-link'>CLSK</a></td>
+          <td>$13.28</td>
+          
+              <td>+3.1%</td>
+              <td>+0.78%</td>
+              <td>6.7×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.78%)</span><span class='tag'>RVOL 6.7x [FIRE]</span><span class='tag'>Gap held (+3.1%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=RIOT' target='_blank' class='ticker-link'>RIOT</a></td>
+          <td>$23.35</td>
+          
+              <td>+3.2%</td>
+              <td>+0.72%</td>
+              <td>5.7×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.72%)</span><span class='tag'>RVOL 5.7x [FIRE]</span><span class='tag'>Gap held (+3.2%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=TQQQ' target='_blank' class='ticker-link'>TQQQ</a></td>
+          <td>$75.99</td>
+          
+              <td>+3.0%</td>
+              <td>+0.42%</td>
+              <td>8.4×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.42%)</span><span class='tag'>RVOL 8.4x [FIRE]</span><span class='tag'>Gap held (+3.0%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=AVGO' target='_blank' class='ticker-link'>AVGO</a></td>
+          <td>$382.33</td>
+          
+              <td>+3.8%</td>
+              <td>+2.07%</td>
+              <td>5.9×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+2.07%)</span><span class='tag'>RVOL 5.9x [FIRE]</span><span class='tag'>Gap held (+3.8%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=DDOG' target='_blank' class='ticker-link'>DDOG</a></td>
+          <td>$258.49</td>
+          
+              <td>-4.1%</td>
+              <td>+2.59%</td>
+              <td>6.5×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+2.59%)</span><span class='tag'>RVOL 6.5x [FIRE]</span><span class='tag'>Gap held (-4.1%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PANW' target='_blank' class='ticker-link'>PANW</a></td>
+          <td>$354.64</td>
+          
+              <td>-3.0%</td>
+              <td>+2.79%</td>
+              <td>5.4×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+2.79%)</span><span class='tag'>RVOL 5.4x [FIRE]</span><span class='tag'>Gap held (-3.0%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=TECL' target='_blank' class='ticker-link'>TECL</a></td>
+          <td>$205.43</td>
+          
+              <td>+2.6%</td>
+              <td>+1.05%</td>
+              <td>6.3×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+1.05%)</span><span class='tag'>RVOL 6.3x [FIRE]</span><span class='tag'>Gap held (+2.6%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=UVXY' target='_blank' class='ticker-link'>UVXY</a></td>
+          <td>$24.07</td>
+          
+              <td>-2.6%</td>
+              <td>+0.03%</td>
+              <td>7.1×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.03%)</span><span class='tag'>RVOL 7.1x [FIRE]</span><span class='tag'>Gap held (-2.6%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=NIO' target='_blank' class='ticker-link'>NIO</a></td>
+          <td>$4.99</td>
+          
+              <td>+2.1%</td>
+              <td>+0.83%</td>
+              <td>9.6×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.83%)</span><span class='tag'>RVOL 9.6x [FIRE]</span><span class='tag'>Gap held (+2.1%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CRWD' target='_blank' class='ticker-link'>CRWD</a></td>
+          <td>$199.35</td>
+          
+              <td>-2.3%</td>
+              <td>+2.37%</td>
+              <td>4.1×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+2.37%)</span><span class='tag'>RVOL 4.1x</span><span class='tag'>Gap held (-2.3%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=KLAC' target='_blank' class='ticker-link'>KLAC</a></td>
+          <td>$244.25</td>
+          
+              <td>+4.6%</td>
+              <td>+0.23%</td>
+              <td>3.1×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.23%)</span><span class='tag'>RVOL 3.1x</span><span class='tag'>Gap held (+4.6%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=AMD' target='_blank' class='ticker-link'>AMD</a></td>
+          <td>$544.13</td>
+          
+              <td>+3.4%</td>
+              <td>+1.88%</td>
+              <td>4.7×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+1.88%)</span><span class='tag'>RVOL 4.7x</span><span class='tag'>Gap held (+3.4%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=MU' target='_blank' class='ticker-link'>MU</a></td>
+          <td>$1003.30</td>
+          
+              <td>+3.2%</td>
+              <td>+0.08%</td>
+              <td>4.6×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.08%)</span><span class='tag'>RVOL 4.6x</span><span class='tag'>Gap held (+3.2%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=OKTA' target='_blank' class='ticker-link'>OKTA</a></td>
+          <td>$145.64</td>
+          
+              <td>+2.0%</td>
+              <td>+0.88%</td>
+              <td>3.4×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.88%)</span><span class='tag'>RVOL 3.4x</span><span class='tag'>Gap held (+2.0%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SOXS' target='_blank' class='ticker-link'>SOXS</a></td>
+          <td>$4.01</td>
+          
+              <td>-8.9%</td>
+              <td>-2.99%</td>
+              <td>7.8×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Below VWAP (-2.99%)</span><span class='tag'>RVOL 7.8x [FIRE]</span><span class='tag'>Gap held (-8.9%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=MSTR' target='_blank' class='ticker-link'>MSTR</a></td>
+          <td>$95.79</td>
+          
+              <td>-5.6%</td>
+              <td>-0.42%</td>
+              <td>9.8×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Below VWAP (-0.42%)</span><span class='tag'>RVOL 9.8x [FIRE]</span><span class='tag'>Gap held (-5.6%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SQQQ' target='_blank' class='ticker-link'>SQQQ</a></td>
+          <td>$38.51</td>
+          
+              <td>-3.0%</td>
+              <td>-0.46%</td>
+              <td>6.4×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Below VWAP (-0.46%)</span><span class='tag'>RVOL 6.4x [FIRE]</span><span class='tag'>Gap held (-3.0%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ARM' target='_blank' class='ticker-link'>ARM</a></td>
+          <td>$333.98</td>
+          
+              <td>+2.9%</td>
+              <td>+1.86%</td>
+              <td>2.8×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+1.86%)</span><span class='tag'>RVOL 2.8x</span><span class='tag'>Gap held (+2.8%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=LI' target='_blank' class='ticker-link'>LI</a></td>
+          <td>$11.82</td>
+          
+              <td>-2.1%</td>
+              <td>-0.26%</td>
+              <td>11.4×</td>
+              <td><span class='na'>—</span></td>
+            
+          <td><div class='tags'><span class='tag'>Below VWAP (-0.26%)</span><span class='tag'>RVOL 11.4x [FIRE]</span><span class='tag'>Gap held (-2.1%)</span></div></td>
+        </tr>
+        </tbody>
     </table>
     <div class='scan-meta'>
-      Updated: 2026-07-03 09:35:18 ET &bull; 0 stocks scanned &bull;
-      <span class='aplus-count'>0 A+ setups</span>
+      Updated: 2026-07-06 09:35:19 ET &bull; 109 stocks scanned &bull;
+      <span class='aplus-count'>10 A+ setups</span>
     </div>
     </div><div id='tab-midday' class='tab-panel '>
     <table>
