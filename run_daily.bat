@@ -42,12 +42,12 @@ REM ============================================================
 "C:\Python314\python.exe" notion_writer.py >> "%LOG%" 2>&1
 set "NWRC=%ERRORLEVEL%"
 echo [%DATE% %TIME%] Notion writer done - exit code: %NWRC% >> "%LOG%"
-del "%SCREEN%" >> "%LOG%" 2>&1
 if not "%NWRC%"=="0" (
-    echo [%DATE% %TIME%] ERROR: notion_writer.py failed ^(exit %NWRC%^) - aborting. >> "%LOG%"
+    echo [%DATE% %TIME%] ERROR: notion_writer.py failed ^(exit %NWRC%^) - screen_output.json kept for retry. >> "%LOG%"
     echo [%DATE% %TIME%] CANSLIM run FAILED >> "%LOG%"
     exit /b 1
 )
+del "%SCREEN%" >> "%LOG%" 2>&1
 
 REM ============================================================
 REM  Step 3: regenerate dashboard
