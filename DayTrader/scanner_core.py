@@ -83,8 +83,11 @@ def _tv_gap_scan(min_gap_pct: float = 3.0, max_results: int = 60) -> list:
     return sorted(tickers)
 
 
+_US_EXCHANGES = {"NYSE", "NASDAQ", "CBOE", "AMEX"}
+
 def _canslim_tickers() -> list:
-    """Extract tickers from the last CANSLIM nightly screen."""
+    """Extract US-listed tickers from the last CANSLIM nightly screen.
+    Filters to NYSE/NASDAQ/CBOE only — yfinance doesn't handle EU exchange codes."""
     try:
         if not os.path.exists(CANSLIM_SCREEN_FILE):
             log("CANSLIM screen_last.json not found — skipping")
@@ -93,10 +96,13 @@ def _canslim_tickers() -> list:
             stocks = json.load(f)
         tickers = []
         for s in stocks:
+            exch = str(s.get("exchange", "")).strip().upper()
+            if exch not in _US_EXCHANGES:
+                continue
             tk = str(s.get("ticker", "")).split(":")[-1].strip().upper()
-            if tk and not tk.startswith("0") and ":" not in tk:
+            if tk and not tk.startswith("0") and "." not in tk and "_" not in tk:
                 tickers.append(tk)
-        log(f"CANSLIM feed: {len(tickers)} tickers from last nightly screen")
+        log(f"CANSLIM feed: {len(tickers)} US tickers from last nightly screen")
         return tickers
     except Exception as e:
         log(f"CANSLIM feed error: {e}")
