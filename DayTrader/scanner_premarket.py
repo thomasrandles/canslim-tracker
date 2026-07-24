@@ -16,9 +16,10 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from scanner_core import (
-    UNIVERSE, ET_TZ, OUTPUTS_DIR, save_output, log,
+    ET_TZ, OUTPUTS_DIR, save_output, log,
     fetch_daily_bulk, fetch_intraday_bulk,
-    score_premarket, now_et
+    score_premarket, now_et,
+    build_daily_universe,
 )
 
 SCAN_NAME = "premarket"
@@ -26,6 +27,11 @@ SCAN_NAME = "premarket"
 def run():
     n_et = now_et()
     log(f"Pre-market scan starting — {n_et.strftime('%H:%M ET')}", SCAN_NAME)
+
+    # ── 0. Build today's dynamic universe ────────────────────────────────────
+    log("Building daily universe (base + CANSLIM + TV gap scan)...", SCAN_NAME)
+    UNIVERSE = build_daily_universe()
+    log(f"Universe ready: {len(UNIVERSE)} tickers", SCAN_NAME)
 
     is_premarket_session = n_et.hour < 9 or (n_et.hour == 9 and n_et.minute < 30)
 

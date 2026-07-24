@@ -16,7 +16,7 @@ import os
 ET_TZ = pytz.timezone("US/Eastern")
 
 # ─── Stock universe ─────────────────────────────────────────────────────────
-UNIVERSE = [
+BASE_UNIVERSE = sorted(set([
     "AAPL","MSFT","NVDA","TSLA","AMZN","META","GOOGL","AMD",
     "INTC","QCOM","AVGO","MU","NFLX","CRM","ORCL","ADBE","ARM","SMCI",
     "KLAC","LRCX","AMAT","MRVL","ON","TXN",
@@ -36,8 +36,120 @@ UNIVERSE = [
     "SOXL","SOXS","TQQQ","SQQQ","UVXY",
     "LABU","LABD","SPXL","SPXS","TECL","TECS",
     "GDX","GDXJ","GLD","SLV","TLT","HYG","USO","XLE","XLF","KRE",
-]
-UNIVERSE = sorted(set(UNIVERSE))
+]))
+
+# Backward-compat alias — scanners that haven't been updated yet still work
+UNIVERSE = BASE_UNIVERSE
+
+DAILY_UNIVERSE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "outputs", "daily_universe.json")
+
+CANSLIM_SCREEN_FILE = r"C:\CANSLIM\archive\screen_last.json"
+
+
+def _tv_gap_scan(min_gap_pct: float = 3.0, max_results: int = 60) -> list:
+    """Query TradingView for pre-market gap movers across the full US market."""
+    try:
+        from tradingview_screener import Query, col
+    except ImportError:
+        log("tradingview_screener not installed — skipping TV gap scan")
+        return []
+
+    tickers = set()
+    filters_common = [
+        col("average_volume_10d_calc") > 200_000,
+        col("market_cap_basic") > 50_000_000,
+    ]
+
+    for direction, gap_col_filter in [
+        ("up",   col("premarket_change") > min_gap_pct),
+        ("down", col("premarket_change") < -min_gap_pct),
+    ]:
+        try:
+            _, df = (
+                Query()
+                .select("name", "premarket_change", "premarket_volume",
+                        "average_volume_10d_calc", "market_cap_basic")
+                .where(gap_col_filter, *filters_common)
+                .set_markets("america")
+                .limit(max_results)
+                .get_scanner_data()
+            )
+            found = [t for t in df["name"].tolist() if t and ":" not in t]
+            tickers.update(found)
+            log(f"TV gap scan ({direction}): {len(found)} stocks >{min_gap_pct}% pre-market move")
+        except Exception as e:
+            log(f"TV gap scan ({direction}) error: {e}")
+
+    return sorted(tickers)
+
+
+def _canslim_tickers() -> list:
+    """Extract tickers from the last CANSLIM nightly screen."""
+    try:
+        if not os.path.exists(CANSLIM_SCREEN_FILE):
+            log("CANSLIM screen_last.json not found — skipping")
+            return []
+        with open(CANSLIM_SCREEN_FILE, encoding="utf-8") as f:
+            stocks = json.load(f)
+        tickers = []
+        for s in stocks:
+            tk = str(s.get("ticker", "")).split(":")[-1].strip().upper()
+            if tk and not tk.startswith("0") and ":" not in tk:
+                tickers.append(tk)
+        log(f"CANSLIM feed: {len(tickers)} tickers from last nightly screen")
+        return tickers
+    except Exception as e:
+        log(f"CANSLIM feed error: {e}")
+        return []
+
+
+def build_daily_universe() -> list:
+    """Build today's watchlist = base universe + CANSLIM results + TV gap movers.
+    Saves to daily_universe.json and returns the sorted ticker list."""
+    combined = set(BASE_UNIVERSE)
+
+    canslim   = _canslim_tickers()
+    combined.update(canslim)
+
+    gap_movers = _tv_gap_scan()
+    combined.update(gap_movers)
+
+    universe = sorted(combined)
+
+    payload = {
+        "date":       datetime.now().strftime("%Y-%m-%d"),
+        "built_at":   now_et().strftime("%Y-%m-%d %H:%M ET"),
+        "count":      len(universe),
+        "base_count": len(BASE_UNIVERSE),
+        "canslim_added": len([t for t in canslim  if t not in BASE_UNIVERSE]),
+        "gap_added":     len([t for t in gap_movers if t not in BASE_UNIVERSE]),
+        "tickers":    universe,
+    }
+    os.makedirs(OUTPUTS_DIR, exist_ok=True)
+    with open(DAILY_UNIVERSE_FILE, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+
+    log(f"Daily universe: {len(universe)} tickers "
+        f"(base={len(BASE_UNIVERSE)} + canslim={payload['canslim_added']} "
+        f"+ gap={payload['gap_added']})")
+    return universe
+
+
+def load_daily_universe() -> list:
+    """Load today's universe from daily_universe.json; fall back to BASE_UNIVERSE."""
+    try:
+        if os.path.exists(DAILY_UNIVERSE_FILE):
+            with open(DAILY_UNIVERSE_FILE, encoding="utf-8") as f:
+                payload = json.load(f)
+            if payload.get("date") == datetime.now().strftime("%Y-%m-%d"):
+                tickers = payload["tickers"]
+                log(f"Daily universe loaded: {len(tickers)} tickers "
+                    f"(built {payload.get('built_at', '?')})")
+                return tickers
+    except Exception as e:
+        log(f"Could not load daily_universe.json: {e}")
+    log("Falling back to BASE_UNIVERSE")
+    return list(BASE_UNIVERSE)
 
 BASE        = os.path.dirname(os.path.abspath(__file__))
 OUTPUTS_DIR = os.path.join(BASE, "outputs")

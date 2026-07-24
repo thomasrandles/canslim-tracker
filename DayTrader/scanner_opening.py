@@ -12,10 +12,11 @@ import pandas as pd
 import json
 from datetime import datetime
 from scanner_core import (
-    UNIVERSE, ET_TZ, OUTPUTS_DIR, save_output, log,
+    ET_TZ, OUTPUTS_DIR, save_output, log,
     fetch_daily_bulk, fetch_intraday_bulk,
     calc_vwap, calc_rvol, calc_rsi,
-    score_opening, now_et, minutes_since_open
+    score_opening, now_et, minutes_since_open,
+    load_daily_universe,
 )
 
 SCAN_NAME = "opening"
@@ -25,7 +26,9 @@ def run():
     mins_open = minutes_since_open()
     log(f"Minutes since open: {mins_open:.0f}", SCAN_NAME)
 
-    # Seed from pre-market output if available
+    base_universe = load_daily_universe()
+
+    # Seed from pre-market output if available (prioritise top movers at top of list)
     seed_tickers = []
     try:
         with open(os.path.join(OUTPUTS_DIR, "premarket_latest.json")) as f:
@@ -35,7 +38,7 @@ def run():
     except Exception:
         log("No pre-market file — scanning full universe", SCAN_NAME)
 
-    combined = seed_tickers + [t for t in UNIVERSE if t not in seed_tickers]
+    combined = seed_tickers + [t for t in base_universe if t not in seed_tickers]
 
     # ── Bulk downloads ──────────────────────────────────────────────────────────
     log(f"Fetching daily + intraday data for {len(combined)} tickers...", SCAN_NAME)
