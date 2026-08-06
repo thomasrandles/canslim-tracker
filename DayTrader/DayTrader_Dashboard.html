@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="120">
-<title>DayTrader Scanner — 2026-08-06 15:35</title>
+<title>DayTrader Scanner — 2026-08-06 19:30</title>
 <style>
   :root {
     --bg: #0d1117; --card: #161b22; --border: #30363d;
@@ -87,7 +87,7 @@
 
 <header>
   <h1>📈 <span>DayTrader</span> Scanner</h1>
-  <div class="time-badge">2026-08-06 15:35 local &bull; 09:35 ET</div>
+  <div class="time-badge">2026-08-06 19:30 local &bull; 13:30 ET</div>
 </header>
 
 <div class="legend">
@@ -102,7 +102,7 @@
 </div>
 
 <div class="tabs">
-  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell<br><small>9:35 AM ET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>10 A+</span><br><small>1:30 PM ET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>10 A+</span><br><small>3:00 PM ET</small></button>
+  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>18 A+</span><br><small>9:35 AM ET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>5 A+</span><br><small>1:30 PM ET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>10 A+</span><br><small>3:00 PM ET</small></button>
 </div>
 
 <div id='tab-premarket' class='tab-panel active'>
@@ -125,15 +125,275 @@
       <thead>
         <tr>
           <th>Grade</th><th>Ticker</th><th>Price</th>
-          
+          <th>Gap %</th><th>vs VWAP</th><th>RVOL</th><th>RSI</th>
           <th>Signals</th>
         </tr>
       </thead>
-      <tbody><tr><td colspan='10' class='empty'>No results yet — scanner hasn't run.</td></tr></tbody>
+      <tbody>
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CHYM' target='_blank' class='ticker-link'>CHYM</a></td>
+          <td>$33.11</td>
+          
+              <td>+9.2%</td>
+              <td>+5.89%</td>
+              <td>6.1×</td>
+              <td>66</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+5.89%)</span><span class='tag'>RVOL 6.1x [FIRE]</span><span class='tag'>RSI 66 (momentum)</span><span class='tag'>Gap held (+9.2%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=HONA' target='_blank' class='ticker-link'>HONA</a></td>
+          <td>$163.60</td>
+          
+              <td>-23.9%</td>
+              <td>+1.62%</td>
+              <td>7.2×</td>
+              <td>55</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+1.62%)</span><span class='tag'>RVOL 7.2x [FIRE]</span><span class='tag'>RSI 55 (momentum)</span><span class='tag'>Gap held (-23.9%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PAYS' target='_blank' class='ticker-link'>PAYS</a></td>
+          <td>$12.64</td>
+          
+              <td>+8.0%</td>
+              <td>+3.91%</td>
+              <td>7.4×</td>
+              <td>57</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+3.91%)</span><span class='tag'>RVOL 7.4x [FIRE]</span><span class='tag'>RSI 57 (momentum)</span><span class='tag'>Gap held (+8.0%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CAI' target='_blank' class='ticker-link'>CAI</a></td>
+          <td>$19.26</td>
+          
+              <td>+15.5%</td>
+              <td>+0.28%</td>
+              <td>3.1×</td>
+              <td>58</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.28%)</span><span class='tag'>RVOL 3.1x</span><span class='tag'>RSI 59 (momentum)</span><span class='tag'>Gap held (+15.5%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CLS' target='_blank' class='ticker-link'>CLS</a></td>
+          <td>$317.06</td>
+          
+              <td>-14.3%</td>
+              <td>+0.36%</td>
+              <td>4.1×</td>
+              <td>61</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.36%)</span><span class='tag'>RVOL 4.1x</span><span class='tag'>RSI 61 (momentum)</span><span class='tag'>Gap held (-14.3%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PRAX' target='_blank' class='ticker-link'>PRAX</a></td>
+          <td>$369.89</td>
+          
+              <td>+9.8%</td>
+              <td>+0.27%</td>
+              <td>4.5×</td>
+              <td>55</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.27%)</span><span class='tag'>RVOL 4.5x</span><span class='tag'>RSI 55 (momentum)</span><span class='tag'>Gap held (+9.8%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=VAC' target='_blank' class='ticker-link'>VAC</a></td>
+          <td>$119.17</td>
+          
+              <td>+8.9%</td>
+              <td>+0.94%</td>
+              <td>3.4×</td>
+              <td>64</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.94%)</span><span class='tag'>RVOL 3.4x</span><span class='tag'>RSI 64 (momentum)</span><span class='tag'>Gap held (+8.9%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=APP' target='_blank' class='ticker-link'>APP</a></td>
+          <td>$340.36</td>
+          
+              <td>-19.0%</td>
+              <td>+0.46%</td>
+              <td>2.8×</td>
+              <td>61</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.46%)</span><span class='tag'>RVOL 2.8x</span><span class='tag'>RSI 61 (momentum)</span><span class='tag'>Gap held (-19.0%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=BLLN' target='_blank' class='ticker-link'>BLLN</a></td>
+          <td>$92.36</td>
+          
+              <td>-30.0%</td>
+              <td>-3.75%</td>
+              <td>6.2×</td>
+              <td>65</td>
+            
+          <td><div class='tags'><span class='tag'>Below VWAP (-3.75%)</span><span class='tag'>RVOL 6.2x [FIRE]</span><span class='tag'>RSI 65 (momentum)</span><span class='tag'>Gap held (-30.0%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ECO' target='_blank' class='ticker-link'>ECO</a></td>
+          <td>$64.12</td>
+          
+              <td>+3.0%</td>
+              <td>+0.92%</td>
+              <td>2.1×</td>
+              <td>56</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.92%)</span><span class='tag'>RVOL 2.1x</span><span class='tag'>RSI 56 (momentum)</span><span class='tag'>Gap held (+3.1%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=INSM' target='_blank' class='ticker-link'>INSM</a></td>
+          <td>$129.73</td>
+          
+              <td>+29.5%</td>
+              <td>-1.50%</td>
+              <td>5.2×</td>
+              <td>54</td>
+            
+          <td><div class='tags'><span class='tag'>Below VWAP (-1.50%)</span><span class='tag'>RVOL 5.2x [FIRE]</span><span class='tag'>RSI 54 (momentum)</span><span class='tag'>Gap held (+29.5%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=MIRM' target='_blank' class='ticker-link'>MIRM</a></td>
+          <td>$94.94</td>
+          
+              <td>-14.7%</td>
+              <td>+1.32%</td>
+              <td>5.4×</td>
+              <td>45</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+1.32%)</span><span class='tag'>RVOL 5.4x [FIRE]</span><span class='tag'>Gap held (-14.7%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PAYC' target='_blank' class='ticker-link'>PAYC</a></td>
+          <td>$217.67</td>
+          
+              <td>+21.8%</td>
+              <td>+0.99%</td>
+              <td>5.3×</td>
+              <td>32</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.99%)</span><span class='tag'>RVOL 5.3x [FIRE]</span><span class='tag'>Gap held (+21.8%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PRMB' target='_blank' class='ticker-link'>PRMB</a></td>
+          <td>$24.10</td>
+          
+              <td>-5.1%</td>
+              <td>+0.05%</td>
+              <td>5.2×</td>
+              <td>45</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.05%)</span><span class='tag'>RVOL 5.2x [FIRE]</span><span class='tag'>Gap held (-5.1%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=TIGO' target='_blank' class='ticker-link'>TIGO</a></td>
+          <td>$106.44</td>
+          
+              <td>+8.4%</td>
+              <td>+1.34%</td>
+              <td>2.6×</td>
+              <td>53</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+1.34%)</span><span class='tag'>RVOL 2.6x</span><span class='tag'>RSI 53 (momentum)</span><span class='tag'>Gap held (+8.4%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=VNT' target='_blank' class='ticker-link'>VNT</a></td>
+          <td>$35.10</td>
+          
+              <td>+7.8%</td>
+              <td>+1.93%</td>
+              <td>2.6×</td>
+              <td>59</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+1.93%)</span><span class='tag'>RVOL 2.6x</span><span class='tag'>RSI 59 (momentum)</span><span class='tag'>Gap held (+7.9%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=WDC' target='_blank' class='ticker-link'>WDC</a></td>
+          <td>$462.67</td>
+          
+              <td>-17.4%</td>
+              <td>+3.17%</td>
+              <td>2.9×</td>
+              <td>54</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+3.17%)</span><span class='tag'>RVOL 2.9x</span><span class='tag'>RSI 54 (momentum)</span><span class='tag'>Gap held (-17.4%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=WPP' target='_blank' class='ticker-link'>WPP</a></td>
+          <td>$26.21</td>
+          
+              <td>+25.9%</td>
+              <td>+0.03%</td>
+              <td>8.7×</td>
+              <td>49</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.03%)</span><span class='tag'>RVOL 8.7x [FIRE]</span><span class='tag'>Gap held (+25.9%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ALB' target='_blank' class='ticker-link'>ALB</a></td>
+          <td>$128.96</td>
+          
+              <td>+7.5%</td>
+              <td>+0.91%</td>
+              <td>1.8×</td>
+              <td>53</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+0.91%)</span><span class='tag'>RVOL 1.8x</span><span class='tag'>RSI 53 (momentum)</span><span class='tag'>Gap held (+7.5%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CNR' target='_blank' class='ticker-link'>CNR</a></td>
+          <td>$90.99</td>
+          
+              <td>+5.7%</td>
+              <td>+1.17%</td>
+              <td>1.8×</td>
+              <td>55</td>
+            
+          <td><div class='tags'><span class='tag'>Above VWAP (+1.17%)</span><span class='tag'>RVOL 1.8x</span><span class='tag'>RSI 55 (momentum)</span><span class='tag'>Gap held (+5.7%)</span></div></td>
+        </tr>
+        </tbody>
     </table>
     <div class='scan-meta'>
-      Updated: 2026-08-06 09:35:43 ET &bull; 0 stocks scanned &bull;
-      <span class='aplus-count'>0 A+ setups</span>
+      Updated: 2026-08-06 12:52:44 ET &bull; 162 stocks scanned &bull;
+      <span class='aplus-count'>18 A+ setups</span>
     </div>
     </div><div id='tab-midday' class='tab-panel '>
     <table>
@@ -147,268 +407,268 @@
       <tbody>
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=GFI' target='_blank' class='ticker-link'>GFI</a></td>
-          <td>$37.48</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=NTDOY' target='_blank' class='ticker-link'>NTDOY</a></td>
+          <td>$12.83</td>
           
-              <td>+10.4%</td>
-              <td>1.6%</td>
-              <td>-0.5%</td>
-              <td>+0.48%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (2.5%)</span><span class='tag'>Near high (-0.5%)</span><span class='tag'>RVOL 1.8x</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 59</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=MCD' target='_blank' class='ticker-link'>MCD</a></td>
-          <td>$273.84</td>
-          
-              <td>+2.6%</td>
-              <td>0.7%</td>
-              <td>-0.5%</td>
-              <td>+0.31%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (2.3%)</span><span class='tag'>Near high (-0.5%)</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 64</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=COMP' target='_blank' class='ticker-link'>COMP</a></td>
-          <td>$13.15</td>
-          
-              <td>+9.7%</td>
-              <td>2.4%</td>
-              <td>-0.1%</td>
-              <td>+1.62%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (-0.1%)</span><span class='tag'>RVOL 2.7x</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 60</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=AEM' target='_blank' class='ticker-link'>AEM</a></td>
-          <td>$163.64</td>
-          
-              <td>+9.5%</td>
-              <td>1.7%</td>
-              <td>-0.8%</td>
-              <td>+0.45%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.9%)</span><span class='tag'>Near high (-0.8%)</span><span class='tag'>RVOL 1.7x</span><span class='tag'>RSI 61</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=GLD' target='_blank' class='ticker-link'>GLD</a></td>
-          <td>$389.18</td>
-          
-              <td>+4.1%</td>
-              <td>0.9%</td>
-              <td>-0.1%</td>
-              <td>+0.29%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (1.4%)</span><span class='tag'>Near high (-0.1%)</span><span class='tag'>RVOL 2.7x</span><span class='tag'>RSI 54</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=HSBC' target='_blank' class='ticker-link'>HSBC</a></td>
-          <td>$102.47</td>
-          
-              <td>-2.9%</td>
-              <td>1.0%</td>
-              <td>-0.5%</td>
-              <td>+0.24%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (1.2%)</span><span class='tag'>Near high (-0.5%)</span><span class='tag'>RVOL 2.4x</span><span class='tag'>RSI 57</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=AROC' target='_blank' class='ticker-link'>AROC</a></td>
-          <td>$34.81</td>
-          
-              <td>-2.4%</td>
-              <td>4.1%</td>
-              <td>-0.2%</td>
-              <td>+2.25%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (-0.2%)</span><span class='tag'>RVOL 2.4x</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 59</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=B' target='_blank' class='ticker-link'>B</a></td>
-          <td>$40.69</td>
-          
-              <td>+7.5%</td>
-              <td>1.6%</td>
-              <td>-1.0%</td>
-              <td>+0.01%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.0%)</span><span class='tag'>Near high (-1.0%)</span><span class='tag'>RVOL 1.6x</span><span class='tag'>RSI 50</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=PUK' target='_blank' class='ticker-link'>PUK</a></td>
-          <td>$27.94</td>
-          
-              <td>-4.5%</td>
+              <td>+9.9%</td>
               <td>1.3%</td>
               <td>-0.8%</td>
-              <td>+0.01%</td>
+              <td>+0.47%</td>
             
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (1.6%)</span><span class='tag'>Near high (-0.9%)</span><span class='tag'>RVOL 3.1x</span><span class='tag'>RSI 60</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.4%)</span><span class='tag'>Near high (-0.8%)</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 52</span></div></td>
         </tr>
         
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SLV' target='_blank' class='ticker-link'>SLV</a></td>
-          <td>$56.10</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=UBER' target='_blank' class='ticker-link'>UBER</a></td>
+          <td>$70.06</td>
           
-              <td>+5.4%</td>
-              <td>1.4%</td>
-              <td>-1.1%</td>
-              <td>-0.21%</td>
+              <td>+2.4%</td>
+              <td>2.4%</td>
+              <td>+0.3%</td>
+              <td>+0.93%</td>
             
-          <td><div class='tags'><span class='tag'>Below VWAP</span><span class='tag'>Tight consol (1.5%)</span><span class='tag'>Near high (-1.1%)</span><span class='tag'>RVOL 1.8x</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 53</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (2.4%)</span><span class='tag'>Near high (+0.3%)</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 49</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=WPP' target='_blank' class='ticker-link'>WPP</a></td>
+          <td>$26.27</td>
+          
+              <td>+27.6%</td>
+              <td>1.9%</td>
+              <td>-0.1%</td>
+              <td>+0.25%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.4%)</span><span class='tag'>Near high (-0.1%)</span><span class='tag'>RVOL 7.4x</span><span class='tag'>RSI 53</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=DEO' target='_blank' class='ticker-link'>DEO</a></td>
+          <td>$92.89</td>
+          
+              <td>+6.5%</td>
+              <td>1.7%</td>
+              <td>-1.4%</td>
+              <td>+0.12%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.2%)</span><span class='tag'>Near high (-1.4%)</span><span class='tag'>RVOL 3.9x</span><span class='tag'>RSI 60</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SGI' target='_blank' class='ticker-link'>SGI</a></td>
+          <td>$66.31</td>
+          
+              <td>-4.4%</td>
+              <td>2.1%</td>
+              <td>-0.3%</td>
+              <td>+1.25%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (-0.3%)</span><span class='tag'>RVOL 1.9x</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 51</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=AMC' target='_blank' class='ticker-link'>AMC</a></td>
-          <td>$2.71</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ECO' target='_blank' class='ticker-link'>ECO</a></td>
+          <td>$63.68</td>
+          
+              <td>+5.9%</td>
+              <td>2.0%</td>
+              <td>-0.8%</td>
+              <td>+0.18%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.1%)</span><span class='tag'>Near high (-0.8%)</span><span class='tag'>RVOL 1.9x</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ALB' target='_blank' class='ticker-link'>ALB</a></td>
+          <td>$128.77</td>
+          
+              <td>+9.3%</td>
+              <td>1.8%</td>
+              <td>-0.9%</td>
+              <td>+0.68%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (-0.9%)</span><span class='tag'>RVOL 1.6x</span><span class='tag'>Vol picking up (squeeze)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=AVGO' target='_blank' class='ticker-link'>AVGO</a></td>
+          <td>$424.23</td>
           
               <td>+2.2%</td>
-              <td>3.4%</td>
-              <td>-1.0%</td>
-              <td>+1.64%</td>
+              <td>1.1%</td>
+              <td>-0.8%</td>
+              <td>+0.56%</td>
             
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (-1.0%)</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 64</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.9%)</span><span class='tag'>Near high (-0.8%)</span><span class='tag'>RSI 48</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ENVA' target='_blank' class='ticker-link'>ENVA</a></td>
-          <td>$264.29</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CACI' target='_blank' class='ticker-link'>CACI</a></td>
+          <td>$634.27</td>
           
-              <td>+2.6%</td>
+              <td>+19.8%</td>
+              <td>3.2%</td>
+              <td>+2.2%</td>
+              <td>+3.62%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (+2.2%)</span><span class='tag'>RVOL 2.6x</span><span class='tag'>Vol picking up (squeeze)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=GNW' target='_blank' class='ticker-link'>GNW</a></td>
+          <td>$9.78</td>
+          
+              <td>+2.2%</td>
               <td>1.0%</td>
-              <td>-0.1%</td>
-              <td>+0.41%</td>
+              <td>-1.3%</td>
+              <td>+0.06%</td>
             
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (2.3%)</span><span class='tag'>Near high (-0.1%)</span><span class='tag'>RSI 57</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.7%)</span><span class='tag'>Near high (-1.3%)</span><span class='tag'>RSI 50</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=GLNCY' target='_blank' class='ticker-link'>GLNCY</a></td>
-          <td>$15.43</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=HAL' target='_blank' class='ticker-link'>HAL</a></td>
+          <td>$32.50</td>
           
-              <td>+3.8%</td>
-              <td>0.9%</td>
-              <td>+0.0%</td>
-              <td>+0.64%</td>
+              <td>+2.4%</td>
+              <td>1.2%</td>
+              <td>-0.2%</td>
+              <td>+0.22%</td>
             
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (1.6%)</span><span class='tag'>Near high (+0.0%)</span><span class='tag'>RSI 55</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (1.9%)</span><span class='tag'>Near high (-0.2%)</span><span class='tag'>RSI 48</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=OGC' target='_blank' class='ticker-link'>OGC</a></td>
-          <td>$27.08</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=KXIAY' target='_blank' class='ticker-link'>KXIAY</a></td>
+          <td>$31.40</td>
           
-              <td>+8.4%</td>
+              <td>-4.6%</td>
+              <td>2.6%</td>
+              <td>-1.3%</td>
+              <td>+0.14%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (-1.3%)</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 46</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=LNG' target='_blank' class='ticker-link'>LNG</a></td>
+          <td>$264.54</td>
+          
+              <td>+5.3%</td>
               <td>1.5%</td>
-              <td>+0.0%</td>
-              <td>+0.76%</td>
+              <td>-1.4%</td>
+              <td>+0.05%</td>
             
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (3.5%)</span><span class='tag'>Near high (+0.0%)</span><span class='tag'>RSI 63</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (2.6%)</span><span class='tag'>Near high (-1.4%)</span><span class='tag'>RSI 63</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SKWD' target='_blank' class='ticker-link'>SKWD</a></td>
-          <td>$62.80</td>
-          
-              <td>+3.3%</td>
-              <td>2.2%</td>
-              <td>-1.2%</td>
-              <td>+0.35%</td>
-            
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (4.0%)</span><span class='tag'>Near high (-1.2%)</span><span class='tag'>RSI 50</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=TSHA' target='_blank' class='ticker-link'>TSHA</a></td>
-          <td>$6.35</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=MSFT' target='_blank' class='ticker-link'>MSFT</a></td>
+          <td>$496.51</td>
           
               <td>+2.3%</td>
-              <td>3.1%</td>
+              <td>1.1%</td>
+              <td>-0.4%</td>
+              <td>+0.28%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (2.0%)</span><span class='tag'>Near high (-0.4%)</span><span class='tag'>RSI 56</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=NOV' target='_blank' class='ticker-link'>NOV</a></td>
+          <td>$20.09</td>
+          
+              <td>+3.0%</td>
+              <td>1.2%</td>
               <td>+0.1%</td>
-              <td>+0.87%</td>
+              <td>+0.41%</td>
             
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (2.4%)</span><span class='tag'>Near high (+0.1%)</span><span class='tag'>RSI 57</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (2.0%)</span><span class='tag'>Near high (+0.0%)</span><span class='tag'>RSI 55</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=KGC' target='_blank' class='ticker-link'>KGC</a></td>
-          <td>$25.50</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ROKU' target='_blank' class='ticker-link'>ROKU</a></td>
+          <td>$150.20</td>
           
-              <td>+9.4%</td>
-              <td>1.8%</td>
-              <td>-1.3%</td>
-              <td>-0.14%</td>
+              <td>+2.4%</td>
+              <td>0.5%</td>
+              <td>-0.2%</td>
+              <td>+0.20%</td>
             
-          <td><div class='tags'><span class='tag'>Below VWAP</span><span class='tag'>Tight consol (3.4%)</span><span class='tag'>Near high (-1.3%)</span><span class='tag'>RVOL 1.6x</span><span class='tag'>RSI 52</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (1.6%)</span><span class='tag'>Near high (-0.2%)</span><span class='tag'>RSI 47</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=PODD' target='_blank' class='ticker-link'>PODD</a></td>
-          <td>$134.06</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=TMUS' target='_blank' class='ticker-link'>TMUS</a></td>
+          <td>$179.47</td>
           
-              <td>-17.0%</td>
-              <td>3.7%</td>
-              <td>-3.1%</td>
-              <td>+0.30%</td>
+              <td>+3.4%</td>
+              <td>1.5%</td>
+              <td>+0.1%</td>
+              <td>+0.74%</td>
             
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>RVOL 4.9x</span><span class='tag'>Vol picking up (squeeze)</span><span class='tag'>RSI 55</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Tight consol (1.7%)</span><span class='tag'>Near high (+0.1%)</span><span class='tag'>RSI 53</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CDW' target='_blank' class='ticker-link'>CDW</a></td>
-          <td>$141.21</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CHYM' target='_blank' class='ticker-link'>CHYM</a></td>
+          <td>$33.07</td>
           
-              <td>-10.8%</td>
-              <td>6.2%</td>
-              <td>+2.9%</td>
-              <td>+8.70%</td>
+              <td>+25.2%</td>
+              <td>4.2%</td>
+              <td>+1.9%</td>
+              <td>+5.46%</td>
             
-          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (+2.9%)</span><span class='tag'>RVOL 3.2x</span><span class='tag'>RSI 61</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (+1.9%)</span><span class='tag'>RVOL 5.4x</span><span class='tag'>RSI 49</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=AGI' target='_blank' class='ticker-link'>AGI</a></td>
-          <td>$31.02</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=HONA' target='_blank' class='ticker-link'>HONA</a></td>
+          <td>$165.40</td>
           
-              <td>+8.6%</td>
-              <td>2.0%</td>
-              <td>-0.6%</td>
-              <td>-0.03%</td>
+              <td>-18.7%</td>
+              <td>4.7%</td>
+              <td>-0.1%</td>
+              <td>+2.61%</td>
             
-          <td><div class='tags'><span class='tag'>Below VWAP</span><span class='tag'>Tight consol (3.1%)</span><span class='tag'>Near high (-0.6%)</span><span class='tag'>RVOL 2.0x</span><span class='tag'>RSI 52</span></div></td>
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (-0.1%)</span><span class='tag'>RVOL 6.3x</span><span class='tag'>RSI 54</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CAI' target='_blank' class='ticker-link'>CAI</a></td>
+          <td>$19.31</td>
+          
+              <td>+18.8%</td>
+              <td>2.9%</td>
+              <td>-1.2%</td>
+              <td>+0.47%</td>
+            
+          <td><div class='tags'><span class='tag'>Holding above VWAP</span><span class='tag'>Near high (-1.3%)</span><span class='tag'>RVOL 2.7x</span><span class='tag'>RSI 52</span></div></td>
         </tr>
         </tbody>
     </table>
     <div class='scan-meta'>
-      Updated: 2026-08-05 13:30:51 ET &bull; 80 stocks scanned &bull;
-      <span class='aplus-count'>10 A+ setups</span>
+      Updated: 2026-08-06 13:30:53 ET &bull; 86 stocks scanned &bull;
+      <span class='aplus-count'>5 A+ setups</span>
     </div>
     </div><div id='tab-powerhour' class='tab-panel '>
     <table>
