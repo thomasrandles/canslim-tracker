@@ -102,6 +102,12 @@ def bs_theta(S, K, T, r, sigma, is_call=True):
             else (r * K * math.exp(-r * T) * norm.cdf(-d2))
     return (term1 + term2) / 365.0
 
+def bs_vega(S, K, T, r, sigma):
+    """Dollar change in option price per 1% IV move, per share."""
+    if T <= 0 or sigma <= 0: return 0.0
+    d1 = (math.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * math.sqrt(T))
+    return S * norm.pdf(d1) * math.sqrt(T) * 0.01
+
 # -- TradingView screens -------------------------------------------------------
 def _tv_query(extra_filters, limit=100):
     try:
@@ -220,6 +226,7 @@ def find_best_contract(ticker, spot, direction):
             else:
                 delta = round(bs_delta_put(spot, strike, T, R, iv), 3)
                 theta = round(bs_theta(spot, strike, T, R, iv, is_call=False), 3)
+            vega = round(bs_vega(spot, strike, T, R, iv), 3)
 
             score = 0
             score += max(0, 3 - spread_pct * 10)
@@ -243,6 +250,7 @@ def find_best_contract(ticker, spot, direction):
                     "spread_pct": round(spread_pct * 100, 1),
                     "delta":      delta,
                     "theta_day":  theta,
+                    "vega":       vega,
                     "cost":       round(mid * 100, 2),
                     "breakeven":  round(strike + mid, 2) if direction == "call"
                                   else round(strike - mid, 2),
@@ -488,7 +496,7 @@ def run(calls=True, puts=True, top_n=15):
         print(f"       Price:    Bid ${r['opt_bid']:.2f}  Ask ${r['opt_ask']:.2f}  Mid ${r['opt_mid']:.2f}")
         print(f"       Cost:     ${r['opt_cost']:.0f} per contract (= 100 shares exposure)")
         print(f"       IV: {r['opt_iv']:.1%}   OI: {r['opt_oi']:,}   Vol: {r['opt_volume']:,}   Spread: {r['opt_spread_pct']:.1f}%")
-        print(f"       Delta: {r['opt_delta']:+.3f}   Theta: ${r['opt_theta_day']*100:+.2f}/contract/day")
+        print(f"       Delta: {r['opt_delta']:+.3f}   Theta: ${r['opt_theta_day']*100:+.2f}/day   Vega: ${r['opt_vega']*100:+.2f}/1% IV move")
         print(f"       Strike {r['opt_otm_pct']:+.1f}% vs spot   Breakeven at expiry: ${r['opt_breakeven']:.2f}")
         stop = round(r["opt_mid"] * 0.50, 2)
         tgt  = round(r["opt_mid"] * 2.00, 2)

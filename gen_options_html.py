@@ -101,6 +101,7 @@ def _render_card(r):
     spread = r.get("opt_spread_pct")
     delta  = r.get("opt_delta", 0)
     theta  = r.get("opt_theta_day", 0)
+    vega   = r.get("opt_vega", 0)
     cost   = r.get("opt_cost")
     be     = r.get("opt_breakeven")
     otm    = r.get("opt_otm_pct")
@@ -128,6 +129,7 @@ def _render_card(r):
     dte_urgent = "dte-urgent" if dte and dte <= 20 else ""
 
     theta_cost = abs((theta or 0) * 100)
+    vega_cost  = (vega or 0) * 100
 
     return f"""
 <div class="card card-{dc}" data-direction="{direction}" data-grade="{grade}" data-score="{score}" data-iv="{iv or 0}" data-delta="{abs(delta or 0):.3f}" data-oi="{oi or 0}" data-spread="{spread or 99}" data-theta="{theta_cost:.2f}">
@@ -204,16 +206,16 @@ def _render_card(r):
       <div class="greek-val theta-val">{_f(theta_per_contract, "+.2f", prefix="$")}</div>
     </div>
     <div class="greek-item">
+      <div class="greek-lbl">Vega / 1% IV</div>
+      <div class="greek-val vega-val">{_f(vega_cost, "+.2f", prefix="$")}</div>
+    </div>
+    <div class="greek-item">
       <div class="greek-lbl">IV</div>
       <div class="greek-val {iv_cls}">{_f(iv * 100 if iv else None, ".1f", suffix="%")}</div>
     </div>
     <div class="greek-item">
       <div class="greek-lbl">Open Interest</div>
       <div class="greek-val">{_f(oi, ",")}</div>
-    </div>
-    <div class="greek-item">
-      <div class="greek-lbl">Volume</div>
-      <div class="greek-val">{_f(vol, ",")}</div>
     </div>
     <div class="greek-item">
       <div class="greek-lbl">Spread</div>
@@ -612,12 +614,13 @@ a {{ color: inherit; text-decoration: none; }}
   border-bottom: 1px solid var(--border-light);
   background: var(--bg);
 }}
-@media (max-width: 580px) {{ .greeks-strip {{ grid-template-columns: repeat(3, 1fr); }} }}
+@media (max-width: 620px) {{ .greeks-strip {{ grid-template-columns: repeat(3, 1fr); }} }}
 .greek-item {{ padding: 8px 12px; border-right: 1px solid var(--border-light); }}
 .greek-item:last-child {{ border-right: none; }}
 .greek-lbl {{ font-size: 9px; color: var(--txt3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }}
 .greek-val {{ font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }}
 .theta-val {{ color: var(--theta-amber); }}
+.vega-val  {{ color: var(--call-bright); }}
 .iv-low  {{ color: var(--call-bright); }}
 .iv-mid  {{ color: var(--b-grade); }}
 .iv-high {{ color: var(--put-bright); }}
