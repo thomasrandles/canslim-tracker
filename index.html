@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Randles Market Dashboards</title>
+<style>
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#1c2430;--b:#30363d;--b2:#21262d;
+  --tx:#e6edf3;--t2:#aeb7c2;--t3:#8d97a3;
+  --cy:#39d0d8;--gr:#3fb950;--am:#d29922;--rd:#f85149;
+  --r:10px;
+  font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-size:14px;min-height:100vh;
+     display:flex;flex-direction:column}
+.wrap{max-width:860px;margin:0 auto;padding:44px 20px 40px;width:100%;flex:1}
+header{border-bottom:1px solid var(--b);padding-bottom:20px;margin-bottom:26px}
+.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+        color:var(--cy);margin-bottom:9px}
+h1{font-size:27px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px}
+header p{color:var(--t2);font-size:13.5px;max-width:62ch;line-height:1.55}
+.grid{display:grid;gap:12px}
+a.card{display:block;background:var(--bg2);border:1px solid var(--b);
+       border-radius:var(--r);padding:18px 20px;text-decoration:none;color:inherit;
+       transition:border-color .15s,transform .15s;border-left:4px solid var(--b)}
+a.card:hover{border-color:var(--cy);border-left-color:var(--cy);transform:translateY(-1px)}
+a.card:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+a.card.canslim{border-left-color:var(--cy)}
+a.card.options{border-left-color:var(--gr)}
+a.card.daytrader{border-left-color:var(--am)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+     flex-wrap:wrap;margin-bottom:5px}
+.name{font-size:17px;font-weight:700}
+.stamp{font-size:11.5px;color:var(--t3);font-variant-numeric:tabular-nums;
+       white-space:nowrap}
+.stamp.ok{color:var(--gr)}
+.stamp.old{color:var(--am)}
+.stamp.err{color:var(--rd)}
+.desc{color:var(--t2);font-size:13px;line-height:1.5;max-width:60ch}
+.meta{margin-top:9px;font-size:11px;color:var(--t3)}
+.meta code{background:var(--bg3);padding:1px 5px;border-radius:3px;
+           font-family:ui-monospace,Consolas,monospace}
+footer{border-top:1px solid var(--b);padding:16px 20px;text-align:center;
+       color:var(--t3);font-size:11.5px;line-height:1.6}
+@media (prefers-reduced-motion:reduce){a.card{transition:none}
+  a.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Automated screeners</div>
+    <h1>Market Dashboards</h1>
+    <p>Three screeners, rebuilt and published automatically on their own schedules.
+       Each card shows the date stamped inside that dashboard, read live — so if a
+       run fails, the date below stops advancing rather than silently looking current.</p>
+  </header>
+
+  <div class="grid">
+    <a class="card canslim" href="CANSLIM_Dashboard.html">
+      <div class="top"><span class="name">CANSLIM Global</span>
+        <span class="stamp" data-src="CANSLIM_Dashboard.html">checking…</span></div>
+      <div class="desc">Daily CANSLIM screen across US, Swiss and 14 European exchanges.
+        Seven-criteria scoring, tier grading, and day-in-filter lifecycle tracking.</div>
+      <div class="meta">Runs weekdays ~22:30 · <code>run_daily.bat</code></div>
+    </a>
+
+    <a class="card options" href="Options_Dashboard.html">
+      <div class="top"><span class="name">Options Scanner</span>
+        <span class="stamp" data-src="Options_Dashboard.html">checking…</span></div>
+      <div class="desc">Long call and long put setups on liquid US names, with live
+        chains, implied volatility, Greeks and spread quality.</div>
+      <div class="meta">Runs during US market hours · <code>scan_options.py</code></div>
+    </a>
+
+    <a class="card daytrader" href="DayTrader/DayTrader_Dashboard.html">
+      <div class="top"><span class="name">DayTrader Scanner</span>
+        <span class="stamp" data-src="DayTrader/DayTrader_Dashboard.html">checking…</span></div>
+      <div class="desc">Intraday scans at the pre-market, opening, midday and
+        power-hour sessions.</div>
+      <div class="meta">Four runs per trading day · <code>scanner_*.py</code></div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  Personal research tools · not regulated financial advice · always apply stop-loss discipline
+</footer>
+
+<script>
+// Read each dashboard's own <title>, which carries its build date, instead of
+// baking a timestamp in here that would go stale the moment a run finishes.
+const MONTHS = {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+
+function parseDate(title){
+  // "CANSLIM Global — 04 Sep 2026" | "Options Dashboard 03 Sep 2026"
+  let m = title.match(/(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(\d{4})/);
+  if(m && MONTHS[m[2].toLowerCase()] !== undefined)
+    return new Date(+m[3], MONTHS[m[2].toLowerCase()], +m[1]);
+  // "DayTrader Scanner — 2026-09-04 13:00"
+  m = title.match(/(\d{4})-(\d{2})-(\d{2})/);
+  if(m) return new Date(+m[1], +m[2]-1, +m[3]);
+  return null;
+}
+
+function weekdaysBetween(from, to){
+  let n = 0; const c = new Date(from);
+  while(c < to){ c.setDate(c.getDate()+1); const d = c.getDay(); if(d>0 && d<6) n++; }
+  return n;
+}
+
+function label(d){
+  const today = new Date(); today.setHours(0,0,0,0);
+  const wd = weekdaysBetween(d, today);
+  const txt = d.toLocaleDateString(undefined,{day:'2-digit',month:'short',year:'numeric'});
+  if(wd <= 0) return [txt + ' · today', 'ok'];
+  if(wd === 1) return [txt + ' · yesterday', 'ok'];
+  return [txt + ' · ' + wd + ' days behind', 'old'];
+}
+
+document.querySelectorAll('.stamp').forEach(async el => {
+  try{
+    const res = await fetch(el.dataset.src, {cache:'no-store'});
+    if(!res.ok) throw new Error(res.status);
+    const html = await res.text();
+    const t = (html.match(/<title>([^<]*)<\/title>/i) || [])[1] || '';
+    const d = parseDate(t);
+    if(!d){ el.textContent = 'published'; el.className = 'stamp'; return; }
+    const [txt, cls] = label(d);
+    el.textContent = txt;
+    el.className = 'stamp ' + cls;
+  }catch(e){
+    el.textContent = 'unavailable';
+    el.className = 'stamp err';
+  }
+});
+</script>
+</body>
+</html>

@@ -1,4 +1,54 @@
-﻿
-backup_claude_mcp_system/
+# ───────────────────────────────────────────────────────────────────────────
+# ALLOWLIST .gitignore  —  ignore everything, then re-include what is public.
+#
+# This repository is PUBLIC: GitHub Pages serves it anonymously at
+# thomasrandles.github.io/canslim-tracker. It also lives inside a working
+# directory that contains a live Notion integration token in ~26 files
+# (legacy notion_*/fix_*/cleanup_* scripts, Archive/, and the
+# claude_desktop_config*.json backups, which additionally hold
+# OPENAPI_MCP_HEADERS).
+#
+# A denylist could not hold that line: every new script written in this folder
+# would be publishable by default, and one `git add -A` would leak the token.
+# Hence the inversion below — new files are private unless named here.
+#
+# After editing this file, ALWAYS verify with:   git add -An
+# Nothing containing a credential may appear in that output.
+# ───────────────────────────────────────────────────────────────────────────
+
+# 1 ─ ignore every top-level entry
+/*
+
+# 2 ─ repo infrastructure
+!/.gitignore
+!/.nojekyll
+!/.github/
+
+# 3 ─ published dashboards (the actual product of this repo)
+!/index.html
+!/CANSLIM_Dashboard.html
+!/Options_Dashboard.html
+
+# 4 ─ orchestrators and screeners that carry no credentials
+!/run_daily.bat
+!/run_options_scan.bat
+!/screen_stocks.py
+!/scan_options.py
+!/gen_options_html.py
+
+# 5 ─ DayTrader subtree (governed by DayTrader/.gitignore)
+!/DayTrader/
+
+# 6 ─ belt and braces: never publish these even if a rule above widens.
+#     Credentials live in .env; compiled bytecode embeds string constants.
+.env
+market_state.json
+__pycache__/
+*.pyc
 notion_writer.py
-screen_stocks.py
+generate_dashboard.py
+canslim_config.py
+backup_pre_audit_*/
+backup_claude_mcp_system/
+claude_desktop_config*.json
+backup_pre_batch2_*/
