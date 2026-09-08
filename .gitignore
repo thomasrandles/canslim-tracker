@@ -52,3 +52,15 @@ backup_pre_audit_*/
 backup_claude_mcp_system/
 claude_desktop_config*.json
 backup_pre_batch2_*/
+backup_pre_batch3_*/
+backup_pre_batch4_*/
+backup_pre_batch5_*/
+sector_history.json
+backup_pre_c1_*/
+backup_pre_d3c10_*/
+notion_mirror.json
+price_history.json
+backup_pre_n_*/
+backup_pre_daytrader_*/
+backup_pre_dtfix_*/
+backup_pre_optrev_*/
