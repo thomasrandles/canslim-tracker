@@ -4,21 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="120">
-<title>DayTrader Scanner — 2026-09-04 20:00</title>
+<title>DayTrader Scanner — 2026-09-08 13:00</title>
 <style>
+  /* Dark is the default look here, so it lives on bare :root. The viewer has
+     THREE states: an explicit choice stamps data-theme, and the default
+     "system" setting stamps nothing — so prefers-color-scheme has to carry
+     the un-stamped case on its own. */
   :root {
     --bg: #0d1117; --card: #161b22; --border: #30363d;
     --text: #c9d1d9; --muted: #8b949e; --link: #58a6ff;
     --aplus: #ffd700; --a: #3fb950; --b: #d29922; --c: #8b949e;
     --long: #3fb950; --short: #f85149; --badge-bg: #1f2937;
+    --hdr-from: #1a1f2e; --hdr-to: #0d1117; --hdr-text: #ffffff;
+    --shadow: rgba(0,0,0,.5);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f8fa; --card: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --muted: #656d76; --link: #0969da;
+      --aplus: #9a6700; --a: #1a7f37; --b: #9a6700; --c: #656d76;
+      --long: #1a7f37; --short: #cf222e; --badge-bg: #eaeef2;
+      --hdr-from: #eaeef2; --hdr-to: #f6f8fa; --hdr-text: #1f2328;
+      --shadow: rgba(0,0,0,.10);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f8fa; --card: #ffffff; --border: #d0d7de;
+    --text: #1f2328; --muted: #656d76; --link: #0969da;
+    --aplus: #9a6700; --a: #1a7f37; --b: #9a6700; --c: #656d76;
+    --long: #1a7f37; --short: #cf222e; --badge-bg: #eaeef2;
+    --hdr-from: #eaeef2; --hdr-to: #f6f8fa; --hdr-text: #1f2328;
+    --shadow: rgba(0,0,0,.10);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --muted: #8b949e; --link: #58a6ff;
+    --aplus: #ffd700; --a: #3fb950; --b: #d29922; --c: #8b949e;
+    --long: #3fb950; --short: #f85149; --badge-bg: #1f2937;
+    --hdr-from: #1a1f2e; --hdr-to: #0d1117; --hdr-text: #ffffff;
+    --shadow: rgba(0,0,0,.5);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: "Segoe UI", system-ui, sans-serif; font-size: 14px; }
 
-  header { background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
+  header { background: linear-gradient(135deg, var(--hdr-from) 0%, var(--hdr-to) 100%);
     border-bottom: 1px solid var(--border); padding: 16px 24px;
     display: flex; justify-content: space-between; align-items: center; }
-  header h1 { font-size: 1.4rem; font-weight: 700; color: #fff; }
+  header h1 { font-size: 1.4rem; font-weight: 700; color: var(--hdr-text); }
+  .theme-btn { background: none; border: 1px solid var(--border); color: var(--muted);
+    border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer;
+    font-family: inherit; }
+  .theme-btn:hover { border-color: var(--text); color: var(--text); }
+  .theme-btn:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+  .hdr-right { display: flex; align-items: center; gap: 10px; }
   header h1 span { color: var(--aplus); }
   .time-badge { background: var(--badge-bg); border: 1px solid var(--border);
     border-radius: 6px; padding: 4px 12px; font-size: 12px; color: var(--muted); }
@@ -35,6 +73,46 @@
   .tab-btn:hover { color: var(--text); }
   .tab-btn.active { color: var(--aplus); border-bottom-color: var(--aplus); }
   .tab-btn small { font-size: 10px; opacity: .7; }
+  .tab-btn small.cet { opacity: .95; color: var(--link); font-weight: 600; }
+  .co-cell { max-width: 190px; overflow: hidden; text-overflow: ellipsis;
+    white-space: nowrap; color: var(--text); }
+  .sec-cell { color: var(--muted); font-size: 12px; white-space: nowrap; }
+  .dim { color: var(--muted); opacity: .6; }
+  .fresh { display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px;
+    border-radius: 10px; margin-right: 8px; }
+  .fresh-ok { background: var(--a); color: #fff; }
+  .fresh-warn { background: var(--b); color: #000; }
+  .fresh-bad { background: var(--short); color: #fff; }
+  .cn-wrap { background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; }
+  .cn-head { font-size: 11px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 9px; }
+  .cn-sub { font-weight: 400; letter-spacing: 0; text-transform: none;
+    opacity: .8; margin-left: 6px; }
+  .cn-row { display: flex; align-items: center; gap: 9px; padding: 2px 0;
+    font-size: 12px; }
+  .cn-name { flex: 0 0 175px; color: var(--text); overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; }
+  .cn-track { flex: 1 1 auto; height: 8px; background: var(--badge-bg);
+    border-radius: 4px; overflow: hidden; }
+  .cn-bar { display: block; height: 100%; background: var(--link); }
+  .cn-pct { flex: 0 0 38px; text-align: right; font-weight: 700;
+    color: var(--text); font-variant-numeric: tabular-nums; }
+  .cn-n { flex: 0 0 34px; text-align: right; color: var(--muted);
+    font-variant-numeric: tabular-nums; }
+  .cn-hot .cn-bar { background: var(--b); }
+  .cn-hot .cn-name, .cn-hot .cn-pct { color: var(--b); font-weight: 700; }
+  .cn-note { margin-top: 9px; font-size: 12px; color: var(--b); }
+  .cn-empty { font-size: 12px; color: var(--muted); }
+  .cn-hdr { font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); border-bottom: 1px solid var(--border);
+    padding-bottom: 4px; margin-bottom: 4px; }
+  .cn-hdr .cn-name, .cn-hdr .cn-pct, .cn-hdr .cn-n { color: var(--muted);
+    font-weight: 600; }
+  .cn-warn { margin-top: 9px; padding: 9px 11px; border-radius: 6px;
+    background: var(--badge-bg); border-left: 3px solid var(--short);
+    font-size: 12px; color: var(--text); line-height: 1.5; }
   .tab-badge { background: var(--aplus); color: #000; border-radius: 10px;
     padding: 1px 7px; font-size: 10px; font-weight: 700; margin-left: 4px; }
 
@@ -87,7 +165,10 @@
 
 <header>
   <h1>📈 <span>DayTrader</span> Scanner</h1>
-  <div class="time-badge">2026-09-04 20:00 local &bull; 14:00 ET</div>
+  <div class="hdr-right">
+    <div class="time-badge">2026-09-08 13:00 local &bull; 07:00 ET</div>
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Switch between light and dark">Theme</button>
+  </div>
 </header>
 
 <div class="legend">
@@ -102,14 +183,15 @@
 </div>
 
 <div class="tabs">
-  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps <span class='tab-badge'>2 A+</span><br><small>7–9 AM ET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>19 A+</span><br><small>9:35 AM ET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>5 A+</span><br><small>1:30 PM ET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>1 A+</span><br><small>3:00 PM ET</small></button>
+  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps <span class='tab-badge'>4 A+</span><br><small>7–9 AM ET</small><br><small class='cet'>14:00 CEST</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>19 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>15:35 CEST</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>5 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>19:30 CEST</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>1 A+</span><br><small>3:00 PM ET</small><br><small class='cet'>21:00 CEST</small></button>
 </div>
 
 <div id='tab-premarket' class='tab-panel active'>
+    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 13 names graded A+ or A &mdash; 108 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row cn-hot'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:38%'></span></span><span class='cn-pct'>38%</span><span class='cn-n'>5</span></div><div class='cn-row'><span class='cn-name'>Producer Manufacturing</span><span class='cn-track'><span class='cn-bar' style='width:15%'></span></span><span class='cn-pct'>15%</span><span class='cn-n'>2</span></div><div class='cn-row'><span class='cn-name'>Finance</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div><div class='cn-row'><span class='cn-name'>Electronic Technology</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div><div class='cn-row'><span class='cn-name'>Consumer Services</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div><div class='cn-row'><span class='cn-name'>Non-Energy Minerals</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div><div class='cn-note'>Health Technology is 38% of the graded names (5 of 13) — likely one catalyst rather than 5 independent setups.</div><div class='cn-warn'>⚠ Correlated A+ setups — <b>2 in Producer Manufacturing</b> (ARBE, BNC). Taking these together is one position at multiple size, not several independent ones.</div></div>
     <table>
       <thead>
         <tr>
-          <th>Grade</th><th>Ticker</th><th>Price</th>
+          <th>Grade</th><th>Ticker</th><th>Name</th><th>Sector / Exposure</th><th>Price</th>
           <th>Gap %</th><th>PM RVOL</th><th>PM Vol</th><th>Side</th>
           <th>Signals</th>
         </tr>
@@ -117,220 +199,284 @@
       <tbody>
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=BBCP' target='_blank' class='ticker-link'>BBCP</a></td>
-          <td>$10.48</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=BNC' target='_blank' class='ticker-link'>BNC</a></td>
+          <td class='co-cell' title="CEA Industries Inc.">CEA Industries Inc.</td>
+          <td class='sec-cell'>Producer Manufacturing</td>
+          <td>$5.64</td>
           
-              <td>+15.8%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>+61.6%</td>
+              <td>232.6×</td>
+              <td>15,835,835</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 15.8%</span><span class='tag'>Near 52w high (+5.9%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 61.6%</span><span class='tag'>PM RVOL 232.6x</span><span class='tag'>Near 52w high (+61.6%)</span></div></td>
         </tr>
         
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=IOT' target='_blank' class='ticker-link'>IOT</a></td>
-          <td>$44.10</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=WDH' target='_blank' class='ticker-link'>WDH</a></td>
+          <td class='co-cell' title="Waterdrop Inc.">Waterdrop Inc.</td>
+          <td class='sec-cell'>Finance</td>
+          <td>$1.18</td>
           
-              <td>+13.8%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>+15.7%</td>
+              <td>51.6×</td>
+              <td>3,033,197</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 13.8%</span><span class='tag'>Near 52w high (+5.3%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 15.7%</span><span class='tag'>PM RVOL 51.6x</span><span class='tag'>Near 52w high (+8.2%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ARBE' target='_blank' class='ticker-link'>ARBE</a></td>
+          <td class='co-cell' title="Arbe Robotics Ltd.">Arbe Robotics Ltd.</td>
+          <td class='sec-cell'>Producer Manufacturing</td>
+          <td>$0.71</td>
+          
+              <td>+12.4%</td>
+              <td>13.1×</td>
+              <td>2,398,227</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Huge gap 12.4%</span><span class='tag'>PM RVOL 13.1x</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ROIV' target='_blank' class='ticker-link'>ROIV</a></td>
+          <td class='co-cell' title="Roivant Sciences Ltd.">Roivant Sciences Ltd.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$43.69</td>
+          
+              <td>+25.1%</td>
+              <td>0.0×</td>
+              <td>77,390</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Huge gap 25.1%</span><span class='tag'>Near 52w high (+16.2%)</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=APH' target='_blank' class='ticker-link'>APH</a></td>
-          <td>$82.68</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CAN' target='_blank' class='ticker-link'>CAN</a></td>
+          <td class='co-cell' title="Canaan Inc.">Canaan Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$0.32</td>
           
-              <td>-47.9%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>-12.1%</td>
+              <td>1.6×</td>
+              <td>8,449,351</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 47.9%</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 12.1%</span><span class='tag'>PM RVOL 1.6x</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ASAN' target='_blank' class='ticker-link'>ASAN</a></td>
-          <td>$8.80</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=DYN' target='_blank' class='ticker-link'>DYN</a></td>
+          <td class='co-cell' title="Dyne Therapeutics, Inc.">Dyne Therapeutics, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$17.99</td>
           
-              <td>-12.8%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>-25.9%</td>
+              <td>0.2×</td>
+              <td>69,701</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 12.8%</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 25.9%</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=EFX' target='_blank' class='ticker-link'>EFX</a></td>
-          <td>$169.99</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=IONS' target='_blank' class='ticker-link'>IONS</a></td>
+          <td class='co-cell' title="Ionis Pharmaceuticals, Inc.">Ionis Pharmaceuticals, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$51.02</td>
           
-              <td>-10.1%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>-12.2%</td>
+              <td>0.2×</td>
+              <td>111,542</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 10.1%</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 12.2%</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=GWRE' target='_blank' class='ticker-link'>GWRE</a></td>
-          <td>$169.05</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=NAMS' target='_blank' class='ticker-link'>NAMS</a></td>
+          <td class='co-cell' title="NewAmsterdam Pharma Company N.V.">NewAmsterdam Pharma Company N.V.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$22.50</td>
           
-              <td>-16.7%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>-11.4%</td>
+              <td>0.0×</td>
+              <td>4,976</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 16.7%</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 11.4%</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=LULU' target='_blank' class='ticker-link'>LULU</a></td>
-          <td>$97.95</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=NVS' target='_blank' class='ticker-link'>NVS</a></td>
+          <td class='co-cell' title="Novartis AG">Novartis AG</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$140.41</td>
           
-              <td>-19.6%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>-12.2%</td>
+              <td>0.3×</td>
+              <td>125,677</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 19.6%</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 12.2%</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=PATH' target='_blank' class='ticker-link'>PATH</a></td>
-          <td>$16.27</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SG' target='_blank' class='ticker-link'>SG</a></td>
+          <td class='co-cell' title="Sweetgreen, Inc.">Sweetgreen, Inc.</td>
+          <td class='sec-cell'>Consumer Services</td>
+          <td>$7.32</td>
+          
+              <td>+7.0%</td>
+              <td>0.0×</td>
+              <td>18,055</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 7.0%</span><span class='tag'>Near 52w high (+4.4%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SGML' target='_blank' class='ticker-link'>SGML</a></td>
+          <td class='co-cell' title="Sigma Lithium Corporation">Sigma Lithium Corporation</td>
+          <td class='sec-cell'>Non-Energy Minerals</td>
+          <td>$11.03</td>
+          
+              <td>-11.0%</td>
+              <td>0.4×</td>
+              <td>157,802</td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Huge gap 11.0%</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SSL' target='_blank' class='ticker-link'>SSL</a></td>
+          <td class='co-cell' title="Sasol Ltd.">Sasol Ltd.</td>
+          <td class='sec-cell'>Process Industries</td>
+          <td>$13.06</td>
+          
+              <td>+6.4%</td>
+              <td>0.0×</td>
+              <td>4,209</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 6.4%</span><span class='tag'>Near 52w high (+3.0%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ZIM' target='_blank' class='ticker-link'>ZIM</a></td>
+          <td class='co-cell' title="ZIM Integrated Shipping Services Ltd.">ZIM Integrated Shipping Services Ltd.</td>
+          <td class='sec-cell'>Transportation</td>
+          <td>$30.37</td>
+          
+              <td>+6.3%</td>
+              <td>0.4×</td>
+              <td>190,116</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 6.3%</span><span class='tag'>Near 52w high (+5.4%)</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=AIFC' target='_blank' class='ticker-link'>AIFC</a></td>
+          <td class='co-cell' title="AI Financial Corporation">AI Financial Corporation</td>
+          <td class='sec-cell'>Industrial Services</td>
+          <td>$0.50</td>
           
               <td>-10.7%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>0.0×</td>
+              <td>6,064</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
           <td><div class='tags'><span class='tag'>Huge gap 10.7%</span></div></td>
         </tr>
         
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SWBI' target='_blank' class='ticker-link'>SWBI</a></td>
-          <td>$13.71</td>
-          
-              <td>+11.7%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 11.7%</span></div></td>
-        </tr>
-        
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CBIO' target='_blank' class='ticker-link'>CBIO</a></td>
-          <td>$21.05</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ANPA' target='_blank' class='ticker-link'>ANPA</a></td>
+          <td class='co-cell' title="Rich Sparkle Holdings Limited">Rich Sparkle Holdings Limited</td>
+          <td class='sec-cell'>Commercial Services</td>
+          <td>$3.40</td>
           
-              <td>+3.2%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 3.2%</span><span class='tag'>Near 52w high (+3.2%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CRESY' target='_blank' class='ticker-link'>CRESY</a></td>
-          <td>$12.35</td>
-          
-              <td>+4.3%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 4.3%</span><span class='tag'>Near 52w high (+1.2%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CURV' target='_blank' class='ticker-link'>CURV</a></td>
-          <td>$2.49</td>
-          
-              <td>+11.7%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 11.7%</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=DFIN' target='_blank' class='ticker-link'>DFIN</a></td>
-          <td>$50.81</td>
-          
-              <td>+3.5%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 3.5%</span><span class='tag'>Near 52w high (+2.3%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=FICO' target='_blank' class='ticker-link'>FICO</a></td>
-          <td>$964.26</td>
-          
-              <td>-13.8%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>-14.4%</td>
+              <td>0.3×</td>
+              <td>21,382</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 13.8%</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 14.4%</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=LFST' target='_blank' class='ticker-link'>LFST</a></td>
-          <td>$13.23</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=AOUT' target='_blank' class='ticker-link'>AOUT</a></td>
+          <td class='co-cell' title="American Outdoor Brands, Inc.">American Outdoor Brands, Inc.</td>
+          <td class='sec-cell'>Consumer Durables</td>
+          <td>$15.04</td>
           
-              <td>+3.1%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>+3.8%</td>
+              <td>0.1×</td>
+              <td>3,712</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Gap 3.1%</span><span class='tag'>Near 52w high (+2.6%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Gap 3.8%</span><span class='tag'>Near 52w high (+3.8%)</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=OSTX' target='_blank' class='ticker-link'>OSTX</a></td>
-          <td>$1.92</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=BE' target='_blank' class='ticker-link'>BE</a></td>
+          <td class='co-cell' title="Bloom Energy Corporation">Bloom Energy Corporation</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$268.12</td>
           
-              <td>+5.5%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>+6.0%</td>
+              <td>0.1×</td>
+              <td>261,092</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 5.5%</span><span class='tag'>Near 52w high (+5.5%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Strong gap 6.0%</span><span class='tag'>Near 52w high (+6.0%)</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=RDVT' target='_blank' class='ticker-link'>RDVT</a></td>
-          <td>$79.13</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=BEAM' target='_blank' class='ticker-link'>BEAM</a></td>
+          <td class='co-cell' title="Beam Therapeutics Inc.">Beam Therapeutics Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$31.02</td>
+          
+              <td>+4.6%</td>
+              <td>0.1×</td>
+              <td>48,698</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Gap 4.6%</span><span class='tag'>Near 52w high (-0.0%)</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=INSW' target='_blank' class='ticker-link'>INSW</a></td>
+          <td class='co-cell' title="International Seaways, Inc.">International Seaways, Inc.</td>
+          <td class='sec-cell'>Transportation</td>
+          <td>$108.19</td>
           
               <td>+3.5%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>0.0×</td>
+              <td>1,409</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
           <td><div class='tags'><span class='tag'>Gap 3.5%</span><span class='tag'>Near 52w high (+3.5%)</span></div></td>
@@ -338,53 +484,31 @@
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=RNTX' target='_blank' class='ticker-link'>RNTX</a></td>
-          <td>$0.92</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=KEP' target='_blank' class='ticker-link'>KEP</a></td>
+          <td class='co-cell' title="Korea Electric Power Corporation">Korea Electric Power Corporation</td>
+          <td class='sec-cell'>Utilities</td>
+          <td>$12.50</td>
           
-              <td>+9.0%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
+              <td>+4.7%</td>
+              <td>0.0×</td>
+              <td>3,339</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 9.0%</span><span class='tag'>Near 52w high (+9.0%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=TAL' target='_blank' class='ticker-link'>TAL</a></td>
-          <td>$12.39</td>
-          
-              <td>+3.3%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 3.3%</span><span class='tag'>Near 52w high (-0.9%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=TROO' target='_blank' class='ticker-link'>TROO</a></td>
-          <td>$2.30</td>
-          
-              <td>+6.5%</td>
-              <td><span class='na'>—</span></td>
-              <td>0</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 6.5%</span><span class='tag'>Near 52w high (-1.7%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Gap 4.7%</span><span class='tag'>Near 52w high (+0.1%)</span></div></td>
         </tr>
         </tbody>
     </table>
     <div class='scan-meta'>
-      Updated: 2026-09-04 09:00:41 ET &bull; 128 stocks scanned &bull;
-      <span class='aplus-count'>2 A+ setups</span>
+      <span class='fresh fresh-ok'>TODAY</span>
+      Updated: 2026-09-08 07:00:51 ET &bull; 121 stocks scanned &bull;
+      <span class='aplus-count'>4 A+ setups</span>
     </div>
     </div><div id='tab-opening' class='tab-panel '>
+    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 89 names graded A+ or A &mdash; 124 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:17%'></span></span><span class='cn-pct'>17%</span><span class='cn-n'>15</span></div><div class='cn-row'><span class='cn-name'>Electronic Technology</span><span class='cn-track'><span class='cn-bar' style='width:13%'></span></span><span class='cn-pct'>13%</span><span class='cn-n'>12</span></div><div class='cn-row'><span class='cn-name'>Non-Energy Minerals</span><span class='cn-track'><span class='cn-bar' style='width:11%'></span></span><span class='cn-pct'>11%</span><span class='cn-n'>10</span></div><div class='cn-row'><span class='cn-name'>Finance</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>7</span></div><div class='cn-row'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:7%'></span></span><span class='cn-pct'>7%</span><span class='cn-n'>6</span></div><div class='cn-row'><span class='cn-name'>Retail Trade</span><span class='cn-track'><span class='cn-bar' style='width:4%'></span></span><span class='cn-pct'>4%</span><span class='cn-n'>4</span></div><div class='cn-warn'>⚠ Correlated A+ setups — <b>4 in Technology Services</b> (ASAN, BIDU, ORCL, ZS); <b>2 in Commercial Services</b> (EFX, TRU); <b>2 in Electronic Technology</b> (ARM, KLAC). Taking these together is one position at multiple size, not several independent ones.</div></div>
     <table>
       <thead>
         <tr>
-          <th>Grade</th><th>Ticker</th><th>Price</th>
+          <th>Grade</th><th>Ticker</th><th>Name</th><th>Sector / Exposure</th><th>Price</th>
           <th>Gap %</th><th>vs VWAP</th><th>RVOL</th><th>RSI</th>
           <th>Signals</th>
         </tr>
@@ -393,6 +517,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ASAN' target='_blank' class='ticker-link'>ASAN</a></td>
+          <td class='co-cell' title="Asana, Inc.">Asana, Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$8.95</td>
           
               <td>-13.1%</td>
@@ -406,6 +532,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=EFX' target='_blank' class='ticker-link'>EFX</a></td>
+          <td class='co-cell' title="Equifax, Inc.">Equifax, Inc.</td>
+          <td class='sec-cell'>Commercial Services</td>
           <td>$172.00</td>
           
               <td>-9.6%</td>
@@ -419,6 +547,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=LULU' target='_blank' class='ticker-link'>LULU</a></td>
+          <td class='co-cell' title="lululemon athletica inc.">lululemon athletica inc.</td>
+          <td class='sec-cell'>Consumer Non-Durables</td>
           <td>$101.07</td>
           
               <td>-19.4%</td>
@@ -432,6 +562,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=CURV' target='_blank' class='ticker-link'>CURV</a></td>
+          <td class='co-cell' title="Torrid Holdings Inc.">Torrid Holdings Inc.</td>
+          <td class='sec-cell'>Retail Trade</td>
           <td>$2.55</td>
           
               <td>+10.8%</td>
@@ -445,6 +577,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=CMBT' target='_blank' class='ticker-link'>CMBT</a></td>
+          <td class='co-cell' title="CMB.TECH NV">CMB.TECH NV</td>
+          <td class='sec-cell'>Transportation</td>
           <td>$19.49</td>
           
               <td>+3.2%</td>
@@ -458,6 +592,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ORCL' target='_blank' class='ticker-link'>ORCL</a></td>
+          <td class='co-cell' title="Oracle Corporation">Oracle Corporation</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$158.96</td>
           
               <td>+3.5%</td>
@@ -471,6 +607,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=TRU' target='_blank' class='ticker-link'>TRU</a></td>
+          <td class='co-cell' title="TransUnion">TransUnion</td>
+          <td class='sec-cell'>Commercial Services</td>
           <td>$76.99</td>
           
               <td>-10.0%</td>
@@ -484,6 +622,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=USAR' target='_blank' class='ticker-link'>USAR</a></td>
+          <td class='co-cell' title="USA Rare Earth, Inc.">USA Rare Earth, Inc.</td>
+          <td class='sec-cell'>Producer Manufacturing</td>
           <td>$19.02</td>
           
               <td>+5.4%</td>
@@ -497,6 +637,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=AMC' target='_blank' class='ticker-link'>AMC</a></td>
+          <td class='co-cell' title="AMC Entertainment Holdings, Inc.">AMC Entertainment Holdings, Inc.</td>
+          <td class='sec-cell'>Consumer Services</td>
           <td>$2.64</td>
           
               <td>+3.8%</td>
@@ -510,6 +652,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ARM' target='_blank' class='ticker-link'>ARM</a></td>
+          <td class='co-cell' title="Arm Holdings plc">Arm Holdings plc</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$252.49</td>
           
               <td>+2.6%</td>
@@ -523,6 +667,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=BIDU' target='_blank' class='ticker-link'>BIDU</a></td>
+          <td class='co-cell' title="Baidu, Inc.">Baidu, Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$98.11</td>
           
               <td>+2.8%</td>
@@ -536,6 +682,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=KLAC' target='_blank' class='ticker-link'>KLAC</a></td>
+          <td class='co-cell' title="KLA Corporation">KLA Corporation</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$179.10</td>
           
               <td>+2.9%</td>
@@ -549,6 +697,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=LABU' target='_blank' class='ticker-link'>LABU</a></td>
+          <td class='co-cell' title="Direxion Daily S&amp;P Biotech Bull 3X Shares">Direxion Daily S&amp;P Biotech Bull 3X Shares</td>
+          <td class='sec-cell'>ETF · Biotech 3x</td>
           <td>$302.29</td>
           
               <td>-2.0%</td>
@@ -562,6 +712,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=MP' target='_blank' class='ticker-link'>MP</a></td>
+          <td class='co-cell' title="MP Materials Corp.">MP Materials Corp.</td>
+          <td class='sec-cell'>Non-Energy Minerals</td>
           <td>$58.01</td>
           
               <td>+5.1%</td>
@@ -575,6 +727,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=RARE' target='_blank' class='ticker-link'>RARE</a></td>
+          <td class='co-cell' title="Ultragenyx Pharmaceutical Inc.">Ultragenyx Pharmaceutical Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
           <td>$15.60</td>
           
               <td>+4.7%</td>
@@ -588,6 +742,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=SGML' target='_blank' class='ticker-link'>SGML</a></td>
+          <td class='co-cell' title="Sigma Lithium Corporation">Sigma Lithium Corporation</td>
+          <td class='sec-cell'>Non-Energy Minerals</td>
           <td>$12.45</td>
           
               <td>-5.1%</td>
@@ -601,6 +757,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=SLV' target='_blank' class='ticker-link'>SLV</a></td>
+          <td class='co-cell' title="iShares Silver Trust">iShares Silver Trust</td>
+          <td class='sec-cell'>ETF · Silver</td>
           <td>$59.35</td>
           
               <td>-2.3%</td>
@@ -614,6 +772,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=SOXL' target='_blank' class='ticker-link'>SOXL</a></td>
+          <td class='co-cell' title="Direxion Daily Semiconductor Bull 3X Shares">Direxion Daily Semiconductor Bull 3X Shares</td>
+          <td class='sec-cell'>ETF · Semiconductors 3x</td>
           <td>$113.72</td>
           
               <td>+4.1%</td>
@@ -627,6 +787,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ZS' target='_blank' class='ticker-link'>ZS</a></td>
+          <td class='co-cell' title="Zscaler, Inc.">Zscaler, Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$171.48</td>
           
               <td>-6.5%</td>
@@ -640,6 +802,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=APH' target='_blank' class='ticker-link'>APH</a></td>
+          <td class='co-cell' title="Amphenol Corporation">Amphenol Corporation</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$82.70</td>
           
               <td>-47.7%</td>
@@ -652,14 +816,16 @@
         </tbody>
     </table>
     <div class='scan-meta'>
+      <span class='fresh fresh-bad'>2 sessions old</span>
       Updated: 2026-09-04 09:35:42 ET &bull; 213 stocks scanned &bull;
       <span class='aplus-count'>19 A+ setups</span>
     </div>
     </div><div id='tab-midday' class='tab-panel '>
+    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 33 names graded A+ or A &mdash; 41 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row'><span class='cn-name'>Electronic Technology</span><span class='cn-track'><span class='cn-bar' style='width:15%'></span></span><span class='cn-pct'>15%</span><span class='cn-n'>5</span></div><div class='cn-row'><span class='cn-name'>Commercial Services</span><span class='cn-track'><span class='cn-bar' style='width:12%'></span></span><span class='cn-pct'>12%</span><span class='cn-n'>4</span></div><div class='cn-row'><span class='cn-name'>Transportation</span><span class='cn-track'><span class='cn-bar' style='width:12%'></span></span><span class='cn-pct'>12%</span><span class='cn-n'>4</span></div><div class='cn-row'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:12%'></span></span><span class='cn-pct'>12%</span><span class='cn-n'>4</span></div><div class='cn-row'><span class='cn-name'>Producer Manufacturing</span><span class='cn-track'><span class='cn-bar' style='width:12%'></span></span><span class='cn-pct'>12%</span><span class='cn-n'>4</span></div><div class='cn-row'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:9%'></span></span><span class='cn-pct'>9%</span><span class='cn-n'>3</span></div><div class='cn-warn'>⚠ Correlated A+ setups — <b>2 in Commercial Services</b> (EFX, REKR). Taking these together is one position at multiple size, not several independent ones.</div></div>
     <table>
       <thead>
         <tr>
-          <th>Grade</th><th>Ticker</th><th>Price</th>
+          <th>Grade</th><th>Ticker</th><th>Name</th><th>Sector / Exposure</th><th>Price</th>
           <th>AM Move</th><th>Range</th><th>vs High</th><th>vs VWAP</th>
           <th>Signals</th>
         </tr>
@@ -668,6 +834,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=EFX' target='_blank' class='ticker-link'>EFX</a></td>
+          <td class='co-cell' title="Equifax, Inc.">Equifax, Inc.</td>
+          <td class='sec-cell'>Commercial Services</td>
           <td>$175.51</td>
           
               <td>-7.5%</td>
@@ -681,6 +849,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=REKR' target='_blank' class='ticker-link'>REKR</a></td>
+          <td class='co-cell' title="Rekor Systems, Inc.">Rekor Systems, Inc.</td>
+          <td class='sec-cell'>Commercial Services</td>
           <td>$0.53</td>
           
               <td>+2.5%</td>
@@ -694,6 +864,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=FUN' target='_blank' class='ticker-link'>FUN</a></td>
+          <td class='co-cell' title="Six Flags Entertainment Corporation">Six Flags Entertainment Corporation</td>
+          <td class='sec-cell'>Consumer Services</td>
           <td>$15.34</td>
           
               <td>+2.5%</td>
@@ -707,6 +879,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=KXIAY' target='_blank' class='ticker-link'>KXIAY</a></td>
+          <td class='co-cell' title="KIOXIA HLDGS CORP">KIOXIA HLDGS CORP</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$36.80</td>
           
               <td>+7.5%</td>
@@ -720,6 +894,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=TRMD' target='_blank' class='ticker-link'>TRMD</a></td>
+          <td class='co-cell' title="TORM plc">TORM plc</td>
+          <td class='sec-cell'>Transportation</td>
           <td>$35.28</td>
           
               <td>+3.8%</td>
@@ -733,6 +909,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=TRU' target='_blank' class='ticker-link'>TRU</a></td>
+          <td class='co-cell' title="TransUnion">TransUnion</td>
+          <td class='sec-cell'>Commercial Services</td>
           <td>$78.85</td>
           
               <td>-7.8%</td>
@@ -746,6 +924,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=BIDU' target='_blank' class='ticker-link'>BIDU</a></td>
+          <td class='co-cell' title="Baidu, Inc.">Baidu, Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$98.48</td>
           
               <td>+2.9%</td>
@@ -759,6 +939,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=LWLG' target='_blank' class='ticker-link'>LWLG</a></td>
+          <td class='co-cell' title="Lightwave Logic, Inc.">Lightwave Logic, Inc.</td>
+          <td class='sec-cell'>Process Industries</td>
           <td>$5.30</td>
           
               <td>+4.9%</td>
@@ -772,6 +954,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ARCT' target='_blank' class='ticker-link'>ARCT</a></td>
+          <td class='co-cell' title="Arcturus Therapeutics Holdings Inc.">Arcturus Therapeutics Holdings Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
           <td>$15.82</td>
           
               <td>+2.2%</td>
@@ -785,6 +969,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=BDN' target='_blank' class='ticker-link'>BDN</a></td>
+          <td class='co-cell' title="Brandywine Realty Trust">Brandywine Realty Trust</td>
+          <td class='sec-cell'>Finance</td>
           <td>$3.12</td>
           
               <td>+2.8%</td>
@@ -798,6 +984,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=BNC' target='_blank' class='ticker-link'>BNC</a></td>
+          <td class='co-cell' title="CEA Industries Inc.">CEA Industries Inc.</td>
+          <td class='sec-cell'>Producer Manufacturing</td>
           <td>$3.38</td>
           
               <td>+4.0%</td>
@@ -811,6 +999,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ECO' target='_blank' class='ticker-link'>ECO</a></td>
+          <td class='co-cell' title="Okeanis Eco Tankers Corp.">Okeanis Eco Tankers Corp.</td>
+          <td class='sec-cell'>Transportation</td>
           <td>$71.13</td>
           
               <td>+3.1%</td>
@@ -824,6 +1014,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ELDN' target='_blank' class='ticker-link'>ELDN</a></td>
+          <td class='co-cell' title="Eledon Pharmaceuticals, Inc.">Eledon Pharmaceuticals, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
           <td>$3.05</td>
           
               <td>+2.4%</td>
@@ -837,6 +1029,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=FISN' target='_blank' class='ticker-link'>FISN</a></td>
+          <td class='co-cell' title="Deep Fission, Inc.">Deep Fission, Inc.</td>
+          <td class='sec-cell'>Producer Manufacturing</td>
           <td>$7.25</td>
           
               <td>+2.8%</td>
@@ -850,6 +1044,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=GCT' target='_blank' class='ticker-link'>GCT</a></td>
+          <td class='co-cell' title="GigaCloud Technology Inc">GigaCloud Technology Inc</td>
+          <td class='sec-cell'>Distribution Services</td>
           <td>$52.20</td>
           
               <td>+3.5%</td>
@@ -863,6 +1059,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=RBLX' target='_blank' class='ticker-link'>RBLX</a></td>
+          <td class='co-cell' title="Roblox Corporation">Roblox Corporation</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$43.03</td>
           
               <td>+2.8%</td>
@@ -876,6 +1074,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=VSTS' target='_blank' class='ticker-link'>VSTS</a></td>
+          <td class='co-cell' title="Vestis Corporation">Vestis Corporation</td>
+          <td class='sec-cell'>Consumer Non-Durables</td>
           <td>$13.16</td>
           
               <td>+6.1%</td>
@@ -889,6 +1089,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=WDS' target='_blank' class='ticker-link'>WDS</a></td>
+          <td class='co-cell' title="Woodside Energy Group Limited">Woodside Energy Group Limited</td>
+          <td class='sec-cell'>Energy Minerals</td>
           <td>$22.79</td>
           
               <td>-3.8%</td>
@@ -902,6 +1104,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=CMBT' target='_blank' class='ticker-link'>CMBT</a></td>
+          <td class='co-cell' title="CMB.TECH NV">CMB.TECH NV</td>
+          <td class='sec-cell'>Transportation</td>
           <td>$19.41</td>
           
               <td>+4.9%</td>
@@ -915,6 +1119,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=RARE' target='_blank' class='ticker-link'>RARE</a></td>
+          <td class='co-cell' title="Ultragenyx Pharmaceutical Inc.">Ultragenyx Pharmaceutical Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
           <td>$15.75</td>
           
               <td>+8.3%</td>
@@ -927,14 +1133,16 @@
         </tbody>
     </table>
     <div class='scan-meta'>
+      <span class='fresh fresh-bad'>2 sessions old</span>
       Updated: 2026-09-04 13:30:41 ET &bull; 74 stocks scanned &bull;
       <span class='aplus-count'>5 A+ setups</span>
     </div>
     </div><div id='tab-powerhour' class='tab-panel '>
+    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 18 names graded A+ or A &mdash; 34 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row cn-hot'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:22%'></span></span><span class='cn-pct'>22%</span><span class='cn-n'>4</span></div><div class='cn-row cn-hot'><span class='cn-name'>Electronic Technology</span><span class='cn-track'><span class='cn-bar' style='width:22%'></span></span><span class='cn-pct'>22%</span><span class='cn-n'>4</span></div><div class='cn-row'><span class='cn-name'>Commercial Services</span><span class='cn-track'><span class='cn-bar' style='width:17%'></span></span><span class='cn-pct'>17%</span><span class='cn-n'>3</span></div><div class='cn-row'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:11%'></span></span><span class='cn-pct'>11%</span><span class='cn-n'>2</span></div><div class='cn-row'><span class='cn-name'>Industrial Services</span><span class='cn-track'><span class='cn-bar' style='width:6%'></span></span><span class='cn-pct'>6%</span><span class='cn-n'>1</span></div><div class='cn-row'><span class='cn-name'>Retail Trade</span><span class='cn-track'><span class='cn-bar' style='width:6%'></span></span><span class='cn-pct'>6%</span><span class='cn-n'>1</span></div><div class='cn-note'>Technology Services is 22% of the graded names (4 of 18) — likely one catalyst rather than 4 independent setups.</div></div>
     <table>
       <thead>
         <tr>
-          <th>Grade</th><th>Ticker</th><th>Price</th>
+          <th>Grade</th><th>Ticker</th><th>Name</th><th>Sector / Exposure</th><th>Price</th>
           <th>Day %</th><th>PH RVOL</th><th>vs VWAP</th><th>Signal</th>
           <th>Signals</th>
         </tr>
@@ -943,6 +1151,8 @@
         <tr class='row-aplus'>
           <td><span class='grade-badge grade-aplus'>A+</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=RARE' target='_blank' class='ticker-link'>RARE</a></td>
+          <td class='co-cell' title="Ultragenyx Pharmaceutical Inc.">Ultragenyx Pharmaceutical Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
           <td>$15.80</td>
           
               <td>+6.4%</td>
@@ -956,6 +1166,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=TRU' target='_blank' class='ticker-link'>TRU</a></td>
+          <td class='co-cell' title="TransUnion">TransUnion</td>
+          <td class='sec-cell'>Commercial Services</td>
           <td>$78.99</td>
           
               <td>-7.0%</td>
@@ -969,6 +1181,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ADBE' target='_blank' class='ticker-link'>ADBE</a></td>
+          <td class='co-cell' title="Adobe Inc.">Adobe Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$269.38</td>
           
               <td>-5.7%</td>
@@ -982,6 +1196,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=GOAI' target='_blank' class='ticker-link'>GOAI</a></td>
+          <td class='co-cell' title="Eva Live Inc.">Eva Live Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$2.93</td>
           
               <td>+10.6%</td>
@@ -995,6 +1211,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=EFX' target='_blank' class='ticker-link'>EFX</a></td>
+          <td class='co-cell' title="Equifax, Inc.">Equifax, Inc.</td>
+          <td class='sec-cell'>Commercial Services</td>
           <td>$175.60</td>
           
               <td>-7.1%</td>
@@ -1008,6 +1226,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=ASAN' target='_blank' class='ticker-link'>ASAN</a></td>
+          <td class='co-cell' title="Asana, Inc.">Asana, Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$8.65</td>
           
               <td>-14.3%</td>
@@ -1021,6 +1241,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=BBCP' target='_blank' class='ticker-link'>BBCP</a></td>
+          <td class='co-cell' title="Concrete Pumping Holdings, Inc.">Concrete Pumping Holdings, Inc.</td>
+          <td class='sec-cell'>Industrial Services</td>
           <td>$10.50</td>
           
               <td>+16.0%</td>
@@ -1034,6 +1256,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=COHU' target='_blank' class='ticker-link'>COHU</a></td>
+          <td class='co-cell' title="Cohu, Inc.">Cohu, Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$49.83</td>
           
               <td>+8.4%</td>
@@ -1047,6 +1271,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=CURV' target='_blank' class='ticker-link'>CURV</a></td>
+          <td class='co-cell' title="Torrid Holdings Inc.">Torrid Holdings Inc.</td>
+          <td class='sec-cell'>Retail Trade</td>
           <td>$2.51</td>
           
               <td>+12.6%</td>
@@ -1060,6 +1286,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=DOCU' target='_blank' class='ticker-link'>DOCU</a></td>
+          <td class='co-cell' title="DocuSign, Inc.">DocuSign, Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
           <td>$68.17</td>
           
               <td>+3.3%</td>
@@ -1073,6 +1301,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=FICO' target='_blank' class='ticker-link'>FICO</a></td>
+          <td class='co-cell' title="Fair Isaac Corporation">Fair Isaac Corporation</td>
+          <td class='sec-cell'>Commercial Services</td>
           <td>$941.86</td>
           
               <td>-15.8%</td>
@@ -1086,6 +1316,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=KLAC' target='_blank' class='ticker-link'>KLAC</a></td>
+          <td class='co-cell' title="KLA Corporation">KLA Corporation</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$185.66</td>
           
               <td>+7.4%</td>
@@ -1099,6 +1331,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=LULU' target='_blank' class='ticker-link'>LULU</a></td>
+          <td class='co-cell' title="lululemon athletica inc.">lululemon athletica inc.</td>
+          <td class='sec-cell'>Consumer Non-Durables</td>
           <td>$100.94</td>
           
               <td>-17.1%</td>
@@ -1112,6 +1346,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=MRVL' target='_blank' class='ticker-link'>MRVL</a></td>
+          <td class='co-cell' title="Marvell Technology, Inc.">Marvell Technology, Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$221.77</td>
           
               <td>+6.2%</td>
@@ -1125,6 +1361,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=NMAD' target='_blank' class='ticker-link'>NMAD</a></td>
+          <td class='co-cell' title="Nomad Power Solutions, Inc.">Nomad Power Solutions, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
           <td>$3.93</td>
           
               <td>+7.2%</td>
@@ -1138,6 +1376,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=NX' target='_blank' class='ticker-link'>NX</a></td>
+          <td class='co-cell' title="Quanex Building Products Corporation">Quanex Building Products Corporation</td>
+          <td class='sec-cell'>Producer Manufacturing</td>
           <td>$21.80</td>
           
               <td>+16.2%</td>
@@ -1151,6 +1391,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=SOXL' target='_blank' class='ticker-link'>SOXL</a></td>
+          <td class='co-cell' title="Direxion Daily Semiconductor Bull 3X Shares">Direxion Daily Semiconductor Bull 3X Shares</td>
+          <td class='sec-cell'>ETF · Semiconductors 3x</td>
           <td>$115.88</td>
           
               <td>+8.6%</td>
@@ -1164,6 +1406,8 @@
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=TTMI' target='_blank' class='ticker-link'>TTMI</a></td>
+          <td class='co-cell' title="TTM Technologies, Inc.">TTM Technologies, Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$123.91</td>
           
               <td>+7.4%</td>
@@ -1177,6 +1421,8 @@
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=KXIAY' target='_blank' class='ticker-link'>KXIAY</a></td>
+          <td class='co-cell' title="KIOXIA HLDGS CORP">KIOXIA HLDGS CORP</td>
+          <td class='sec-cell'>Electronic Technology</td>
           <td>$36.60</td>
           
               <td>+8.8%</td>
@@ -1190,6 +1436,8 @@
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
           <td><a href='https://www.tradingview.com/chart/?symbol=BNC' target='_blank' class='ticker-link'>BNC</a></td>
+          <td class='co-cell' title="CEA Industries Inc.">CEA Industries Inc.</td>
+          <td class='sec-cell'>Producer Manufacturing</td>
           <td>$3.39</td>
           
               <td>+3.0%</td>
@@ -1202,6 +1450,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
+      <span class='fresh fresh-bad'>2 sessions old</span>
       Updated: 2026-09-04 14:00:43 ET &bull; 52 stocks scanned &bull;
       <span class='aplus-count'>1 A+ setup</span>
     </div>
@@ -1213,6 +1462,29 @@ function showTab(name) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   event.currentTarget.classList.add('active');
+}
+</script>
+
+<script>
+// Theme toggle. Unlike the options dashboard, the choice is REMEMBERED —
+// localStorage is per-artifact and per-browser, so it only affects this
+// viewer. Wrapped in try/catch because a private window or blocked site
+// data makes the accessor itself throw.
+function applyTheme(t) {
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else document.documentElement.removeAttribute("data-theme");
+}
+try { applyTheme(localStorage.getItem("dt-theme")); } catch (e) {}
+
+function toggleTheme() {
+  const r = document.documentElement;
+  const cur = r.getAttribute("data-theme");
+  let next;
+  if (cur === "light") next = "dark";
+  else if (cur === "dark") next = "light";
+  else next = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark";
+  applyTheme(next);
+  try { localStorage.setItem("dt-theme", next); } catch (e) {}
 }
 </script>
 </body>
