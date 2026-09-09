@@ -29,15 +29,24 @@
 !/CANSLIM_Dashboard.html
 !/Options_Dashboard.html
 
-# 4 ─ orchestrators and screeners that carry no credentials
-!/run_daily.bat
-!/run_options_scan.bat
-!/screen_stocks.py
-!/scan_options.py
-!/gen_options_html.py
+# 4 ─ NO source code. This repository publishes dashboards, nothing else.
+#
+#     Until 9 Sep 2026 it also carried run_daily.bat, run_options_scan.bat,
+#     screen_stocks.py, scan_options.py, gen_options_html.py and the whole
+#     DayTrader subtree. They were removed: the pipeline is private by
+#     preference, and those files had begun importing market_calendar, which
+#     is deliberately not published — so the public copy would have been code
+#     that could not run.
+#
+#     They are version-controlled in the private canslim-pipeline repo and
+#     copied there by sync_private.py. Before re-publishing anything here,
+#     check it does not import a private module.
 
-# 5 ─ DayTrader subtree (governed by DayTrader/.gitignore)
+# 5 ─ DayTrader: the rendered dashboard only, never the scanners
 !/DayTrader/
+/DayTrader/*
+!/DayTrader/DayTrader_Dashboard.html
+!/DayTrader/.gitignore
 
 # 6 ─ belt and braces: never publish these even if a rule above widens.
 #     Credentials live in .env; compiled bytecode embeds string constants.
@@ -48,6 +57,18 @@ __pycache__/
 notion_writer.py
 generate_dashboard.py
 canslim_config.py
+market_calendar.py
+session_history.json
+screen_stocks.py
+scan_options.py
+gen_options_html.py
+run_daily.bat
+run_options_scan.bat
+verify_calendar.py
+compare_b3.py
+dashboard_template.html
+test_*.py
+*.md
 backup_pre_audit_*/
 backup_claude_mcp_system/
 claude_desktop_config*.json
