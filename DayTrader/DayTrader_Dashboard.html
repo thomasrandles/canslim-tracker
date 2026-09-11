@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="120">
-<title>DayTrader Scanner — 2026-09-10 21:01</title>
+<title>DayTrader Scanner — 2026-09-11 13:01</title>
 <style>
   /* Dark is the default look here, so it lives on bare :root. The viewer has
      THREE states: an explicit choice stamps data-theme, and the default
@@ -166,7 +166,7 @@
 <header>
   <h1>📈 <span>DayTrader</span> Scanner</h1>
   <div class="hdr-right">
-    <div class="time-badge">2026-09-10 21:01 local &bull; 15:01 ET</div>
+    <div class="time-badge">2026-09-11 13:01 local &bull; 07:01 ET</div>
     <button class="theme-btn" onclick="toggleTheme()" aria-label="Switch between light and dark">Theme</button>
   </div>
 </header>
@@ -183,11 +183,11 @@
 </div>
 
 <div class="tabs">
-  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small><br><small class='cet'>14:00 CEST</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>48 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>15:35 CEST</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>49 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>19:30 CEST</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>3 A+</span><br><small>3:00 PM ET</small><br><small class='cet'>21:00 CEST</small></button>
+  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps <span class='tab-badge'>3 A+</span><br><small>7–9 AM ET</small><br><small class='cet'>14:00 CEST</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>48 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>15:35 CEST</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>49 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>19:30 CEST</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>3 A+</span><br><small>3:00 PM ET</small><br><small class='cet'>21:00 CEST</small></button>
 </div>
 
 <div id='tab-premarket' class='tab-panel active'>
-    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 4 names graded A+ or A &mdash; 153 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row cn-hot'><span class='cn-name'>Energy Minerals</span><span class='cn-track'><span class='cn-bar' style='width:25%'></span></span><span class='cn-pct'>25%</span><span class='cn-n'>1</span></div><div class='cn-row cn-hot'><span class='cn-name'>Process Industries</span><span class='cn-track'><span class='cn-bar' style='width:25%'></span></span><span class='cn-pct'>25%</span><span class='cn-n'>1</span></div><div class='cn-row cn-hot'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:25%'></span></span><span class='cn-pct'>25%</span><span class='cn-n'>1</span></div><div class='cn-row cn-hot'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:25%'></span></span><span class='cn-pct'>25%</span><span class='cn-n'>1</span></div><div class='cn-note'>Energy Minerals is 25% of the graded names (1 of 4) — likely one catalyst rather than 1 independent setups.</div></div>
+    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 5 names graded A+ or A &mdash; 53 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row cn-hot'><span class='cn-name'>Electronic Technology</span><span class='cn-track'><span class='cn-bar' style='width:40%'></span></span><span class='cn-pct'>40%</span><span class='cn-n'>2</span></div><div class='cn-row cn-hot'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:40%'></span></span><span class='cn-pct'>40%</span><span class='cn-n'>2</span></div><div class='cn-row cn-hot'><span class='cn-name'>Retail Trade</span><span class='cn-track'><span class='cn-bar' style='width:20%'></span></span><span class='cn-pct'>20%</span><span class='cn-n'>1</span></div><div class='cn-note'>Electronic Technology is 40% of the graded names (2 of 5) — likely one catalyst rather than 2 independent setups.</div><div class='cn-warn'>⚠ Correlated A+ setups — <b>2 in Electronic Technology</b> (FEIM, PCLA). Taking these together is one position at multiple size, not several independent ones.</div></div>
     <table>
       <thead>
         <tr>
@@ -197,154 +197,244 @@
         </tr>
       </thead>
       <tbody>
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=BATL' target='_blank' class='ticker-link'>BATL</a></td>
-          <td class='co-cell' title="Battalion Oil Corporation">Battalion Oil Corporation</td>
-          <td class='sec-cell'>Energy Minerals</td>
-          <td>$1.47</td>
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PCLA' target='_blank' class='ticker-link'>PCLA</a></td>
+          <td class='co-cell' title="PicoCELA Inc.">PicoCELA Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$12.23</td>
           
-              <td>+8.1%</td>
-              <td>1.6×</td>
-              <td>1,460,999</td>
+              <td>+25.8%</td>
+              <td>3.2×</td>
+              <td>473,219</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 8.1%</span><span class='tag'>PM RVOL 1.6x</span><span class='tag'>Near 52w high (+2.8%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 25.8%</span><span class='tag'>PM RVOL 3.2x</span><span class='tag'>Near 52w high (+25.8%)</span></div></td>
         </tr>
         
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CC' target='_blank' class='ticker-link'>CC</a></td>
-          <td class='co-cell' title="Chemours Company (The)">Chemours Company (The)</td>
-          <td class='sec-cell'>Process Industries</td>
-          <td>$16.00</td>
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ACVA' target='_blank' class='ticker-link'>ACVA</a></td>
+          <td class='co-cell' title="ACV Auctions Inc.">ACV Auctions Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
+          <td>$10.40</td>
           
-              <td>+6.4%</td>
+              <td>+44.0%</td>
+              <td>0.8×</td>
+              <td>757,765</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Huge gap 44.0%</span><span class='tag'>Near 52w high (+25.8%)</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=FEIM' target='_blank' class='ticker-link'>FEIM</a></td>
+          <td class='co-cell' title="Frequency Electronics, Inc.">Frequency Electronics, Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$80.11</td>
+          
+              <td>+29.1%</td>
               <td>0.1×</td>
-              <td>26,939</td>
+              <td>3,482</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 6.4%</span><span class='tag'>Near 52w high (+0.2%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 29.1%</span><span class='tag'>Near 52w high (+1.6%)</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=COO' target='_blank' class='ticker-link'>COO</a></td>
-          <td class='co-cell' title="The Cooper Companies, Inc.">The Cooper Companies, Inc.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$52.03</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ORCL' target='_blank' class='ticker-link'>ORCL</a></td>
+          <td class='co-cell' title="Oracle Corporation">Oracle Corporation</td>
+          <td class='sec-cell'>Technology Services</td>
+          <td>$163.64</td>
           
-              <td>-18.0%</td>
-              <td>0.3×</td>
-              <td>164,081</td>
+              <td>+7.0%</td>
+              <td>0.2×</td>
+              <td>901,412</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 7.0%</span><span class='tag'>Near 52w high (+0.7%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ZUMZ' target='_blank' class='ticker-link'>ZUMZ</a></td>
+          <td class='co-cell' title="Zumiez Inc.">Zumiez Inc.</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$14.00</td>
+          
+              <td>-16.2%</td>
+              <td>0.0×</td>
+              <td>713</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 18.0%</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=IOND' target='_blank' class='ticker-link'>IOND</a></td>
-          <td class='co-cell' title="Ionic Digital Inc.">Ionic Digital Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$81.00</td>
-          
-              <td>+6.2%</td>
-              <td>0.0×</td>
-              <td>5,227</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 6.2%</span><span class='tag'>Near 52w high (-1.2%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 16.2%</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ANNA' target='_blank' class='ticker-link'>ANNA</a></td>
-          <td class='co-cell' title="AleAnna, Inc.">AleAnna, Inc.</td>
-          <td class='sec-cell'>Energy Minerals</td>
-          <td>$3.48</td>
-          
-              <td>+5.9%</td>
-              <td>0.1×</td>
-              <td>6,632</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 5.9%</span><span class='tag'>Near 52w high (+5.9%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=KNTK' target='_blank' class='ticker-link'>KNTK</a></td>
-          <td class='co-cell' title="Kinetik Holdings Inc.">Kinetik Holdings Inc.</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=GDHG' target='_blank' class='ticker-link'>GDHG</a></td>
+          <td class='co-cell' title="Golden Heaven Group Holdings Ltd.">Golden Heaven Group Holdings Ltd.</td>
           <td class='sec-cell'>Industrial Services</td>
-          <td>$56.89</td>
+          <td>$1.17</td>
           
-              <td>+4.3%</td>
-              <td>0.0×</td>
-              <td>1,430</td>
-              <td><span class='badge badge-long'>LONG</span></td>
+              <td>-11.4%</td>
+              <td>0.5×</td>
+              <td>72,126</td>
+              <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Gap 4.3%</span><span class='tag'>Near 52w high (+3.2%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 11.4%</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=OBE' target='_blank' class='ticker-link'>OBE</a></td>
-          <td class='co-cell' title="Obsidian Energy Ltd.">Obsidian Energy Ltd.</td>
-          <td class='sec-cell'>Energy Minerals</td>
-          <td>$12.59</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=GME' target='_blank' class='ticker-link'>GME</a></td>
+          <td class='co-cell' title="GameStop Corporation">GameStop Corporation</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$21.16</td>
           
-              <td>+3.5%</td>
+              <td>+3.8%</td>
               <td>0.0×</td>
-              <td>2,970</td>
+              <td>56,092</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Gap 3.5%</span><span class='tag'>Near 52w high (+3.5%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Gap 3.8%</span><span class='tag'>Near 52w high (+3.8%)</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=RCKT' target='_blank' class='ticker-link'>RCKT</a></td>
-          <td class='co-cell' title="Rocket Pharmaceuticals, Inc.">Rocket Pharmaceuticals, Inc.</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SWRD' target='_blank' class='ticker-link'>SWRD</a></td>
+          <td class='co-cell' title="Stewards Inc">Stewards Inc</td>
+          <td class='sec-cell'>Non-Energy Minerals</td>
+          <td>$1.91</td>
+          
+              <td>-14.3%</td>
+              <td>0.1×</td>
+              <td>51,829</td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Huge gap 14.3%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=WT' target='_blank' class='ticker-link'>WT</a></td>
+          <td class='co-cell' title="WisdomTree, Inc.">WisdomTree, Inc.</td>
+          <td class='sec-cell'>Finance</td>
+          <td>$25.15</td>
+          
+              <td>+3.7%</td>
+              <td>0.0×</td>
+              <td>300</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Gap 3.7%</span><span class='tag'>Near 52w high (+0.4%)</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=AADX' target='_blank' class='ticker-link'>AADX</a></td>
+          <td class='co-cell' title="Applied Aerospace &amp; Defense, Inc.">Applied Aerospace &amp; Defense, Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$12.13</td>
+          
+              <td>+5.1%</td>
+              <td>0.0×</td>
+              <td>1,257</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 5.1%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ATEC' target='_blank' class='ticker-link'>ATEC</a></td>
+          <td class='co-cell' title="Alphatec Holdings, Inc.">Alphatec Holdings, Inc.</td>
           <td class='sec-cell'>Health Technology</td>
-          <td>$3.91</td>
+          <td>$9.37</td>
           
-              <td>+7.6%</td>
+              <td>+6.0%</td>
               <td>0.0×</td>
-              <td>100</td>
+              <td>6,262</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 7.6%</span><span class='tag'>Near 52w high (+1.2%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Strong gap 6.0%</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=RXT' target='_blank' class='ticker-link'>RXT</a></td>
-          <td class='co-cell' title="Rackspace Technology, Inc.">Rackspace Technology, Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$3.50</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CPRT' target='_blank' class='ticker-link'>CPRT</a></td>
+          <td class='co-cell' title="Copart, Inc.">Copart, Inc.</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$32.51</td>
+          
+              <td>+5.7%</td>
+              <td>0.0×</td>
+              <td>25,843</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 5.7%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PBR' target='_blank' class='ticker-link'>PBR</a></td>
+          <td class='co-cell' title="Petroleo Brasileiro S.A. Petrobras">Petroleo Brasileiro S.A. Petrobras</td>
+          <td class='sec-cell'>Energy Minerals</td>
+          <td>$21.05</td>
+          
+              <td>-1.5%</td>
+              <td>0.0×</td>
+              <td>14,032</td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Near 52w high (-1.5%)</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=REGN' target='_blank' class='ticker-link'>REGN</a></td>
+          <td class='co-cell' title="Regeneron Pharmaceuticals, Inc.">Regeneron Pharmaceuticals, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$831.71</td>
+          
+              <td>+4.8%</td>
+              <td><span class='na'>—</span></td>
+              <td>0</td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Gap 4.8%</span><span class='tag'>No pre-market volume - gap UNCONFIRMED</span><span class='tag'>Near 52w high (-2.4%)</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=RH' target='_blank' class='ticker-link'>RH</a></td>
+          <td class='co-cell' title="RH">RH</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$144.77</td>
           
               <td>+8.0%</td>
-              <td>2.6×</td>
-              <td>3,964,630</td>
+              <td>0.0×</td>
+              <td>3,029</td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 8.0%</span><span class='tag'>PM RVOL 2.6x</span></div></td>
+          <td><div class='tags'><span class='tag'>Strong gap 8.0%</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SDA' target='_blank' class='ticker-link'>SDA</a></td>
-          <td class='co-cell' title="SunCar Technology Group Inc.">SunCar Technology Group Inc.</td>
-          <td class='sec-cell'>Consumer Services</td>
-          <td>$0.68</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SPXS' target='_blank' class='ticker-link'>SPXS</a></td>
+          <td class='co-cell' title="Direxion Daily S&amp;P 500 Bear 3X Shares">Direxion Daily S&amp;P 500 Bear 3X Shares</td>
+          <td class='sec-cell'>ETF · S&amp;P 500 -3x</td>
+          <td>$25.26</td>
           
-              <td>+13.2%</td>
-              <td>0.6×</td>
-              <td>99,362</td>
-              <td><span class='badge badge-long'>LONG</span></td>
+              <td>-1.6%</td>
+              <td><span class='na'>—</span></td>
+              <td>0</td>
+              <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 13.1%</span></div></td>
+          <td><div class='tags'><span class='tag'>No pre-market volume - gap UNCONFIRMED</span><span class='tag'>Near 52w high (-1.6%)</span></div></td>
         </tr>
         
         <tr class=''>
@@ -352,14 +442,29 @@
           <td><a href='https://www.tradingview.com/chart/?symbol=SQQQ' target='_blank' class='ticker-link'>SQQQ</a></td>
           <td class='co-cell' title="ProShares UltraPro Short QQQ">ProShares UltraPro Short QQQ</td>
           <td class='sec-cell'>ETF · Nasdaq 100 -3x</td>
-          <td>$40.16</td>
+          <td>$39.20</td>
           
-              <td>+3.9%</td>
+              <td>-1.8%</td>
               <td><span class='na'>—</span></td>
               <td>0</td>
-              <td><span class='badge badge-long'>LONG</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Gap 3.9%</span><span class='tag'>No pre-market volume - gap UNCONFIRMED</span><span class='tag'>Near 52w high (-0.1%)</span></div></td>
+          <td><div class='tags'><span class='tag'>No pre-market volume - gap UNCONFIRMED</span><span class='tag'>Near 52w high (-2.5%)</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=TJGC' target='_blank' class='ticker-link'>TJGC</a></td>
+          <td class='co-cell' title="TJGC Group Limited">TJGC Group Limited</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$10.50</td>
+          
+              <td>-1.6%</td>
+              <td>0.0×</td>
+              <td>3,298</td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Near 52w high (-1.6%)</span></div></td>
         </tr>
         
         <tr class=''>
@@ -367,141 +472,36 @@
           <td><a href='https://www.tradingview.com/chart/?symbol=VG' target='_blank' class='ticker-link'>VG</a></td>
           <td class='co-cell' title="Venture Global, Inc.">Venture Global, Inc.</td>
           <td class='sec-cell'>Industrial Services</td>
-          <td>$15.80</td>
+          <td>$15.22</td>
           
-              <td>+3.3%</td>
-              <td>0.1×</td>
-              <td>168,758</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 3.3%</span><span class='tag'>Near 52w high (+3.3%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ALMS' target='_blank' class='ticker-link'>ALMS</a></td>
-          <td class='co-cell' title="Alumis Inc.">Alumis Inc.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$10.40</td>
-          
-              <td>+6.2%</td>
-              <td>0.1×</td>
-              <td>66,826</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 6.2%</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ARBE' target='_blank' class='ticker-link'>ARBE</a></td>
-          <td class='co-cell' title="Arbe Robotics Ltd.">Arbe Robotics Ltd.</td>
-          <td class='sec-cell'>Producer Manufacturing</td>
-          <td>$0.82</td>
-          
-              <td>+3.3%</td>
-              <td>0.2×</td>
-              <td>373,616</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 3.3%</span><span class='tag'>Near 52w high (+0.7%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=AU' target='_blank' class='ticker-link'>AU</a></td>
-          <td class='co-cell' title="AngloGold Ashanti PLC">AngloGold Ashanti PLC</td>
-          <td class='sec-cell'>Non-Energy Minerals</td>
-          <td>$102.00</td>
-          
-              <td>-6.0%</td>
-              <td>0.1×</td>
-              <td>51,755</td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 6.0%</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CF' target='_blank' class='ticker-link'>CF</a></td>
-          <td class='co-cell' title="CF Industries Holdings, Inc.">CF Industries Holdings, Inc.</td>
-          <td class='sec-cell'>Process Industries</td>
-          <td>$141.60</td>
-          
-              <td>+2.5%</td>
+              <td>-1.8%</td>
               <td>0.0×</td>
-              <td>939</td>
-              <td><span class='badge badge-long'>LONG</span></td>
+              <td>26,719</td>
+              <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Near 52w high (+1.7%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Near 52w high (-1.8%)</span></div></td>
         </tr>
         
         <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CHYM' target='_blank' class='ticker-link'>CHYM</a></td>
-          <td class='co-cell' title="Chime Financial, Inc.">Chime Financial, Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$33.59</td>
+          <td><span class='grade-badge grade-c'>C</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=AMBR' target='_blank' class='ticker-link'>AMBR</a></td>
+          <td class='co-cell' title="Amber International Holding Limited">Amber International Holding Limited</td>
+          <td class='sec-cell'>Finance</td>
+          <td>$0.95</td>
           
-              <td>-2.8%</td>
+              <td>-5.9%</td>
               <td>0.0×</td>
-              <td>18,676</td>
+              <td>2,629</td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Near 52w high (-2.8%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=COP' target='_blank' class='ticker-link'>COP</a></td>
-          <td class='co-cell' title="ConocoPhillips">ConocoPhillips</td>
-          <td class='sec-cell'>Energy Minerals</td>
-          <td>$139.65</td>
-          
-              <td>+2.3%</td>
-              <td>0.1×</td>
-              <td>80,248</td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Near 52w high (+1.8%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CRWV' target='_blank' class='ticker-link'>CRWV</a></td>
-          <td class='co-cell' title="CoreWeave, Inc.">CoreWeave, Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$90.15</td>
-          
-              <td>-5.0%</td>
-              <td>0.1×</td>
-              <td>598,772</td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 5.0%</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ERO' target='_blank' class='ticker-link'>ERO</a></td>
-          <td class='co-cell' title="Ero Copper Corp.">Ero Copper Corp.</td>
-          <td class='sec-cell'>Non-Energy Minerals</td>
-          <td>$35.57</td>
-          
-              <td>-7.0%</td>
-              <td>0.1×</td>
-              <td>51,927</td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 7.0%</span></div></td>
+          <td><div class='tags'><span class='tag'>Strong gap 5.9%</span></div></td>
         </tr>
         </tbody>
     </table>
     <div class='scan-meta'>
       <span class='fresh fresh-ok'>TODAY</span>
-      Updated: 2026-09-10 09:00:53 ET &bull; 157 stocks scanned &bull;
-      <span class='aplus-count'>0 A+ setups</span>
+      Updated: 2026-09-11 07:00:53 ET &bull; 58 stocks scanned &bull;
+      <span class='aplus-count'>3 A+ setups</span>
     </div>
     </div><div id='tab-opening' class='tab-panel '>
     <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 143 names graded A+ or A &mdash; 85 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row cn-hot'><span class='cn-name'>Electronic Technology</span><span class='cn-track'><span class='cn-bar' style='width:20%'></span></span><span class='cn-pct'>20%</span><span class='cn-n'>29</span></div><div class='cn-row'><span class='cn-name'>Non-Energy Minerals</span><span class='cn-track'><span class='cn-bar' style='width:17%'></span></span><span class='cn-pct'>17%</span><span class='cn-n'>25</span></div><div class='cn-row'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:13%'></span></span><span class='cn-pct'>13%</span><span class='cn-n'>18</span></div><div class='cn-row'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>12</span></div><div class='cn-row'><span class='cn-name'>Finance</span><span class='cn-track'><span class='cn-bar' style='width:4%'></span></span><span class='cn-pct'>4%</span><span class='cn-n'>6</span></div><div class='cn-row'><span class='cn-name'>Producer Manufacturing</span><span class='cn-track'><span class='cn-bar' style='width:3%'></span></span><span class='cn-pct'>3%</span><span class='cn-n'>5</span></div><div class='cn-note'>Electronic Technology is 20% of the graded names (29 of 143) — likely one catalyst rather than 29 independent setups.</div><div class='cn-warn'>⚠ Correlated A+ setups — <b>9 in Electronic Technology</b> (AVAV, BE, CIEN, COHR, GLW…); <b>8 in Technology Services</b> (CLSK, CMRC, CRWV, HUT, IREN…); <b>7 in Non-Energy Minerals</b> (AA, AEM, AU, B, HBM…). Taking these together is one position at multiple size, not several independent ones.</div></div>
@@ -816,7 +816,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-ok'>TODAY</span>
+      <span class='fresh fresh-warn'>yesterday</span>
       Updated: 2026-09-10 09:35:52 ET &bull; 228 stocks scanned &bull;
       <span class='aplus-count'>48 A+ setups</span>
     </div>
@@ -1133,7 +1133,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-ok'>TODAY</span>
+      <span class='fresh fresh-warn'>yesterday</span>
       Updated: 2026-09-10 13:30:49 ET &bull; 77 stocks scanned &bull;
       <span class='aplus-count'>49 A+ setups</span>
     </div>
@@ -1450,7 +1450,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-ok'>TODAY</span>
+      <span class='fresh fresh-warn'>yesterday</span>
       Updated: 2026-09-10 15:00:59 ET &bull; 58 stocks scanned &bull;
       <span class='aplus-count'>3 A+ setups</span>
     </div>
