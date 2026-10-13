@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="120">
-<title>DayTrader Scanner — 2026-10-12 21:01</title>
+<title>DayTrader Scanner — 2026-10-13 13:00</title>
 <style>
   /* Dark is the default look here, so it lives on bare :root. The viewer has
      THREE states: an explicit choice stamps data-theme, and the default
@@ -166,7 +166,7 @@
 <header>
   <h1>📈 <span>DayTrader</span> Scanner</h1>
   <div class="hdr-right">
-    <div class="time-badge">2026-10-12 21:01 local &bull; 15:01 ET</div>
+    <div class="time-badge">2026-10-13 13:00 local &bull; 07:00 ET</div>
     <button class="theme-btn" onclick="toggleTheme()" aria-label="Switch between light and dark">Theme</button>
   </div>
 </header>
@@ -183,11 +183,11 @@
 </div>
 
 <div class="tabs">
-  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps <span class='tab-badge'>4 A+</span><br><small>7–9 AM ET</small><br><small class='cet'>14:00 CEST</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>29 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>15:35 CEST</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>25 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>19:30 CEST</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>4 A+</span><br><small>3:00 PM ET</small><br><small class='cet'>21:00 CEST</small></button>
+  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small><br><small class='cet'>14:00 CEST</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>29 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>15:35 CEST</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>25 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>19:30 CEST</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>4 A+</span><br><small>3:00 PM ET</small><br><small class='cet'>21:00 CEST</small></button>
 </div>
 
 <div id='tab-premarket' class='tab-panel active'>
-    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 7 names graded A+ or A &mdash; 97 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row cn-hot'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:43%'></span></span><span class='cn-pct'>43%</span><span class='cn-n'>3</span></div><div class='cn-row cn-hot'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:43%'></span></span><span class='cn-pct'>43%</span><span class='cn-n'>3</span></div><div class='cn-row'><span class='cn-name'>Process Industries</span><span class='cn-track'><span class='cn-bar' style='width:14%'></span></span><span class='cn-pct'>14%</span><span class='cn-n'>1</span></div><div class='cn-note'>Technology Services is 43% of the graded names (3 of 7) — likely one catalyst rather than 3 independent setups.</div><div class='cn-warn'>⚠ Correlated A+ setups — <b>2 in Technology Services</b> (CCC, SKYA); <b>2 in Health Technology</b> (CTNM, TRAX). Taking these together is one position at multiple size, not several independent ones.</div></div>
+    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 3 names graded A+ or A &mdash; 84 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row cn-hot'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:33%'></span></span><span class='cn-pct'>33%</span><span class='cn-n'>1</span></div><div class='cn-row cn-hot'><span class='cn-name'>Producer Manufacturing</span><span class='cn-track'><span class='cn-bar' style='width:33%'></span></span><span class='cn-pct'>33%</span><span class='cn-n'>1</span></div><div class='cn-row cn-hot'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:33%'></span></span><span class='cn-pct'>33%</span><span class='cn-n'>1</span></div><div class='cn-note'>Technology Services is 33% of the graded names (1 of 3) — likely one catalyst rather than 1 independent setups.</div></div>
     <table>
       <thead>
         <tr>
@@ -197,180 +197,164 @@
         </tr>
       </thead>
       <tbody>
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SKYA' target='_blank' class='ticker-link'>SKYA</a></td>
-          <td class='co-cell' title="SkyAI, Inc.">SkyAI, Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$2.35</td>
-          
-              <td>+29.1%</td>
-              <td>149.5×</td>
-              <td>15,122,249</td>
-              <td><span class='badge badge-long' title="confirmed — TV +28.6%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 29.1%</span><span class='tag'>PM RVOL 149.5x</span><span class='tag'>Near 52w high (+20.5%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CTNM' target='_blank' class='ticker-link'>CTNM</a></td>
-          <td class='co-cell' title="Contineum Therapeutics, Inc.">Contineum Therapeutics, Inc.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$9.98</td>
-          
-              <td>-25.4%</td>
-              <td>4.7×</td>
-              <td>892,092</td>
-              <td><span class='badge badge-long' title="confirmed — TV -25.4%">✓</span></td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 25.4%</span><span class='tag'>PM RVOL 4.7x</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CCC' target='_blank' class='ticker-link'>CCC</a></td>
-          <td class='co-cell' title="CCC Intelligent Solutions Holdings Inc.">CCC Intelligent Solutions Holdings Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$7.79</td>
-          
-              <td>+11.0%</td>
-              <td>0.3×</td>
-              <td>887,406</td>
-              <td><span class='badge badge-long' title="confirmed — TV +10.8%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 11.0%</span><span class='tag'>Near 52w high (+3.7%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=TRAX' target='_blank' class='ticker-link'>TRAX</a></td>
-          <td class='co-cell' title="First Tracks Biotherapeutics, Inc.">First Tracks Biotherapeutics, Inc.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$39.75</td>
-          
-              <td>+24.8%</td>
-              <td>3.2×</td>
-              <td>587,764</td>
-              <td><span class='badge badge-long' title="confirmed — TV +25.6%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 24.8%</span><span class='tag'>PM RVOL 3.2x</span></div></td>
-        </tr>
-        
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=WFF' target='_blank' class='ticker-link'>WFF</a></td>
-          <td class='co-cell' title="WF Holding Limited">WF Holding Limited</td>
-          <td class='sec-cell'>Process Industries</td>
-          <td>$13.34</td>
-          
-              <td>+8.6%</td>
-              <td>1.1×</td>
-              <td>1,909,849</td>
-              <td><span class='badge badge-short' title="reversed — TV -13.8% vs +8.6%">✗</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 8.6%</span><span class='tag'>PM RVOL 1.1x</span><span class='tag'>Near 52w high (+8.6%)</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=NABL' target='_blank' class='ticker-link'>NABL</a></td>
-          <td class='co-cell' title="N-able, Inc.">N-able, Inc.</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=CD' target='_blank' class='ticker-link'>CD</a></td>
+          <td class='co-cell' title="Chaince Digital Holdings Inc. - American">Chaince Digital Holdings Inc. - American</td>
           <td class='sec-cell'>Technology Services</td>
-          <td>$5.01</td>
+          <td>$6.41</td>
           
-              <td>+8.2%</td>
+              <td>-10.8%</td>
               <td>0.0×</td>
-              <td>950</td>
-              <td><span class='badge badge-long' title="confirmed — TV +8.2%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
+              <td>514</td>
+              <td><span class='badge badge-long' title="confirmed — TV -10.8%">✓</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 8.2%</span><span class='tag'>Near 52w high (+8.2%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 10.8%</span></div></td>
         </tr>
         
         <tr class='row-a'>
           <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=QUCY' target='_blank' class='ticker-link'>QUCY</a></td>
-          <td class='co-cell' title="Quantum Cyber N.V.">Quantum Cyber N.V.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$1.21</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=EFXT' target='_blank' class='ticker-link'>EFXT</a></td>
+          <td class='co-cell' title="Enerflex Ltd">Enerflex Ltd</td>
+          <td class='sec-cell'>Producer Manufacturing</td>
+          <td>$25.30</td>
           
-              <td>-10.1%</td>
-              <td>1.5×</td>
-              <td>142,482</td>
-              <td><span class='badge badge-long' title="confirmed — TV -10.1%">✓</span></td>
+              <td>+5.1%</td>
+              <td>0.0×</td>
+              <td>850</td>
+              <td><span class='badge badge-long' title="confirmed — TV +8.0%">✓</span></td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 5.1%</span><span class='tag'>Near 52w high (-0.6%)</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SNDX' target='_blank' class='ticker-link'>SNDX</a></td>
+          <td class='co-cell' title="Syndax Pharmaceuticals, Inc.">Syndax Pharmaceuticals, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$13.83</td>
+          
+              <td>-16.4%</td>
+              <td>0.0×</td>
+              <td>7,741</td>
+              <td><span class='badge badge-long' title="confirmed — TV -16.9%">✓</span></td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Huge gap 10.1%</span><span class='tag'>PM RVOL 1.5x</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 16.4%</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=AI' target='_blank' class='ticker-link'>AI</a></td>
-          <td class='co-cell' title="C3.ai, Inc.">C3.ai, Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$12.00</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=INSG' target='_blank' class='ticker-link'>INSG</a></td>
+          <td class='co-cell' title="Inseego Corp.">Inseego Corp.</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$3.60</td>
           
-              <td>+4.1%</td>
+              <td>-16.3%</td>
+              <td>0.0×</td>
+              <td>397</td>
+              <td><span class='badge badge-long' title="confirmed — TV -16.3%">✓</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Huge gap 16.3%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=KNDI' target='_blank' class='ticker-link'>KNDI</a></td>
+          <td class='co-cell' title="Kandi Technologies Group, Inc.">Kandi Technologies Group, Inc.</td>
+          <td class='sec-cell'>Consumer Durables</td>
+          <td>$0.52</td>
+          
+              <td>-10.3%</td>
+              <td>0.0×</td>
+              <td>17,430</td>
+              <td><span class='badge badge-long' title="confirmed — TV -9.8%">✓</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Huge gap 10.3%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=TOYO' target='_blank' class='ticker-link'>TOYO</a></td>
+          <td class='co-cell' title="TOYO Co., Ltd">TOYO Co., Ltd</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$4.55</td>
+          
+              <td>+5.6%</td>
+              <td>0.0×</td>
+              <td>805</td>
+              <td><span class='badge badge-long' title="confirmed — TV +5.6%">✓</span></td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 5.6%</span><span class='tag'>Near 52w high (+1.3%)</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=VFC' target='_blank' class='ticker-link'>VFC</a></td>
+          <td class='co-cell' title="V.F. Corporation">V.F. Corporation</td>
+          <td class='sec-cell'>Consumer Non-Durables</td>
+          <td>$16.40</td>
+          
+              <td>+3.9%</td>
+              <td>0.0×</td>
+              <td>41,733</td>
+              <td><span class='badge badge-long' title="confirmed — TV +3.9%">✓</span></td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Gap 3.9%</span><span class='tag'>Near 52w high (+3.9%)</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ZYBT' target='_blank' class='ticker-link'>ZYBT</a></td>
+          <td class='co-cell' title="Zhengye Biotechnology Holding Limited">Zhengye Biotechnology Holding Limited</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$1.48</td>
+          
+              <td>-12.4%</td>
               <td>0.1×</td>
-              <td>120,743</td>
-              <td><span class='badge badge-long' title="confirmed — TV +4.4%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
+              <td>59,749</td>
+              <td><span class='badge badge-long' title="confirmed — TV -14.2%">✓</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Gap 4.1%</span><span class='tag'>Near 52w high (+4.1%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Huge gap 12.4%</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=DHT' target='_blank' class='ticker-link'>DHT</a></td>
-          <td class='co-cell' title="DHT Holdings, Inc.">DHT Holdings, Inc.</td>
-          <td class='sec-cell'>Transportation</td>
-          <td>$25.70</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ADCT' target='_blank' class='ticker-link'>ADCT</a></td>
+          <td class='co-cell' title="ADC Therapeutics SA">ADC Therapeutics SA</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$1.92</td>
           
-              <td>+4.3%</td>
-              <td>0.1×</td>
-              <td>103,404</td>
-              <td><span class='badge badge-long' title="confirmed — TV +4.3%">✓</span></td>
+              <td>+3.3%</td>
+              <td>0.0×</td>
+              <td>2,376</td>
+              <td><span class='badge badge-long' title="confirmed — TV +3.3%">✓</span></td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Gap 4.3%</span><span class='tag'>Near 52w high (+3.1%)</span></div></td>
+          <td><div class='tags'><span class='tag'>Gap 3.3%</span><span class='tag'>Near 52w high (+3.3%)</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ECO' target='_blank' class='ticker-link'>ECO</a></td>
-          <td class='co-cell' title="Okeanis Eco Tankers Corp.">Okeanis Eco Tankers Corp.</td>
-          <td class='sec-cell'>Transportation</td>
-          <td>$97.00</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=DBI' target='_blank' class='ticker-link'>DBI</a></td>
+          <td class='co-cell' title="Designer Brands Inc.">Designer Brands Inc.</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$6.11</td>
           
-              <td>+4.2%</td>
-              <td>0.1×</td>
-              <td>21,702</td>
-              <td><span class='badge badge-long' title="confirmed — TV +4.1%">✓</span></td>
+              <td>+5.2%</td>
+              <td>0.0×</td>
+              <td>389</td>
+              <td><span class='badge badge-long' title="confirmed — TV +5.2%">✓</span></td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Gap 4.2%</span><span class='tag'>Near 52w high (+2.7%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ENVX' target='_blank' class='ticker-link'>ENVX</a></td>
-          <td class='co-cell' title="Enovix Corporation">Enovix Corporation</td>
-          <td class='sec-cell'>Producer Manufacturing</td>
-          <td>$2.84</td>
-          
-              <td>+15.5%</td>
-              <td>0.2×</td>
-              <td>303,968</td>
-              <td><span class='badge badge-long' title="confirmed — TV +10.6%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 15.5%</span></div></td>
+          <td><div class='tags'><span class='tag'>Strong gap 5.2%</span></div></td>
         </tr>
         
         <tr class=''>
@@ -378,150 +362,166 @@
           <td><a href='https://www.tradingview.com/chart/?symbol=FRO' target='_blank' class='ticker-link'>FRO</a></td>
           <td class='co-cell' title="Frontline Plc">Frontline Plc</td>
           <td class='sec-cell'>Transportation</td>
-          <td>$58.25</td>
+          <td>$58.23</td>
           
-              <td>+3.8%</td>
+              <td>-1.6%</td>
               <td>0.0×</td>
-              <td>36,556</td>
-              <td><span class='badge badge-long' title="confirmed — TV +3.9%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 3.8%</span><span class='tag'>Near 52w high (+3.5%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=JZXN' target='_blank' class='ticker-link'>JZXN</a></td>
-          <td class='co-cell' title="Jiuzi Holdings, Inc.">Jiuzi Holdings, Inc.</td>
-          <td class='sec-cell'>Retail Trade</td>
-          <td>$1.06</td>
-          
-              <td>-4.5%</td>
-              <td>7.3×</td>
-              <td>4,365,779</td>
-              <td><span class='badge badge-long' title="confirmed — TV -3.6%">✓</span></td>
+              <td>13,537</td>
+              <td><span class='badge badge-long' title="confirmed — TV -1.5%">✓</span></td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Gap 4.5%</span><span class='tag'>PM RVOL 7.3x</span></div></td>
+          <td><div class='tags'><span class='tag'>Near 52w high (-1.6%)</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SAIQ' target='_blank' class='ticker-link'>SAIQ</a></td>
-          <td class='co-cell' title="WISeSat.Space Holdings Corp.">WISeSat.Space Holdings Corp.</td>
-          <td class='sec-cell'>Finance</td>
-          <td>$4.00</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=FUN' target='_blank' class='ticker-link'>FUN</a></td>
+          <td class='co-cell' title="Six Flags Entertainment Corporation">Six Flags Entertainment Corporation</td>
+          <td class='sec-cell'>Consumer Services</td>
+          <td>$11.11</td>
           
-              <td>-14.5%</td>
-              <td>0.3×</td>
-              <td>309,000</td>
-              <td><span class='badge badge-long' title="confirmed — TV -15.6%">✓</span></td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 14.5%</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=STNG' target='_blank' class='ticker-link'>STNG</a></td>
-          <td class='co-cell' title="Scorpio Tankers Inc.">Scorpio Tankers Inc.</td>
-          <td class='sec-cell'>Transportation</td>
-          <td>$88.40</td>
-          
-              <td>+3.8%</td>
+              <td>-6.8%</td>
               <td>0.0×</td>
-              <td>3,440</td>
-              <td><span class='badge badge-long' title="confirmed — TV +3.8%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 3.8%</span><span class='tag'>Near 52w high (+0.3%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=TRMD' target='_blank' class='ticker-link'>TRMD</a></td>
-          <td class='co-cell' title="TORM plc">TORM plc</td>
-          <td class='sec-cell'>Transportation</td>
-          <td>$41.68</td>
-          
-              <td>+4.3%</td>
-              <td>0.3×</td>
-              <td>187,517</td>
-              <td><span class='badge badge-long' title="confirmed — TV +4.3%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 4.4%</span><span class='tag'>Near 52w high (+1.5%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ASC' target='_blank' class='ticker-link'>ASC</a></td>
-          <td class='co-cell' title="Ardmore Shipping Corporation">Ardmore Shipping Corporation</td>
-          <td class='sec-cell'>Transportation</td>
-          <td>$19.80</td>
-          
-              <td>+2.7%</td>
-              <td>0.1×</td>
-              <td>7,529</td>
-              <td><span class='badge badge-long' title="confirmed — TV +2.7%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Near 52w high (+1.7%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=BIIB' target='_blank' class='ticker-link'>BIIB</a></td>
-          <td class='co-cell' title="Biogen Inc.">Biogen Inc.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$233.05</td>
-          
-              <td>+3.2%</td>
-              <td>0.0×</td>
-              <td>11,114</td>
-              <td><span class='badge badge-long' title="confirmed — TV +3.3%">✓</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Gap 3.3%</span><span class='tag'>Near 52w high (+1.9%)</span></div></td>
-        </tr>
-        
-        <tr class=''>
-          <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CGNT' target='_blank' class='ticker-link'>CGNT</a></td>
-          <td class='co-cell' title="Cognyte Software Ltd.">Cognyte Software Ltd.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$8.20</td>
-          
-              <td>-7.0%</td>
-              <td>0.0×</td>
-              <td>519</td>
+              <td>27,362</td>
               <td><span class='badge badge-long' title="confirmed — TV -7.0%">✓</span></td>
               <td><span class='badge badge-short'>SHORT</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 7.0%</span></div></td>
+          <td><div class='tags'><span class='tag'>Strong gap 6.8%</span></div></td>
         </tr>
         
         <tr class=''>
           <td><span class='grade-badge grade-b'>B</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=IRS' target='_blank' class='ticker-link'>IRS</a></td>
-          <td class='co-cell' title="IRSA Inversiones Y Representaciones S.A. Global Depositary Shares (Each representing ten shares of">IRSA Inversiones Y Representaciones S.A. Global Depositary Shares (Each representing ten shares of</td>
-          <td class='sec-cell'>Finance</td>
-          <td>$14.48</td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=GOSS' target='_blank' class='ticker-link'>GOSS</a></td>
+          <td class='co-cell' title="Gossamer Bio, Inc.">Gossamer Bio, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$10.16</td>
           
-              <td>+6.0%</td>
-              <td>0.0×</td>
-              <td>343</td>
-              <td><span class='badge badge-long' title="confirmed — TV +6.0%">✓</span></td>
+              <td>+9.5%</td>
+              <td>0.2×</td>
+              <td>13,966</td>
+              <td><span class='badge badge-long' title="confirmed — TV +10.9%">✓</span></td>
               <td><span class='badge badge-long'>LONG</span></td>
             
-          <td><div class='tags'><span class='tag'>Strong gap 6.0%</span></div></td>
+          <td><div class='tags'><span class='tag'>Strong gap 9.5%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SKHY' target='_blank' class='ticker-link'>SKHY</a></td>
+          <td class='co-cell' title="SK hynix Inc.">SK hynix Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$153.54</td>
+          
+              <td>-5.4%</td>
+              <td>0.1×</td>
+              <td>401,923</td>
+              <td><span class='badge badge-long' title="confirmed — TV -5.3%">✓</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 5.4%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SOXL' target='_blank' class='ticker-link'>SOXL</a></td>
+          <td class='co-cell' title="Direxion Daily Semiconductor Bull 3X Shares">Direxion Daily Semiconductor Bull 3X Shares</td>
+          <td class='sec-cell'>ETF · Semiconductors 3x</td>
+          <td>$121.63</td>
+          
+              <td>-5.3%</td>
+              <td><span class='na'>—</span></td>
+              <td>0</td>
+              <td><span class='tag' title="no TV pre-market quote">–</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 5.3%</span><span class='tag'>No pre-market volume - gap UNCONFIRMED</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SOXS' target='_blank' class='ticker-link'>SOXS</a></td>
+          <td class='co-cell' title="Direxion Daily Semiconductor Bear 3X Shares">Direxion Daily Semiconductor Bear 3X Shares</td>
+          <td class='sec-cell'>ETF · Semiconductors -3x</td>
+          <td>$39.24</td>
+          
+              <td>+5.5%</td>
+              <td><span class='na'>—</span></td>
+              <td>0</td>
+              <td><span class='tag' title="no TV pre-market quote">–</span></td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 5.5%</span><span class='tag'>No pre-market volume - gap UNCONFIRMED</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SVRA' target='_blank' class='ticker-link'>SVRA</a></td>
+          <td class='co-cell' title="Savara, Inc.">Savara, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$5.20</td>
+          
+              <td>+7.4%</td>
+              <td>0.0×</td>
+              <td>1,047</td>
+              <td><span class='badge badge-long' title="confirmed — TV +7.4%">✓</span></td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 7.4%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-c'>C</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ABLV' target='_blank' class='ticker-link'>ABLV</a></td>
+          <td class='co-cell' title="Able View Global Inc.">Able View Global Inc.</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$1.20</td>
+          
+              <td>-9.5%</td>
+              <td>0.1×</td>
+              <td>5,620</td>
+              <td><span class='badge badge-long' title="confirmed — TV -9.5%">✓</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 9.5%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-c'>C</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=AIAI' target='_blank' class='ticker-link'>AIAI</a></td>
+          <td class='co-cell' title="AIAI Holdings Corporation">AIAI Holdings Corporation</td>
+          <td class='sec-cell'>Technology Services</td>
+          <td>$3.45</td>
+          
+              <td>+6.8%</td>
+              <td>0.0×</td>
+              <td>3,270</td>
+              <td><span class='badge badge-long' title="confirmed — TV +6.8%">✓</span></td>
+              <td><span class='badge badge-long'>LONG</span></td>
+            
+          <td><div class='tags'><span class='tag'>Strong gap 6.8%</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-c'>C</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=ASTS' target='_blank' class='ticker-link'>ASTS</a></td>
+          <td class='co-cell' title="AST SpaceMobile, Inc.">AST SpaceMobile, Inc.</td>
+          <td class='sec-cell'>Communications</td>
+          <td>$49.58</td>
+          
+              <td>-3.6%</td>
+              <td>0.1×</td>
+              <td>168,965</td>
+              <td><span class='badge badge-long' title="confirmed — TV -3.6%">✓</span></td>
+              <td><span class='badge badge-short'>SHORT</span></td>
+            
+          <td><div class='tags'><span class='tag'>Gap 3.7%</span></div></td>
         </tr>
         </tbody>
     </table>
     <div class='scan-meta'>
       <span class='fresh fresh-ok'>TODAY</span>
-      Updated: 2026-10-12 09:00:44 ET &bull; 104 stocks scanned &bull;
-      <span class='aplus-count'>4 A+ setups</span>
+      Updated: 2026-10-13 07:00:39 ET &bull; 87 stocks scanned &bull;
+      <span class='aplus-count'>0 A+ setups</span>
     </div>
     </div><div id='tab-opening' class='tab-panel '>
     <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 96 names graded A+ or A &mdash; 104 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:17%'></span></span><span class='cn-pct'>17%</span><span class='cn-n'>16</span></div><div class='cn-row'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:16%'></span></span><span class='cn-pct'>16%</span><span class='cn-n'>15</span></div><div class='cn-row'><span class='cn-name'>Electronic Technology</span><span class='cn-track'><span class='cn-bar' style='width:12%'></span></span><span class='cn-pct'>12%</span><span class='cn-n'>12</span></div><div class='cn-row'><span class='cn-name'>Transportation</span><span class='cn-track'><span class='cn-bar' style='width:11%'></span></span><span class='cn-pct'>11%</span><span class='cn-n'>11</span></div><div class='cn-row'><span class='cn-name'>Finance</span><span class='cn-track'><span class='cn-bar' style='width:10%'></span></span><span class='cn-pct'>10%</span><span class='cn-n'>10</span></div><div class='cn-row'><span class='cn-name'>Retail Trade</span><span class='cn-track'><span class='cn-bar' style='width:4%'></span></span><span class='cn-pct'>4%</span><span class='cn-n'>4</span></div><div class='cn-warn'>⚠ Correlated A+ setups — <b>7 in Technology Services</b> (ADBE, AI, BIDU, CCC, CRM…); <b>6 in Transportation</b> (DHT, ECO, FRO, HSHP, TEN…); <b>3 in Finance</b> (SLM, SOFI, XRPN). Taking these together is one position at multiple size, not several independent ones.</div></div>
@@ -836,7 +836,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-ok'>TODAY</span>
+      <span class='fresh fresh-warn'>yesterday</span>
       Updated: 2026-10-12 09:35:41 ET &bull; 200 stocks scanned &bull;
       <span class='aplus-count'>29 A+ setups</span>
     </div>
@@ -1153,7 +1153,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-ok'>TODAY</span>
+      <span class='fresh fresh-warn'>yesterday</span>
       Updated: 2026-10-12 13:30:48 ET &bull; 53 stocks scanned &bull;
       <span class='aplus-count'>25 A+ setups</span>
     </div>
@@ -1470,7 +1470,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-ok'>TODAY</span>
+      <span class='fresh fresh-warn'>yesterday</span>
       Updated: 2026-10-12 15:01:16 ET &bull; 45 stocks scanned &bull;
       <span class='aplus-count'>4 A+ setups</span>
     </div>
