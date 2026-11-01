@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="120">
-<title>DayTrader Scanner — 2026-10-30 19:30</title>
+<title>DayTrader Scanner — 2026-11-01 21:30</title>
 <style>
   /* Dark is the default look here, so it lives on bare :root. The viewer has
      THREE states: an explicit choice stamps data-theme, and the default
@@ -166,7 +166,7 @@
 <header>
   <h1>📈 <span>DayTrader</span> Scanner</h1>
   <div class="hdr-right">
-    <div class="time-badge">2026-10-30 19:30 local &bull; 14:30 ET</div>
+    <div class="time-badge">2026-11-01 21:30 local &bull; 15:30 ET</div>
     <button class="theme-btn" onclick="toggleTheme()" aria-label="Switch between light and dark">Theme</button>
   </div>
 </header>
@@ -183,345 +183,25 @@
 </div>
 
 <div class="tabs">
-  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps <span class='tab-badge'>10 A+</span><br><small>7–9 AM ET</small><br><small class='cet'>13:00 CET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>40 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>14:35 CET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>24 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>18:30 CET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>2 A+</span><br><small>3:00 PM ET</small><br><small class='cet'>20:00 CET</small></button>
+  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small><br><small class='cet'>14:00 CET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>40 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>15:35 CET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>24 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>19:30 CET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>2 A+</span><br><small>3:00 PM ET</small><br><small class='cet'>21:00 CET</small></button>
 </div>
 
 <div id='tab-premarket' class='tab-panel active'>
-    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 30 names graded A+ or A &mdash; 150 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:13%'></span></span><span class='cn-pct'>13%</span><span class='cn-n'>4</span></div><div class='cn-row'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:13%'></span></span><span class='cn-pct'>13%</span><span class='cn-n'>4</span></div><div class='cn-row'><span class='cn-name'>Producer Manufacturing</span><span class='cn-track'><span class='cn-bar' style='width:10%'></span></span><span class='cn-pct'>10%</span><span class='cn-n'>3</span></div><div class='cn-row'><span class='cn-name'>ETF: Technology</span><span class='cn-track'><span class='cn-bar' style='width:7%'></span></span><span class='cn-pct'>7%</span><span class='cn-n'>2</span></div><div class='cn-row'><span class='cn-name'>Retail Trade</span><span class='cn-track'><span class='cn-bar' style='width:7%'></span></span><span class='cn-pct'>7%</span><span class='cn-n'>2</span></div><div class='cn-row'><span class='cn-name'>ETF: Semiconductors</span><span class='cn-track'><span class='cn-bar' style='width:7%'></span></span><span class='cn-pct'>7%</span><span class='cn-n'>2</span></div><div class='cn-warn'>⚠ Correlated A+ setups — <b>2 in Health Technology</b> (CDNA, NRXP); <b>2 in Technology Services</b> (GDYN, OSPN). Taking these together is one position at multiple size, not several independent ones.</div></div>
+    
     <table>
       <thead>
         <tr>
           <th>Grade</th><th>Ticker</th><th>Name</th><th>Sector / Exposure</th><th>Price</th>
-          <th>Gap %</th><th>PM RVOL</th><th>PM Vol</th><th>TV</th><th>Side</th>
+          
           <th>Signals</th>
         </tr>
       </thead>
-      <tbody>
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=TECS' target='_blank' class='ticker-link'>TECS</a></td>
-          <td class='co-cell' title="Direxion Daily Technology Bear 3X Shares">Direxion Daily Technology Bear 3X Shares</td>
-          <td class='sec-cell'>ETF · Technology -3x</td>
-          <td>$62.90</td>
-          
-              <td>+10.5%</td>
-              <td>1.1×</td>
-              <td>96,286</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 10.5%</span><span class='tag'>RVOL[yahoo-intraday] 1.1x</span><span class='tag'>Near 52w high (-0.8%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=ACCO' target='_blank' class='ticker-link'>ACCO</a></td>
-          <td class='co-cell' title="Acco Brands Corporation">Acco Brands Corporation</td>
-          <td class='sec-cell'>Producer Manufacturing</td>
-          <td>$5.26</td>
-          
-              <td>+20.8%</td>
-              <td>0.1×</td>
-              <td>23,572</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 20.8%</span><span class='tag'>Near 52w high (+0.1%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=BTSG' target='_blank' class='ticker-link'>BTSG</a></td>
-          <td class='co-cell' title="BrightSpring Health Services, Inc.">BrightSpring Health Services, Inc.</td>
-          <td class='sec-cell'>Health Services</td>
-          <td>$67.82</td>
-          
-              <td>+12.6%</td>
-              <td>0.1×</td>
-              <td>34,745</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 12.6%</span><span class='tag'>Near 52w high (-0.2%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CDNA' target='_blank' class='ticker-link'>CDNA</a></td>
-          <td class='co-cell' title="CareDx, Inc.">CareDx, Inc.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$89.51</td>
-          
-              <td>+25.1%</td>
-              <td>0.1×</td>
-              <td>23,291</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 25.2%</span><span class='tag'>Near 52w high (-0.2%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=CPRI' target='_blank' class='ticker-link'>CPRI</a></td>
-          <td class='co-cell' title="Capri Holdings Limited">Capri Holdings Limited</td>
-          <td class='sec-cell'>Retail Trade</td>
-          <td>$18.67</td>
-          
-              <td>+16.2%</td>
-              <td>0.6×</td>
-              <td>389,329</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 16.3%</span><span class='tag'>Near 52w high (+0.5%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=FDXF' target='_blank' class='ticker-link'>FDXF</a></td>
-          <td class='co-cell' title="FedEx Freight Holding Company, Inc.">FedEx Freight Holding Company, Inc.</td>
-          <td class='sec-cell'>Transportation</td>
-          <td>$121.89</td>
-          
-              <td>+11.1%</td>
-              <td>0.0×</td>
-              <td>7,674</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 11.1%</span><span class='tag'>Near 52w high (-0.4%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=GDYN' target='_blank' class='ticker-link'>GDYN</a></td>
-          <td class='co-cell' title="Grid Dynamics Holdings, Inc.">Grid Dynamics Holdings, Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$11.78</td>
-          
-              <td>+24.1%</td>
-              <td>0.1×</td>
-              <td>27,242</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 24.1%</span><span class='tag'>Near 52w high (-0.4%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=NRXP' target='_blank' class='ticker-link'>NRXP</a></td>
-          <td class='co-cell' title="NRX Pharmaceuticals, Inc.">NRX Pharmaceuticals, Inc.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$2.36</td>
-          
-              <td>-11.4%</td>
-              <td>19.7×</td>
-              <td>5,333,499</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 11.4%</span><span class='tag'>PM RVOL 19.7x</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=OSPN' target='_blank' class='ticker-link'>OSPN</a></td>
-          <td class='co-cell' title="OneSpan Inc.">OneSpan Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$27.12</td>
-          
-              <td>+34.6%</td>
-              <td>0.1×</td>
-              <td>22,751</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 34.6%</span><span class='tag'>Near 52w high (+0.0%)</span></div></td>
-        </tr>
-        
-        <tr class='row-aplus'>
-          <td><span class='grade-badge grade-aplus'>A+</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SOXL' target='_blank' class='ticker-link'>SOXL</a></td>
-          <td class='co-cell' title="Direxion Daily Semiconductor Bull 3X Shares">Direxion Daily Semiconductor Bull 3X Shares</td>
-          <td class='sec-cell'>ETF · Semiconductors 3x</td>
-          <td>$83.05</td>
-          
-              <td>-18.9%</td>
-              <td>2.0×</td>
-              <td>41,772,634</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 18.9%</span><span class='tag'>RVOL[yahoo-intraday] 2.0x</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=REGN' target='_blank' class='ticker-link'>REGN</a></td>
-          <td class='co-cell' title="Regeneron Pharmaceuticals, Inc.">Regeneron Pharmaceuticals, Inc.</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$919.21</td>
-          
-              <td>+12.3%</td>
-              <td>0.1×</td>
-              <td>18,424</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 12.3%</span><span class='tag'>Near 52w high (-0.4%)</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=RMNI' target='_blank' class='ticker-link'>RMNI</a></td>
-          <td class='co-cell' title="Rimini Street, Inc.">Rimini Street, Inc.</td>
-          <td class='sec-cell'>Technology Services</td>
-          <td>$4.84</td>
-          
-              <td>+21.2%</td>
-              <td>0.2×</td>
-              <td>11,743</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 21.2%</span><span class='tag'>Near 52w high (+0.4%)</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SOXS' target='_blank' class='ticker-link'>SOXS</a></td>
-          <td class='co-cell' title="Direxion Daily Semiconductor Bear 3X Shares">Direxion Daily Semiconductor Bear 3X Shares</td>
-          <td class='sec-cell'>ETF · Semiconductors -3x</td>
-          <td>$49.62</td>
-          
-              <td>+19.1%</td>
-              <td>1.4×</td>
-              <td>24,666,119</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 19.0%</span><span class='tag'>RVOL[yahoo-intraday] 1.4x</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=SQQQ' target='_blank' class='ticker-link'>SQQQ</a></td>
-          <td class='co-cell' title="ProShares UltraPro Short QQQ">ProShares UltraPro Short QQQ</td>
-          <td class='sec-cell'>ETF · Nasdaq 100 -3x</td>
-          <td>$40.59</td>
-          
-              <td>+7.3%</td>
-              <td>1.4×</td>
-              <td>14,903,790</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 7.3%</span><span class='tag'>RVOL[yahoo-intraday] 1.4x</span><span class='tag'>Near 52w high (-0.1%)</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=TECL' target='_blank' class='ticker-link'>TECL</a></td>
-          <td class='co-cell' title="Direxion Daily Technology Bull 3X Shares">Direxion Daily Technology Bull 3X Shares</td>
-          <td class='sec-cell'>ETF · Technology 3x</td>
-          <td>$181.57</td>
-          
-              <td>-10.6%</td>
-              <td>2.0×</td>
-              <td>268,216</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 10.6%</span><span class='tag'>RVOL[yahoo-intraday] 2.0x</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=AN' target='_blank' class='ticker-link'>AN</a></td>
-          <td class='co-cell' title="AutoNation, Inc.">AutoNation, Inc.</td>
-          <td class='sec-cell'>Retail Trade</td>
-          <td>$184.66</td>
-          
-              <td>+9.1%</td>
-              <td>0.0×</td>
-              <td>944</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 9.0%</span><span class='tag'>Near 52w high (+0.4%)</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=AZN' target='_blank' class='ticker-link'>AZN</a></td>
-          <td class='co-cell' title="AstraZeneca PLC">AstraZeneca PLC</td>
-          <td class='sec-cell'>Health Technology</td>
-          <td>$186.36</td>
-          
-              <td>+6.9%</td>
-              <td>0.1×</td>
-              <td>98,877</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Strong gap 6.9%</span><span class='tag'>Near 52w high (-0.1%)</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=COIN' target='_blank' class='ticker-link'>COIN</a></td>
-          <td class='co-cell' title="Coinbase Global, Inc.">Coinbase Global, Inc.</td>
-          <td class='sec-cell'>Finance</td>
-          <td>$143.16</td>
-          
-              <td>-10.8%</td>
-              <td>0.3×</td>
-              <td>457,907</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 10.9%</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=FMC' target='_blank' class='ticker-link'>FMC</a></td>
-          <td class='co-cell' title="FMC Corporation">FMC Corporation</td>
-          <td class='sec-cell'>Process Industries</td>
-          <td>$5.57</td>
-          
-              <td>+17.3%</td>
-              <td>0.0×</td>
-              <td>62,358</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-long'>LONG</span></td>
-            
-          <td><div class='tags'><span class='tag'>Huge gap 17.3%</span></div></td>
-        </tr>
-        
-        <tr class='row-a'>
-          <td><span class='grade-badge grade-a'>A</span></td>
-          <td><a href='https://www.tradingview.com/chart/?symbol=HLP' target='_blank' class='ticker-link'>HLP</a></td>
-          <td class='co-cell' title="Hongli Group Inc.">Hongli Group Inc.</td>
-          <td class='sec-cell'>Producer Manufacturing</td>
-          <td>$4.11</td>
-          
-              <td>-1.9%</td>
-              <td>5.6×</td>
-              <td>257,703</td>
-              <td><span class='tag' title="n/a — scan ran outside pre-market hours">–</span></td>
-              <td><span class='badge badge-short'>SHORT</span></td>
-            
-          <td><div class='tags'><span class='tag'>PM RVOL 5.6x</span><span class='tag'>Near 52w high (-1.9%)</span></div></td>
-        </tr>
-        </tbody>
+      <tbody><tr><td colspan='12' class='empty'>No results yet — scanner hasn't run.</td></tr></tbody>
     </table>
     <div class='scan-meta'>
       <span class='fresh fresh-ok'>TODAY</span>
-      Updated: 2026-10-30 10:01:00 ET &bull; 180 stocks scanned &bull;
-      <span class='aplus-count'>10 A+ setups</span>
+      Updated: 2026-11-01 15:30:21 ET &bull; 0 stocks scanned &bull;
+      <span class='aplus-count'>0 A+ setups</span>
     </div>
     </div><div id='tab-opening' class='tab-panel '>
     <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 92 names graded A+ or A &mdash; 101 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row'><span class='cn-name'>Finance</span><span class='cn-track'><span class='cn-bar' style='width:16%'></span></span><span class='cn-pct'>16%</span><span class='cn-n'>15</span></div><div class='cn-row'><span class='cn-name'>Electronic Technology</span><span class='cn-track'><span class='cn-bar' style='width:14%'></span></span><span class='cn-pct'>14%</span><span class='cn-n'>13</span></div><div class='cn-row'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:12%'></span></span><span class='cn-pct'>12%</span><span class='cn-n'>11</span></div><div class='cn-row'><span class='cn-name'>Health Technology</span><span class='cn-track'><span class='cn-bar' style='width:11%'></span></span><span class='cn-pct'>11%</span><span class='cn-n'>10</span></div><div class='cn-row'><span class='cn-name'>Producer Manufacturing</span><span class='cn-track'><span class='cn-bar' style='width:7%'></span></span><span class='cn-pct'>7%</span><span class='cn-n'>6</span></div><div class='cn-row'><span class='cn-name'>Non-Energy Minerals</span><span class='cn-track'><span class='cn-bar' style='width:4%'></span></span><span class='cn-pct'>4%</span><span class='cn-n'>4</span></div><div class='cn-warn'>⚠ Correlated A+ setups — <b>5 in Technology Services</b> (GDYN, RBLX, RMNI, ROP, SNAP); <b>5 in Electronic Technology</b> (AMD, ASML, INTC, KLAC, MU); <b>5 in Health Technology</b> (CDNA, NRXP, REGN, STXS, SYK). Taking these together is one position at multiple size, not several independent ones.</div></div>
@@ -836,7 +516,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-ok'>TODAY</span>
+      <span class='fresh fresh-warn'>last session</span>
       Updated: 2026-10-30 10:35:37 ET &bull; 193 stocks scanned &bull;
       <span class='aplus-count'>40 A+ setups</span>
     </div>
@@ -1153,7 +833,7 @@
         </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-ok'>TODAY</span>
+      <span class='fresh fresh-warn'>last session</span>
       Updated: 2026-10-30 14:30:40 ET &bull; 75 stocks scanned &bull;
       <span class='aplus-count'>24 A+ setups</span>
     </div>
