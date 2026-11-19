@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="120">
-<title>DayTrader Scanner — 2026-11-19 19:30</title>
+<title>DayTrader Scanner — 2026-11-19 21:00</title>
 <style>
   /* Dark is the default look here, so it lives on bare :root. The viewer has
      THREE states: an explicit choice stamps data-theme, and the default
@@ -166,7 +166,7 @@
 <header>
   <h1>📈 <span>DayTrader</span> Scanner</h1>
   <div class="hdr-right">
-    <div class="time-badge">2026-11-19 19:30 local &bull; 13:30 ET</div>
+    <div class="time-badge">2026-11-19 21:00 local &bull; 15:00 ET</div>
     <button class="theme-btn" onclick="toggleTheme()" aria-label="Switch between light and dark">Theme</button>
   </div>
 </header>
@@ -183,7 +183,7 @@
 </div>
 
 <div class="tabs">
-  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small><br><small class='cet'>14:00 CET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>60 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>15:35 CET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>6 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>19:30 CET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum<br><small>3:00 PM ET</small><br><small class='cet'>21:00 CET</small></button>
+  <button class='tab-btn active' onclick='showTab("premarket")'>🌙 Pre-Market Gaps<br><small>7–9 AM ET</small><br><small class='cet'>14:00 CET</small></button><button class='tab-btn ' onclick='showTab("opening")'>🔔 Opening Bell <span class='tab-badge'>60 A+</span><br><small>9:35 AM ET</small><br><small class='cet'>15:35 CET</small></button><button class='tab-btn ' onclick='showTab("midday")'>☀️ Mid-Day Squeeze <span class='tab-badge'>6 A+</span><br><small>1:30 PM ET</small><br><small class='cet'>19:30 CET</small></button><button class='tab-btn ' onclick='showTab("powerhour")'>⚡ Power Hour Momentum <span class='tab-badge'>4 A+</span><br><small>3:00 PM ET</small><br><small class='cet'>21:00 CET</small></button>
 </div>
 
 <div id='tab-premarket' class='tab-panel active'>
@@ -1158,21 +1158,321 @@
       <span class='aplus-count'>6 A+ setups</span>
     </div>
     </div><div id='tab-powerhour' class='tab-panel '>
-    
+    <div class='cn-wrap'><div class='cn-head'>Sector concentration<span class='cn-sub'>among the 13 names graded A+ or A &mdash; 22 B/C rows excluded</span></div><div class='cn-row cn-hdr'><span class='cn-name'>Sector or ETF exposure</span><span class='cn-track'></span><span class='cn-pct'>Share</span><span class='cn-n'>Names</span></div><div class='cn-row'><span class='cn-name'>Technology Services</span><span class='cn-track'><span class='cn-bar' style='width:15%'></span></span><span class='cn-pct'>15%</span><span class='cn-n'>2</span></div><div class='cn-row'><span class='cn-name'>ETF: Technology</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div><div class='cn-row'><span class='cn-name'>Communications</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div><div class='cn-row'><span class='cn-name'>ETF: S&amp;P 500</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div><div class='cn-row'><span class='cn-name'>ETF: Nasdaq 100</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div><div class='cn-row'><span class='cn-name'>ETF: Volatility</span><span class='cn-track'><span class='cn-bar' style='width:8%'></span></span><span class='cn-pct'>8%</span><span class='cn-n'>1</span></div></div>
     <table>
       <thead>
         <tr>
           <th>Grade</th><th>Ticker</th><th>Name</th><th>Sector / Exposure</th><th>Price</th>
-          
+          <th>Day %</th><th>PH RVOL</th><th>vs VWAP</th><th>Signal</th>
           <th>Signals</th>
         </tr>
       </thead>
-      <tbody><tr><td colspan='12' class='empty'>No results yet — scanner hasn't run.</td></tr></tbody>
+      <tbody>
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=TECS' target='_blank' class='ticker-link'>TECS</a></td>
+          <td class='co-cell' title="Direxion Daily Technology Bear 3X Shares">Direxion Daily Technology Bear 3X Shares</td>
+          <td class='sec-cell'>ETF · Technology -3x</td>
+          <td>$85.11</td>
+          
+              <td>+5.5%</td>
+              <td>0.0×</td>
+              <td>+5.15%</td>
+              <td><span class='newhigh'>↑ NEW HIGH</span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 5.5%</span><span class='tag'>Holding VWAP</span><span class='tag'>RVOL[full day] 1.7x</span><span class='tag'>New intraday high</span><span class='tag'>RSI 67</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=TU' target='_blank' class='ticker-link'>TU</a></td>
+          <td class='co-cell' title="Telus Corporation">Telus Corporation</td>
+          <td class='sec-cell'>Communications</td>
+          <td>$10.70</td>
+          
+              <td>+12.6%</td>
+              <td>0.0×</td>
+              <td>+2.10%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 12.6% [ROCKET]</span><span class='tag'>Holding VWAP</span><span class='tag'>RVOL[full day] 2.3x</span><span class='tag'>RSI 60</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SPXS' target='_blank' class='ticker-link'>SPXS</a></td>
+          <td class='co-cell' title="Direxion Daily S&amp;P 500 Bear 3X Shares">Direxion Daily S&amp;P 500 Bear 3X Shares</td>
+          <td class='sec-cell'>ETF · S&amp;P 500 -3x</td>
+          <td>$29.55</td>
+          
+              <td>+5.4%</td>
+              <td>0.0×</td>
+              <td>+3.52%</td>
+              <td><span class='newhigh'>↑ NEW HIGH</span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 5.4%</span><span class='tag'>Holding VWAP</span><span class='tag'>New intraday high</span><span class='tag'>RSI 73</span></div></td>
+        </tr>
+        
+        <tr class='row-aplus'>
+          <td><span class='grade-badge grade-aplus'>A+</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SQQQ' target='_blank' class='ticker-link'>SQQQ</a></td>
+          <td class='co-cell' title="ProShares UltraPro Short QQQ">ProShares UltraPro Short QQQ</td>
+          <td class='sec-cell'>ETF · Nasdaq 100 -3x</td>
+          <td>$49.23</td>
+          
+              <td>+6.2%</td>
+              <td>0.0×</td>
+              <td>+6.26%</td>
+              <td><span class='newhigh'>↑ NEW HIGH</span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 6.2%</span><span class='tag'>Holding VWAP</span><span class='tag'>New intraday high</span><span class='tag'>RSI 74</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=UVXY' target='_blank' class='ticker-link'>UVXY</a></td>
+          <td class='co-cell' title="ProShares Ultra VIX Short-Term Futures ETF">ProShares Ultra VIX Short-Term Futures ETF</td>
+          <td class='sec-cell'>ETF · Volatility</td>
+          <td>$24.92</td>
+          
+              <td>+14.5%</td>
+              <td>0.0×</td>
+              <td>+8.29%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 14.5% [ROCKET]</span><span class='tag'>Holding VWAP</span><span class='tag'>RSI 73</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=VZLA' target='_blank' class='ticker-link'>VZLA</a></td>
+          <td class='co-cell' title="Vizsla Silver Corp.">Vizsla Silver Corp.</td>
+          <td class='sec-cell'>Non-Energy Minerals</td>
+          <td>$2.83</td>
+          
+              <td>-5.0%</td>
+              <td>0.0×</td>
+              <td>+0.36%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Down -5.0% (short)</span><span class='tag'>Holding VWAP</span><span class='tag'>RVOL[full day] 2.5x</span><span class='tag'>RSI 65</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PANW' target='_blank' class='ticker-link'>PANW</a></td>
+          <td class='co-cell' title="Palo Alto Networks, Inc.">Palo Alto Networks, Inc.</td>
+          <td class='sec-cell'>Technology Services</td>
+          <td>$360.17</td>
+          
+              <td>+6.0%</td>
+              <td>0.0×</td>
+              <td>+0.03%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 6.0%</span><span class='tag'>Holding VWAP</span><span class='tag'>RVOL[full day] 2.3x</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SVRE' target='_blank' class='ticker-link'>SVRE</a></td>
+          <td class='co-cell' title="SaverOne 2014 Ltd.">SaverOne 2014 Ltd.</td>
+          <td class='sec-cell'>Technology Services</td>
+          <td>$1.04</td>
+          
+              <td>+20.1%</td>
+              <td>0.0×</td>
+              <td>+13.46%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 20.1% [ROCKET]</span><span class='tag'>Holding VWAP</span><span class='tag'>RSI 56</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PDD' target='_blank' class='ticker-link'>PDD</a></td>
+          <td class='co-cell' title="PDD Holdings Inc.">PDD Holdings Inc.</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$85.62</td>
+          
+              <td>+10.6%</td>
+              <td>0.0×</td>
+              <td>-0.21%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 10.5% [ROCKET]</span><span class='tag'>Lost VWAP</span><span class='tag'>RVOL[full day] 3.2x</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=LABD' target='_blank' class='ticker-link'>LABD</a></td>
+          <td class='co-cell' title="Direxion Daily S&amp;P Biotech Bear 3X Shares">Direxion Daily S&amp;P Biotech Bear 3X Shares</td>
+          <td class='sec-cell'>ETF · Biotech -3x</td>
+          <td>$8.45</td>
+          
+              <td>+2.5%</td>
+              <td>0.0×</td>
+              <td>+3.82%</td>
+              <td><span class='newhigh'>↑ NEW HIGH</span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 2.5%</span><span class='tag'>Holding VWAP</span><span class='tag'>New intraday high</span><span class='tag'>RSI 65</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=PS' target='_blank' class='ticker-link'>PS</a></td>
+          <td class='co-cell' title="Pershing Square Inc.">Pershing Square Inc.</td>
+          <td class='sec-cell'>Finance</td>
+          <td>$37.08</td>
+          
+              <td>-8.7%</td>
+              <td>0.0×</td>
+              <td>+0.75%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Down -8.7% (short)</span><span class='tag'>Holding VWAP</span><span class='tag'>RVOL[full day] 3.9x</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=RRGB' target='_blank' class='ticker-link'>RRGB</a></td>
+          <td class='co-cell' title="Red Robin Gourmet Burgers, Inc.">Red Robin Gourmet Burgers, Inc.</td>
+          <td class='sec-cell'>Consumer Services</td>
+          <td>$6.22</td>
+          
+              <td>-21.8%</td>
+              <td>0.0×</td>
+              <td>+0.66%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Down -21.8% (short)</span><span class='tag'>Holding VWAP</span><span class='tag'>RVOL[full day] 5.9x</span></div></td>
+        </tr>
+        
+        <tr class='row-a'>
+          <td><span class='grade-badge grade-a'>A</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=UTI' target='_blank' class='ticker-link'>UTI</a></td>
+          <td class='co-cell' title="Universal Technical Institute Inc">Universal Technical Institute Inc</td>
+          <td class='sec-cell'>Commercial Services</td>
+          <td>$20.66</td>
+          
+              <td>-6.3%</td>
+              <td>0.0×</td>
+              <td>+0.40%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Down -6.3% (short)</span><span class='tag'>Holding VWAP</span><span class='tag'>RVOL[full day] 2.2x</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=VVV' target='_blank' class='ticker-link'>VVV</a></td>
+          <td class='co-cell' title="Valvoline Inc.">Valvoline Inc.</td>
+          <td class='sec-cell'>Consumer Services</td>
+          <td>$36.35</td>
+          
+              <td>+8.9%</td>
+              <td>0.0×</td>
+              <td>-1.84%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 8.9%</span><span class='tag'>Lost VWAP</span><span class='tag'>RVOL[full day] 2.0x</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=SOXS' target='_blank' class='ticker-link'>SOXS</a></td>
+          <td class='co-cell' title="Direxion Daily Semiconductor Bear 3X Shares">Direxion Daily Semiconductor Bear 3X Shares</td>
+          <td class='sec-cell'>ETF · Semiconductors -3x</td>
+          <td>$62.58</td>
+          
+              <td>+7.2%</td>
+              <td>0.0×</td>
+              <td>+10.29%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 7.2%</span><span class='tag'>Holding VWAP</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=GME' target='_blank' class='ticker-link'>GME</a></td>
+          <td class='co-cell' title="GameStop Corporation">GameStop Corporation</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$27.09</td>
+          
+              <td>+2.1%</td>
+              <td>0.0×</td>
+              <td>+0.45%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 2.1%</span><span class='tag'>Holding VWAP</span><span class='tag'>RVOL[full day] 2.6x</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=P' target='_blank' class='ticker-link'>P</a></td>
+          <td class='co-cell' title="Everpure, Inc.">Everpure, Inc.</td>
+          <td class='sec-cell'>Electronic Technology</td>
+          <td>$107.79</td>
+          
+              <td>+7.0%</td>
+              <td>0.0×</td>
+              <td>-3.29%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 7.0%</span><span class='tag'>Lost VWAP</span><span class='tag'>RVOL[full day] 2.1x</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=WSM' target='_blank' class='ticker-link'>WSM</a></td>
+          <td class='co-cell' title="Williams-Sonoma, Inc.">Williams-Sonoma, Inc.</td>
+          <td class='sec-cell'>Retail Trade</td>
+          <td>$218.91</td>
+          
+              <td>-15.8%</td>
+              <td>0.0×</td>
+              <td>-4.46%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Down -15.8% (short)</span><span class='tag'>Lost VWAP</span><span class='tag'>RVOL[full day] 3.2x</span><span class='tag'>RSI 56</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=GCL' target='_blank' class='ticker-link'>GCL</a></td>
+          <td class='co-cell' title="GCL Global Holdings Ltd">GCL Global Holdings Ltd</td>
+          <td class='sec-cell'>Technology Services</td>
+          <td>$1.53</td>
+          
+              <td>+3.4%</td>
+              <td>0.0×</td>
+              <td>+1.40%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 3.4%</span><span class='tag'>Holding VWAP</span><span class='tag'>RSI 52</span></div></td>
+        </tr>
+        
+        <tr class=''>
+          <td><span class='grade-badge grade-b'>B</span></td>
+          <td><a href='https://www.tradingview.com/chart/?symbol=MRNA' target='_blank' class='ticker-link'>MRNA</a></td>
+          <td class='co-cell' title="Moderna, Inc.">Moderna, Inc.</td>
+          <td class='sec-cell'>Health Technology</td>
+          <td>$200.93</td>
+          
+              <td>+2.1%</td>
+              <td>0.0×</td>
+              <td>+1.16%</td>
+              <td><span class='newhigh'></span></td>
+            
+          <td><div class='tags'><span class='tag'>Up 2.1%</span><span class='tag'>Holding VWAP</span><span class='tag'>RSI 55</span></div></td>
+        </tr>
+        </tbody>
     </table>
     <div class='scan-meta'>
-      <span class='fresh fresh-warn'>yesterday</span>
-      Updated: 2026-11-18 15:00:07 ET &bull; 0 stocks scanned &bull;
-      <span class='aplus-count'>0 A+ setups</span>
+      <span class='fresh fresh-ok'>TODAY</span>
+      Updated: 2026-11-19 15:00:31 ET &bull; 35 stocks scanned &bull;
+      <span class='aplus-count'>4 A+ setups</span>
     </div>
     </div>
 
