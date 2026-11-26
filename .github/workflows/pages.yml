@@ -21,7 +21,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.retry1.outputs.page_url || steps.retry2.outputs.page_url }}
     runs-on: ubuntu-latest
     # Actions bumped 25 Nov 2026 from the 2024 Node-20 majors (checkout@v4,
     # configure-pages@v5, upload-pages-artifact@v3, deploy-pages@v4). GitHub
@@ -40,6 +40,33 @@ jobs:
         with:
           path: "."
 
+      # Retry the deploy STEP, inside this same run (added 26 Nov 2026). Since
+      # 23 Nov the deploy has often failed within a second of a successful
+      # upload with 'No artifacts named "github-pages" were found' (5 of 6
+      # failed on the evening of 25 Nov, on both the old and the new action
+      # versions): the fresh upload is apparently not visible yet. Waiting
+      # and asking again uses the SAME artifact. This is not a re-run of the
+      # workflow, which re-uploads and fails with "Multiple artifacts".
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait 30s before retry
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to GitHub Pages (retry 1)
+        id: retry1
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait 60s before retry
+        if: steps.deployment.outcome == 'failure' && steps.retry1.outcome == 'failure'
+        run: sleep 60
+
+      - name: Deploy to GitHub Pages (retry 2)
+        id: retry2
+        if: steps.deployment.outcome == 'failure' && steps.retry1.outcome == 'failure'
         uses: actions/deploy-pages@v5
